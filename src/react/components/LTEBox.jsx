@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import AbstractContent from '../components/abstract-content';
+
 import {BOX_TOPS} from '../constants/constants';
 
 class LTEBox extends React.Component {
@@ -22,26 +24,32 @@ class LTEBox extends React.Component {
 
 	render() {
     const {BOX_TOPS} = this.state;
-    const {children, sidebar, topColor, topSolid} = this.props;
+    const {children, footer, header, sidebar, topColor, topSolid} = this.props;
 		const boxWidth = 'col-sm-12 col-md-12 col-lg-12 col-xl-12';
 		const boxTopColor = BOX_TOPS[topColor.toLowerCase()] || BOX_TOPS[''];
 		const boxClasses = `box ${boxTopColor}${topSolid ? ' box-solid' : ''}`;
 		return (
-			<div className={boxWidth}>
-        <div className='row'>
-          <div className={boxWidth} style={{paddingTop: '15px', paddingBottom: '15px'}}>
-            {sidebar}
-          </div>
+      <div className='skin-blue-light'>
+        <div className="box-header with-border">
+          {typeof(header === 'string') ? (<span className="box-title">{header}</span>) : header}
         </div>
-        <div className='row' style={{paddingTop: '20px'}}>
-          <div className={boxWidth}>
-            <div className={boxClasses}>
-              <div className='box-body'>
-                {children}
+        <AbstractContent>
+          <div className='row'>
+            <div className={boxWidth} style={{paddingTop: '15px', paddingBottom: '15px'}}>
+              {sidebar}
+            </div>
+          </div>
+          <div className='row' style={{paddingTop: '20px'}}>
+            <div className={boxWidth}>
+              <div className={boxClasses}>
+                <div className='box-body'>
+                  {children}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </AbstractContent>
+        {footer}
       </div>
 		);
 	}

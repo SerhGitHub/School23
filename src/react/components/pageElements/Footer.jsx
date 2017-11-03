@@ -5,7 +5,11 @@ import React from 'react';
 
 class Footer extends React.Component {
   render() {
-   return <div></div>
+   return (
+     <footer className={`main-footer false`}>
+       Государственное учреждение образования "Средняя школа № 23 г. Гродно"
+     </footer>
+   );
   }
 }
 
