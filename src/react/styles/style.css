@@ -1,0 +1,245 @@
+/*  This CSS is only used to demonstrate what is needed to implement custom
+    AdminLTE "semantic" colors for boxes (panels).  It is not required if
+    the "custom1" and "custom2" panel "colors" are not used.
+ */
+
+.blue-tooltip + .tooltip > .tooltip-inner {background-color: #3c8dbc; }
+.blue-tooltip + .tooltip > .tooltip-arrow { border-bottom-color:#3c8dbc; }
+
+.tooltip > .tooltip-inner {
+  background-color: #3c8dbc;
+}
+
+.tooltip {
+  z-index: 9999 !important;
+  position: fixed;
+}
+
+.tooltip-inner {
+  max-width: 300px;
+}
+
+.box {									/* darken LRB borders */
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.idata-green {
+    color: #c3d942;     /* rgb(195, 217, 66) from goris.com */
+}
+.idata-blue {
+    color: #283a8f;     /* rgb(40, 58, 143) from goris.com */
+}
+
+/* IData "green" (from the logo) */
+.box.box-custom1 {
+    border-top-color: #c3d942;  /* #c3d743; */
+}
+.box.box-solid.box-custom1 {
+    border: 1px solid #c3d942;
+}
+.box.box-solid.box-custom1 > .box-header {
+    color: #ffffff;
+    background-color: #c3d942;
+}
+.box.box-solid.box-custom1 > .box-header a,
+.box.box-solid.box-custom1 > .box-header .btn {
+    color: #ffffff;
+}
+.btn-custom1 {
+    background-color: #c3d942;
+    border-color: #98ac23;  /* #d7eb43; */
+    color: #fff;
+}
+.btn-custom1:hover,
+.btn-custom1:active,
+.btn-custom1.hover {
+    background-color: #98ac23;
+    color: #fff;
+}
+.bg-custom1 {
+    background-color: #c3d942;
+    color: #fff !important;
+}
+/* Translucent custom btnColor for backgrounds */
+.box.box-custom1 .pale {
+    background-color: #c3d942;
+    background-color: rgba(195, 217, 66, 0.3);
+}
+
+/* IData "blue" (from the logo) */
+.box.box-custom2 {
+    border-top-color: #283a8f;  /* #1c2166; */
+}
+.box.box-solid.box-custom2 {
+    border: 1px solid #283a8f;
+}
+.box.box-solid.box-custom2 > .box-header {
+    color: #ffffff;
+    background-color: #283a8f;
+}
+.box.box-solid.box-custom2 > .box-header a,
+.box.box-solid.box-custom2 > .box-header .btn {
+    color: #ffffff;
+}
+.btn-custom2 {
+    background-color: #283a8f;
+    border-color: #3b54c8;  /* #1e23b4; */
+    color: #fff;
+}
+.btn-custom2:hover,
+.btn-custom2:active,
+.btn-custom2.hover {
+    background-color: #3b54c8;
+    color: #fff;
+}
+.bg-custom2 {
+    background-color: #283a8f;
+    color: #fff !important;
+}
+/* Translucent custom btnColor for backgrounds */
+.box.box-custom2 .pale {
+    background-color: #283a8f;
+    background-color: rgba(40, 58, 143, 0.2);
+}
+
+/* Translucent version of "standard" colors */
+.box.box-default .pale {
+    background-color: #d2d6de;
+    background-color: rgba(210, 214, 222, 0.2);
+}
+.box.box-primary .pale {
+    background-color: #3c8dbc;
+    background-color: rgba(60, 141, 188, 0.1);
+}
+.box.box-info .pale {
+    background-color: #00c0ef;
+    background-color: rgba(0, 192, 239, 0.1);
+}
+.box.box-success .pale {
+    background-color: #00a65a;
+    background-color: rgba(0, 166, 90, 0.1);
+}
+.box.box-danger .pale {
+    background-color: #dd4b39;
+    background-color: rgba(221, 75, 57, 0.1);
+}
+.box.box-warning .pale {
+    background-color: #f39c12;
+    background-color: rgba(243, 156, 18, 0.1);
+}
+
+
+/* Style for collapsible*/
+.tabCollapses-wrapper {
+  border: 1px solid #d2d6de;
+  border-top: 0px solid #d2d6de;
+}
+
+.tabCollapses-label {
+  background-color: #fff;
+  border: 0px solid #d2d6de;
+  border-top: 1px solid #d2d6de;
+  border-bottom: 1px solid #d2d6de;
+  cursor: pointer;
+}
+
+.tabCollapses-label.tabCollapse-attention-label {
+  background-color: #FFA500
+}
+
+.tabCollapses-inner {
+  padding: 5px 0px 5px 0px;
+}
+
+.tabCollapses-label .fa-chevron-down {
+  display: inline;
+}
+
+.tabCollapses-label .collapsed .fa-chevron-down {
+  display: none;
+}
+
+.tabCollapses-label .fa-chevron-left {
+  display: none;
+}
+
+.tabCollapses-label .collapsed .fa-chevron-left {
+  display: inline;
+}
+
+.margin-l-5 {
+  margin-left: 5px;
+}
+
+.margin-b-2 {
+  margin-bottom: 2px;
+}
+
+.margin-b-0 {
+  margin-bottom: 0px;
+}
+
+.margin-r-5 {
+  margin-right: 5px;
+}
+
+.padding-l-5 {
+  padding-left: 5px;
+}
+
+.padding-l-0 {
+  padding-left: 0px;
+}
+
+.padding-t-10 {
+  padding-top: 10px;
+}
+
+.padding-t-7 {
+  padding-top: 7px;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.buttons-style {
+  padding-left: 5px;
+  padding-top: 5px;
+  display: inline;
+}
+
+.table>thead>tr>th {
+  vertical-align: middle;
+}
+
+.table>tbody>tr>td {
+  vertical-align: middle;
+}
+
+.btn {
+  margin-bottom: 5px;
+  width: 120px;
+}
+
+.max-width {
+  max-width: 173px;
+}
+
+.attention-label {
+  color : #FFA500
+}
+
+.fontAwesome-select {
+  font-family: 'FontAwesome', 'Helvetica';
+}
+
+.scrollable-sidebar-part, .central-scrollable-area {
+  overflow-x : hidden;
+}
+
+.no-data-text {
+  font-size: 16px;
+  text-align: center;
+}
