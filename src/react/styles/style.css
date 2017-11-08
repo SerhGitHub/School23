@@ -243,3 +243,19 @@
   font-size: 16px;
   text-align: center;
 }
+
+.link-class{
+  border: none;
+  background: none;
+  width: 178px;
+  text-align: left;
+}
+
+.block-content{
+  border: 10px solid white;
+  border-radius: 8px;
+  padding: 10px;
+  width: 220px;
+  color: white;
+  display: inline-block;
+}

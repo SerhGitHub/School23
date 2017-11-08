@@ -9,9 +9,9 @@ class CrudButton extends React.Component {
   };
 
   render() {
-    const {disabled, customClassName, iconClassName, label, tooltip} = this.props;
+    const {disabled, customClassName, iconClassName, label, isLink, tooltip} = this.props;
     return (
-      <button className={`${customClassName} blue-tooltip`} data-toggle='tooltip' data-html='true' data-placement='top' title={tooltip} disabled={disabled} onClick={this.onClick} style={{paddingLeft: '20px', paddingRight: '20px'}}>
+      <button className={`${customClassName} blue-tooltip ${isLink ? 'link-class' : ''}`} data-toggle='tooltip' data-html='true' data-placement='top' title={tooltip} disabled={disabled} onClick={this.onClick} style={{paddingLeft: '5px', paddingRight: '5px'}}>
         <i className={iconClassName} />
         {label}
       </button>
@@ -25,7 +25,8 @@ CrudButton.propTypes = {
   iconClassName: PropTypes.string,
   label: PropTypes.string,
   onClick: PropTypes.func,
-  tooltip: PropTypes.string
+  tooltip: PropTypes.string,
+  isLink: PropTypes.object
 };
 
 export default CrudButton;

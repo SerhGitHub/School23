@@ -1,28 +1,68 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LTEBox from './LTEBox.jsx'
-import AllTabsView from './tabs/AllTabsView.jsx'
 
-import Footer from './pageElements/Footer.jsx';
-import Header from './pageElements/Header.jsx';
-import Sidebar from './pageElements/Sidebar.jsx';
+import Footer from './pageElements/Footer';
+import Header from './pageElements/Header';
+import Sidebar from './pageElements/Sidebar';
 
-import InitializationActions from '../actions/Initialization.js';
+import BlockContent from '../components/block/block-content';
 
+import SubjectStore from '../stores/SubjectStore';
+
+import {
+  DEVELOPMENT_TAB,
+  TEACHING_TAB,
+  SCIENCE_TAB
+} from '../constants/constants';
 class RootComponent extends React.Component {
   constructor(props) {
     super(props);
-    InitializationActions.initApplication()
+    this.state = this.getCurrentState();
+  }
+
+  componentDidMount() {
+    SubjectStore.addChangeListener(this.onChange);
+  }
+
+  componentWillUnmount() {
+    SubjectStore.removeChangeListener(this.onChange);
+  }
+
+  onChange = () => {
+    this.setState(this.getCurrentState());
+  };
+
+  getCurrentState() {
+    return {
+      subject: SubjectStore.getCurrentSubject()
+    };
   }
 
   render() {
+    const {subject} = this.state;
     const header = <Header />;
     const footer = <Footer />;
     const sidebar = <Sidebar />;
+    const content = !subject.isActive ? (
+      <span>
+        <span style={{padding: '20px'}}>
+          <BlockContent activeTab={DEVELOPMENT_TAB}/>
+        </span>
+        <span style={{padding: '20px'}}>
+          <BlockContent activeTab={TEACHING_TAB}/>
+        </span>
+        <span style={{padding: '20px'}}>
+          <BlockContent activeTab={SCIENCE_TAB}/>
+        </span>
+      </span>
+      ) : null;
     return (
-      <LTEBox topColor={'custom2'} width={11} header={header} footer={footer} sidebar={sidebar}>
-        <AllTabsView/>
-      </LTEBox>
+      <span>
+        <LTEBox topColor={'custom2'} width={11} header={header} footer={footer} sidebar={sidebar}>
+          {content}
+        </LTEBox>
+      </span>
     );
   }
 }

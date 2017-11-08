@@ -4,7 +4,7 @@ import React from 'react';
 class AbstractContentComponent extends React.Component {
 
   resetMinimumHeight() {
-    const verySmallValueToGetRidOfRightScroll = 35;
+    const verySmallValueToGetRidOfRightScroll = 23;
     $(this.wrapper).css('min-height', ($(window).height() - $('.main-header').outerHeight() - $('.main-footer').outerHeight() - verySmallValueToGetRidOfRightScroll));
   }
 
@@ -18,7 +18,7 @@ class AbstractContentComponent extends React.Component {
 
   render() {
     return (
-      <div className='content-wrapper' ref={(wrapper) => {this.wrapper = wrapper;}}>
+      <div className='content-wrapper' ref={(wrapper) => {this.wrapper = wrapper;}} style={{background: 'url(img/background/children.jpg)'}}>
         {this.props.children}
       </div>
     );
