@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import SubjectAction from '../../actions/subject.action';
+
 import CrudButton from '../../components/shared/CrudButton';
 
 import {
@@ -10,15 +12,21 @@ import {
   ICON_FIELD,
   WIDTH_FIELD,
   HEIGHT_FIELD,
-  BACKGROUND_FIELD
+  BACKGROUND_FIELD,
+  QUESTIONS,
+  DESCRIPTION_FIELD
 } from '../../../react/constants/constants';
 
 class BlockContent extends React.Component {
 
+  activateBlock = (link) => {
+    SubjectAction.initSubject(link[DESCRIPTION_FIELD], link[QUESTIONS]);
+  };
+
   getLink(link){
     return (
       <span>
-        <CrudButton isLink={true} label={link[LABEL_FIELD]} iconClassName={`fa fa-${link[ICON_FIELD]}`}/>
+        <CrudButton isLink={true} label={link[LABEL_FIELD]} iconClassName={`fa fa-${link[ICON_FIELD]}`} onClick={this.activateBlock.bind(this, link)}/>
         <br/>
       </span>
     );
@@ -50,7 +58,8 @@ class BlockContent extends React.Component {
 }
 
 BlockContent.propTypes = {
-  activeTab: PropTypes.string
+  activeTab: PropTypes.string,
+  subject: PropTypes.object
 };
 
 export default BlockContent;

@@ -3,7 +3,13 @@
  */
 import React from 'react';
 
+import SubjectAction from '../../actions/subject.action';
+
 class Header extends React.Component {
+
+  onClick = () => {
+    SubjectAction.deactivateSubject();
+  };
 
   render() {
     const style = {
@@ -12,7 +18,9 @@ class Header extends React.Component {
     };
     return (
       <header className='main-header' style={style}>
-        Подготовка к школе. Задания для детей 5-6 лет
+        <button className={`header-content`} onClick={this.onClick}>
+          <img src='img/home.png' width={'30px'} height={'30px'}/> Подготовка к школе
+        </button>
       </header>
     );
   }

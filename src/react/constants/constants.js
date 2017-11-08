@@ -8,7 +8,9 @@ export const VIEW_ACTION = 'VIEW_ACTION';
 export const SELECT_TAB = 'SELECT_TAB';
 export const INIT_TAB_CONTENT = 'INIT_MENU_ITEMS';
 export const INIT_SUBJECT_CONTENT = 'INIT_SUBJECT_CONTENT';
+export const INIT_QUESTION_CONTENT = 'INIT_QUESTION_CONTENT';
 export const DEACTIVATE_SUBJECT_CONTENT = 'DEACTIVATE_SUBJECT_CONTENT';
+export const DEACTIVATE_QUESTION_CONTENT = 'DEACTIVATE_QUESTION_CONTENT';
 export const INIT_CURRENT_TAB = 'INIT_CURRENT_DATA_SYSTEM';
 export const EVENT_CHANGE = 'change';
 
@@ -86,6 +88,8 @@ export const IMAGE_FIELD = 'image';
 export const WIDTH_FIELD = 'width';
 export const HEIGHT_FIELD = 'height';
 export const BACKGROUND_FIELD = 'background';
+export const LEVEL_FIELD = 'level';
+export const DESCRIPTION_FIELD = 'description';
 
 export const TAB_CONTENT_SETTINGS = {
   [DEVELOPMENT_TAB]: {
@@ -100,10 +104,12 @@ export const TAB_CONTENT_SETTINGS = {
       {
         [ID_FIELD]: 11,
         [LABEL_FIELD]: 'Внимание',
+        [DESCRIPTION_FIELD]: 'Задания для развития внимания у детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: [
           {
             [ID_FIELD]: 1,
+            [LEVEL_FIELD]: 1,
             [LABEL_FIELD]: 'Найди точно такую же картинку как образец',
             [IMAGE_FIELD]: 'red_circle.png',
             [VARIANTS_OF_ANSWERS]: [
@@ -138,24 +144,28 @@ export const TAB_CONTENT_SETTINGS = {
       {
         [ID_FIELD]: 12,
         [LABEL_FIELD]: 'Память',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 13,
         [LABEL_FIELD]: 'Логика',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 14,
         [LABEL_FIELD]: 'Пространство и время',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 15,
         [LABEL_FIELD]: 'Речь',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       }
@@ -173,7 +183,9 @@ export const TAB_CONTENT_SETTINGS = {
       {
         [ID_FIELD]: 21,
         [LABEL_FIELD]: 'Счет и цифры',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
+        [LEVEL_FIELD]: 1,
         [QUESTIONS]: [
           {
             [ID_FIELD]: 1,
@@ -195,6 +207,7 @@ export const TAB_CONTENT_SETTINGS = {
       {
         [ID_FIELD]: 22,
         [LABEL_FIELD]: 'Буквы и чтение',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       }
@@ -204,7 +217,7 @@ export const TAB_CONTENT_SETTINGS = {
     [LABEL_FIELD]: 'Наука',
     [ICON_FIELD]: {
       [LABEL_FIELD]: 'science.png',
-      [WIDTH_FIELD]: '150',
+      [WIDTH_FIELD]: '180',
       [HEIGHT_FIELD]: '150'
     },
     [BACKGROUND_FIELD]: '#fb6834',
@@ -212,30 +225,35 @@ export const TAB_CONTENT_SETTINGS = {
       {
         [ID_FIELD]: 31,
         [LABEL_FIELD]: 'Биология',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 32,
         [LABEL_FIELD]: 'География',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 33,
         [LABEL_FIELD]: 'Физика',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 34,
         [LABEL_FIELD]: 'Химия',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 35,
         [LABEL_FIELD]: 'Культура',
+        [DESCRIPTION_FIELD]: '',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       }

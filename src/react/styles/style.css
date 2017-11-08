@@ -259,3 +259,52 @@
   color: white;
   display: inline-block;
 }
+
+.levels-label{
+  text-align: center;
+  color: #0097de;
+  font-size: 36px;
+  font-family: Monotype Corsiva;
+}
+
+.question-content{
+  border: 10px solid white;
+  border-radius: 8px;
+  padding: 10px;
+  width: 700px;
+  color: white;
+  display: inline-block;
+}
+
+.level-button{
+  border: none;
+  background: none;
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 26px;
+  font-family: Monotype Corsiva;
+}
+
+.level1{
+  background: #a4d300;
+}
+
+.level2{
+  background: #0085c3;
+}
+
+.level3{
+  background: #fb6834;
+}
+
+.level-disabled{
+  background: gainsboro;
+}
+
+.header-content{
+  border: none;
+  background: none;
+  padding: 0px;
+}

@@ -4,18 +4,20 @@
 import AppDispatcher from '../dispatcher/Dispatcher';
 
 import {
-  LABEL_FIELD,
+  DESCRIPTION_FIELD,
   QUESTIONS,
   INIT_SUBJECT_CONTENT,
-  DEACTIVATE_SUBJECT_CONTENT
+  INIT_QUESTION_CONTENT,
+  DEACTIVATE_SUBJECT_CONTENT,
+  DEACTIVATE_QUESTION_CONTENT
 } from '../constants/constants';
 
 export default {
-  initSubject(label, questions) {
+  initSubject(description, questions) {
     AppDispatcher.handleViewAction({
       actionType: INIT_SUBJECT_CONTENT,
       data: {
-        [LABEL_FIELD]: label,
+        [DESCRIPTION_FIELD]: description,
         [QUESTIONS]: questions
       }
     });
@@ -23,6 +25,18 @@ export default {
   deactivateSubject() {
     AppDispatcher.handleViewAction({
       actionType: DEACTIVATE_SUBJECT_CONTENT,
+      data: false
+    });
+  },
+  initQuestion(questions) {
+    AppDispatcher.handleViewAction({
+      actionType: INIT_QUESTION_CONTENT,
+      data: questions
+    });
+  },
+  deactivateQuestion() {
+    AppDispatcher.handleViewAction({
+      actionType: DEACTIVATE_QUESTION_CONTENT,
       data: false
     });
   }

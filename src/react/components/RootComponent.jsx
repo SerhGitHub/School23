@@ -7,6 +7,7 @@ import Header from './pageElements/Header';
 import Sidebar from './pageElements/Sidebar';
 
 import BlockContent from '../components/block/block-content';
+import BlockQuestion from '../components/block/block-question';
 
 import SubjectStore from '../stores/SubjectStore';
 
@@ -47,16 +48,16 @@ class RootComponent extends React.Component {
     const content = !subject.isActive ? (
       <span>
         <span style={{padding: '20px'}}>
-          <BlockContent activeTab={DEVELOPMENT_TAB}/>
+          <BlockContent activeTab={DEVELOPMENT_TAB} subject={subject}/>
         </span>
         <span style={{padding: '20px'}}>
-          <BlockContent activeTab={TEACHING_TAB}/>
+          <BlockContent activeTab={TEACHING_TAB} subject={subject}/>
         </span>
         <span style={{padding: '20px'}}>
-          <BlockContent activeTab={SCIENCE_TAB}/>
+          <BlockContent activeTab={SCIENCE_TAB} subject={subject}/>
         </span>
       </span>
-      ) : null;
+      ) : <BlockQuestion subject={subject}/>;
     return (
       <span>
         <LTEBox topColor={'custom2'} width={11} header={header} footer={footer} sidebar={sidebar}>
