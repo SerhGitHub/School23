@@ -14,13 +14,14 @@ import {
   HEIGHT_FIELD,
   BACKGROUND_FIELD,
   QUESTIONS,
-  DESCRIPTION_FIELD
+  DESCRIPTION_FIELD,
+  ID_FIELD
 } from '../../../react/constants/constants';
 
 class BlockContent extends React.Component {
 
   activateBlock = (link) => {
-    SubjectAction.initSubject(link[DESCRIPTION_FIELD], link[QUESTIONS]);
+    SubjectAction.initSubject(link[ID_FIELD], link[DESCRIPTION_FIELD], link[QUESTIONS]);
   };
 
   getLink(link){

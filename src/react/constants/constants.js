@@ -11,6 +11,8 @@ export const INIT_SUBJECT_CONTENT = 'INIT_SUBJECT_CONTENT';
 export const INIT_QUESTION_CONTENT = 'INIT_QUESTION_CONTENT';
 export const DEACTIVATE_SUBJECT_CONTENT = 'DEACTIVATE_SUBJECT_CONTENT';
 export const DEACTIVATE_QUESTION_CONTENT = 'DEACTIVATE_QUESTION_CONTENT';
+export const CHANGE_INDEX_QUESTION = 'CHANGE_INDEX_QUESTION';
+export const DEACTIVATE_INDEX_QUESTION = 'DEACTIVATE_INDEX_QUESTION';
 export const INIT_CURRENT_TAB = 'INIT_CURRENT_DATA_SYSTEM';
 export const EVENT_CHANGE = 'change';
 
@@ -90,6 +92,7 @@ export const HEIGHT_FIELD = 'height';
 export const BACKGROUND_FIELD = 'background';
 export const LEVEL_FIELD = 'level';
 export const DESCRIPTION_FIELD = 'description';
+export const SIZE_FIELD = 'size';
 
 export const TAB_CONTENT_SETTINGS = {
   [DEVELOPMENT_TAB]: {
@@ -112,6 +115,10 @@ export const TAB_CONTENT_SETTINGS = {
             [LEVEL_FIELD]: 1,
             [LABEL_FIELD]: 'Найди точно такую же картинку как образец',
             [IMAGE_FIELD]: 'red_circle.png',
+            [SIZE_FIELD]: {
+              [WIDTH_FIELD]: '120',
+              [HEIGHT_FIELD]: '120'
+            },
             [VARIANTS_OF_ANSWERS]: [
               {
                 [IS_TRUE]: false,
@@ -144,28 +151,28 @@ export const TAB_CONTENT_SETTINGS = {
       {
         [ID_FIELD]: 12,
         [LABEL_FIELD]: 'Память',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Задания для развития памяти детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 13,
         [LABEL_FIELD]: 'Логика',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Задания на логику для детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 14,
         [LABEL_FIELD]: 'Пространство и время',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Пространственно-временные представления для детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 15,
         [LABEL_FIELD]: 'Речь',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Задания для развития речи ребенка',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       }
@@ -183,14 +190,18 @@ export const TAB_CONTENT_SETTINGS = {
       {
         [ID_FIELD]: 21,
         [LABEL_FIELD]: 'Счет и цифры',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Счет и цифры для детей',
         [ICON_FIELD]: 'check',
-        [LEVEL_FIELD]: 1,
         [QUESTIONS]: [
           {
             [ID_FIELD]: 1,
             [LABEL_FIELD]: 'Выбери знак, который можно поставить между картинками: «равно» или «не равно».',
             [IMAGE_FIELD]: 'myachiki.png',
+            [SIZE_FIELD]: {
+              [WIDTH_FIELD]: '170',
+              [HEIGHT_FIELD]: '120'
+            },
+            [LEVEL_FIELD]: 1,
             [VARIANTS_OF_ANSWERS]: [
               {
                 [IS_TRUE]: false,
@@ -207,7 +218,7 @@ export const TAB_CONTENT_SETTINGS = {
       {
         [ID_FIELD]: 22,
         [LABEL_FIELD]: 'Буквы и чтение',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Буквы и чтение для детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       }
@@ -225,35 +236,35 @@ export const TAB_CONTENT_SETTINGS = {
       {
         [ID_FIELD]: 31,
         [LABEL_FIELD]: 'Биология',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Биология для детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 32,
         [LABEL_FIELD]: 'География',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'География для детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 33,
         [LABEL_FIELD]: 'Физика',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Физика для детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 34,
         [LABEL_FIELD]: 'Химия',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Химия для детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       },
       {
         [ID_FIELD]: 35,
         [LABEL_FIELD]: 'Культура',
-        [DESCRIPTION_FIELD]: '',
+        [DESCRIPTION_FIELD]: 'Культура для детей',
         [ICON_FIELD]: 'check',
         [QUESTIONS]: []
       }

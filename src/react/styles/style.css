@@ -260,6 +260,17 @@
   display: inline-block;
 }
 
+.variant-class{
+  border: 5px solid white;
+  border-radius: 4px;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  background: #f1f0ec;
+  box-shadow: 10px -10px 5px 5px rgba(0, 0, 0, .2);
+}
+
 .levels-label{
   text-align: center;
   color: #0097de;
@@ -271,7 +282,7 @@
   border: 10px solid white;
   border-radius: 8px;
   padding: 10px;
-  width: 700px;
+  width: 800px;
   color: white;
   display: inline-block;
 }

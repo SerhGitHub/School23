@@ -9,6 +9,8 @@ class Header extends React.Component {
 
   onClick = () => {
     SubjectAction.deactivateSubject();
+    SubjectAction.deactivateIndexQuestion();
+    SubjectAction.deactivateQuestion();
   };
 
   render() {
