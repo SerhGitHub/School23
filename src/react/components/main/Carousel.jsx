@@ -33,9 +33,9 @@ class Carousel extends React.Component {
             this.getCaruselItems().map((item, index) => {
               return (
                 <div key={item.id} className={`carousel-item${index == 0 ? ' active' : ''}`}>
-                  <img className='d-block' src={item.img} alt={item.alt}/>
+                  <img className='d-block' src={item.img} alt={item.alt} style={{width: '100%', height: '100%'}}/>
                   <div className='caption'>
-                    <div className='caption-title'>
+                    <div className='caption-title' style={{padding: '10px 8px 5px'}}>
                       {item.title}
                     </div>
                   </div>

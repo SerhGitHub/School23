@@ -19,3 +19,8 @@
   text-align: left;
   text-transform: uppercase;
 }
+
+.smallNavItem{
+  color: white;
+  cursor: pointer;
+}

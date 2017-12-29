@@ -2,13 +2,21 @@ import AuthAction from '../actions/auth.action';
 
 export default {
 
-  showRegistrationWindow(id) {
-    AuthAction.showRegistrationWindow(id);
+  showRegistrationWindow(data) {
+    AuthAction.showRegistrationWindow(data);
   },
 
-  showSingWindow(id) {
-    AuthAction.showSingWindow(id);
+  showSingWindow(data) {
+    AuthAction.showSingWindow(data);
   },
+
+  createUser(username, password){
+    AuthAction.createUser(username, password);
+  },
+
+  logOut(){
+    AuthAction.logOut();
+  }
 }
 
 

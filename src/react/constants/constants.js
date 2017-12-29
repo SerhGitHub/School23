@@ -22,6 +22,8 @@ export const SELECT_TAB_MENU_ITEM = 'SELECT_TAB_MENU_ITEM';
 //auth consts
 export const SHOW_REGISTRATION_WINDOW = 'SHOW_REGISTRATION_WINDOW';
 export const SHOW_SING_WINDOW = 'SHOW_SING_WINDOW';
+export const CREATE_USER = 'CREATE_USER';
+export const LOGOUT = 'LOGOUT';
 
 export const EVENT_CHANGE = 'change';
 export const VIEW_ACTION = 'VIEW_ACTION';

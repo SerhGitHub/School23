@@ -1,6 +1,8 @@
 import AppDispatcher from '../dispatcher/Dispatcher';
 
 import {
+  CREATE_USER,
+  LOGOUT,
   SHOW_REGISTRATION_WINDOW,
   SHOW_SING_WINDOW,
 } from '../constants/constants';
@@ -16,6 +18,21 @@ let AuthAction = {
     AppDispatcher.handleViewAction({
       actionType: SHOW_SING_WINDOW,
       data: data
+    });
+  },
+  createUser(username, password) {
+    AppDispatcher.handleViewAction({
+      actionType: CREATE_USER,
+      data: {
+        username: username,
+        password: password,
+      }
+    });
+  },
+  logOut() {
+    AppDispatcher.handleViewAction({
+      actionType: LOGOUT,
+      data: false
     });
   }
 };

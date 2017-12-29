@@ -43,6 +43,12 @@
     --font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+@media (min-width: 576px){
+  .other-nav{
+    display: none !important;
+  }
+}
+
 @media print {
     *,
     *::before,
@@ -3177,10 +3183,6 @@ tbody.collapse.show {
     background-color: transparent;
 }
 
-.dropdown:hover > .dropdown-menu {
-  display: block;
-}
-
 .dropdown-menu.show {
     display: block;
 }
@@ -3950,6 +3952,9 @@ tbody.collapse.show {
 }
 
 @media (min-width: 576px) {
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
     .navbar-expand-sm {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
