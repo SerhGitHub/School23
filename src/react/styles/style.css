@@ -24,3 +24,18 @@
   color: white;
   cursor: pointer;
 }
+
+.sm-nav-link {
+  border-bottom: 1px solid white;
+  font-size: 15px;
+}
+
+.dropdown-menu{
+  font-size: 12px !important;
+  font-family: 'PT Sans' !important;
+}
+
+.dropdown-item{
+  font-size: 12px !important;
+  font-family: 'PT Sans' !important;
+}
