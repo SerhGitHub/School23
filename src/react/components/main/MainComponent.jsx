@@ -75,7 +75,6 @@ class MainComponent extends React.Component {
             <div className='card bg-light mb-3'>
               <div className='card-body' style={{padding: '0px'}}>
                 <div className='card-header'>Дружественные ссылки</div>
-                <a href='https://sch23grodno.schools.by/'>Официальный сайт ГУО 'Средняя школа № 23 г. Гродно'</a>
               </div>
             </div>
           </div>

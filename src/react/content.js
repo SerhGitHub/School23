@@ -6,24 +6,9 @@ import RoutingService from './services/routing.service';
 
 import MainComponent from './components/main/MainComponent';
 import AboutProjectComponent from './components/main/AboutProjectComponent';
-import KindergartenToSchool from './components/obvious/KindergartenToSchool';
-import FirstFrom2016 from './components/obvious/FirstFrom2016';
-import ExperimentalWork from './components/obvious/ExperimentalWork';
-import Continuity from './components/obvious/Continuity';
-import HowEasyLean from './components/obvious/HowEasyLean';
-import Diligence from './components/obvious/Diligence';
-import InterestInReading from './components/obvious/InterestInReading';
-import LookAtFirstFrom from './components/obvious/LookAtFirstFrom';
-import Emotionally from './components/psychologist/Emotionally';
-import Obvious from './components/obvious/Obvious';
-import Intellectually from './components/psychologist/Intellectually';
-import Socially from './components/psychologist/Socially';
-import DoParentsReadyForSchool from './components/psychologist/DoParentsReadyForSchool';
-import Personally from './components/psychologist/Personally';
-import Psychologically from './components/psychologist/Psychologically';
-import TestsForParents from './components/psychologist/TestsForParents';
-import Psychologist from './components/psychologist/Psychologist';
 import Other from './components/other/Other';
+
+import HomePsychologist from './components/home/psychologist/HomePsychologist';
 
 import {
   MAIN_ID,
@@ -89,7 +74,7 @@ ReactDOM.render(
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomePsychologically)}>
-            <Route path={`/${HOME_PSYCHOLOGICALLY_URL}`} component={Other}/>
+            <Route path={`/${HOME_PSYCHOLOGICALLY_URL}`} component={HomePsychologist}/>
             <Route path={`/${FROM_CHILD_ROOM_TO_SCHOOL_URL}`} component={Other}/>
             <Route path={`/${DO_PARENTS_READY_TO_SCHOOL_URL}`} component={Other}/>
             <Route path={`/${TESTS_FOR_PARENTS_URL}`} component={Other}/>

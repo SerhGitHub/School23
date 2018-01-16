@@ -43,15 +43,10 @@ class RootComponent extends React.Component {
     return MENU;
   }
 
-  getChildMenu(item, isClickOnDropdown){
+  getChildMenu(item){
     return (
       <li key={item.id} className='nav-item dropdown' >
-        {
-          isClickOnDropdown ?
-            <a className={'nav-link dropdown-toggle'} data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false' href='#'>{item.name}</a>
-            :
-            <a className={'nav-link dropdown-toggle'} href='#'>{item.name}</a>
-        }
+        <Link className={'nav-link dropdown-toggle'} to={item.url}>{item.name}</Link>
         <div className='dropdown-menu' x-placement='bottom-start' style={{position: 'absolute', transform: 'translate3d(235px, 0px, 0px)', top: '0px', left: '0px', willChange: 'transform', border: 'none'}}>
           {
             item.children && item.children.length > 0 ? item.children.map(child => {
@@ -63,22 +58,17 @@ class RootComponent extends React.Component {
     );
   }
 
-  getNavigationItems(isClickOnDropdown){
+  getNavigationItems(){
     const menu = this.getMenuProperties();
     return menu && menu.length > 0 ? menu.map(item => {
       return (
         <li key={item.id} className='nav-item dropdown'>
-          {
-            isClickOnDropdown ?
-              <a className={`nav-link${this.isActive(item.id) ? ' active' : ''} dropdown-toggle`} data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false' href='#' style={{textTransform: 'uppercase', textAlign: 'left'}}>{item.name}</a>
-              :
-              <a className={`nav-link${this.isActive(item.id) ? ' active' : ''} dropdown-toggle`} href='#' style={{textTransform: 'uppercase', textAlign: 'left'}}>{item.name}</a>
-          }
+          <Link className={`nav-link${this.isActive(item.id) ? ' active' : ''} dropdown-toggle`} to={item.url} style={{textTransform: 'uppercase', textAlign: 'left'}}>{item.name}</Link>
           <div className='dropdown-menu' x-placement='bottom-start' style={{position: 'absolute', transform: 'translate3d(0px, 24px, 0px)', top: '0px', left: '0px', willChange: 'transform', border: 'none', width: '240px'}}>
             {
               item.children && item.children.length > 0 ? item.children.map(child => {
                   return child.isGroup ?
-                    this.getChildMenu(child, isClickOnDropdown)
+                    this.getChildMenu(child)
                     : <Link key={child.id} className='dropdown-item nav-link' to={child.url ? child.url : '/'}>{child.name}</Link>
                 }) : null
             }
