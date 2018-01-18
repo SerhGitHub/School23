@@ -9,6 +9,8 @@ import {
   SHOW_SING_WINDOW,
 } from '../constants/constants';
 
+const customUser = {username: 'teacher', password: 'test', role: 'test'};
+
 let showRegistrationWindow = false;
 let showSingWindow = false;
 let users = new Map();
@@ -26,6 +28,10 @@ class AuthStore extends BasicStore {
 
   getUserByUsername(username){
     return users.get(username);
+  }
+
+  getCustomUser(){
+    return customUser;
   }
 
   getUser(){

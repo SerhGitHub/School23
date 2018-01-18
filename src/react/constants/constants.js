@@ -76,7 +76,8 @@ export const MENU = [
     children: [
       {
         id: FROM_CHILD_ROOM_TO_SCHOOL_URL,
-        name: 'Из сада в школу (модель выпускника детского сада)',
+        name: 'Из сада в школу',
+        fullName: 'Из сада в школу (модель выпускника детского сада)',
         url: `/${FROM_CHILD_ROOM_TO_SCHOOL_URL}`,
       },
       {

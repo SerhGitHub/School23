@@ -39,3 +39,10 @@
   font-size: 12px !important;
   font-family: 'PT Sans' !important;
 }
+
+.link-custom-style {
+  color: #78C2AD;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+}
