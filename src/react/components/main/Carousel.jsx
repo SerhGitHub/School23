@@ -1,6 +1,32 @@
 import React from 'react';
 
+import StyleStore from '../../stores/style/style.store';
+
 class Carousel extends React.Component {
+
+  constructor(props, context) {
+    super(props, context);
+    this.state = this.getCurrentState();
+  }
+
+  getCurrentState() {
+    return {
+      defaultColor: StyleStore.getDefaultColor(),
+      backgroundImage: StyleStore.getBackgroundImage(),
+    };
+  }
+
+  onChange = () => {
+    this.setState(this.getCurrentState());
+  };
+
+  componentDidMount() {
+    StyleStore.addChangeListener(this.onChange);
+  }
+
+  componentWillUnmount() {
+    StyleStore.removeChangeListener(this.onChange);
+  }
 
   getCaruselItems(){
     return [
@@ -26,15 +52,17 @@ class Carousel extends React.Component {
   }
 
   render() {
+    const {backgroundImage, defaultColor} = this.state;
+    const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     return (
       <div id='carouselExampleIndicators' className='carousel slide' data-ride='carousel'>
-        <div className='carousel-inner' role='listbox' style={{display: 'inline-block'}}>
+        <div className='carousel-inner' role='listbox' style={{display: 'inline-block', borderRadius: '20px'}}>
           {
             this.getCaruselItems().map((item, index) => {
               return (
                 <div key={item.id} className={`carousel-item${index == 0 ? ' active' : ''}`}>
                   <img className='d-block' src={item.img} alt={item.alt} style={{width: '100%', height: '100%'}}/>
-                  <div className='caption'>
+                  <div className='caption' style={style}>
                     <div className='caption-title' style={{padding: '10px 8px 5px'}}>
                       {item.title}
                     </div>

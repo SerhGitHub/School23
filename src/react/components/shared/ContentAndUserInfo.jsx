@@ -1,19 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import AuthStore from '../../stores/auth.store';
+import StyleStore from '../../stores/style/style.store';
+
 import UserInfo from '../shared/UserInfo';
+import Style from '../shared/Style';
 import RightContentCard from '../shared/RightContentCard';
 import FriendlyLinks from '../shared/FriendlyLinks';
 
 class ContentAndUserInfo extends React.Component {
 
+  constructor(props, context) {
+    super(props, context);
+    this.state = this.getCurrentState();
+  }
+
+  getCurrentState() {
+    return {
+      user: AuthStore.getUser(),
+      defaultColor: StyleStore.getDefaultColor(),
+      backgroundImage: StyleStore.getBackgroundImage(),
+    };
+  }
+
+  onChange = () => {
+    this.setState(this.getCurrentState());
+  };
+
+  componentDidMount() {
+    AuthStore.addChangeListener(this.onChange);
+    StyleStore.addChangeListener(this.onChange);
+  }
+
+  componentWillUnmount() {
+    AuthStore.removeChangeListener(this.onChange);
+    StyleStore.removeChangeListener(this.onChange);
+  }
+
   render() {
+    const {user, defaultColor, backgroundImage} = this.state;
     const {carousel, content} = this.props;
+    const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     return (
       <div>
         {
           carousel ? (
-              <div className='jumbotron' style={{maxWidth: '1280px', marginTop: '10px', marginBottom: '10px', background: '#78C2AD', padding: '5px',}}>
+              <div className='jumbotron custom-carousel' style={style}>
                 {carousel}
               </div>
             ) : null
@@ -28,6 +61,13 @@ class ContentAndUserInfo extends React.Component {
           <RightContentCard>
             <FriendlyLinks />
           </RightContentCard>
+          {
+            user && user.username === 'teacher' ? (
+                <RightContentCard>
+                  <Style />
+                </RightContentCard>
+            ) : null
+          }
         </div>
       </div>
     );

@@ -9,6 +9,11 @@ import AboutProjectComponent from './components/main/AboutProjectComponent';
 import Other from './components/other/Other';
 
 import HomePsychologist from './components/home/psychologist/HomePsychologist';
+import HomeAssistant from './components/home/assistant/HomeAssistant';
+import HomeDoctor from './components/home/doctor/HomeDoctor';
+import HomeMaster from './components/home/master/HomeMaster';
+import HomeTutor from './components/home/tutor/HomeTutor';
+import Forum from './components/forum/Forum';
 
 import {
   MAIN_ID,
@@ -94,23 +99,23 @@ ReactDOM.render(
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeDoctor)}>
-            <Route path={`${HOME_DOCTOR_URL}`} component={Other}/>
+            <Route path={`${HOME_DOCTOR_URL}`} component={HomeDoctor}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeTutor)}>
-            <Route path={`${HOME_TUTOR_URL}`} component={Other}/>
+            <Route path={`${HOME_TUTOR_URL}`} component={HomeTutor}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeAssistant)}>
-            <Route path={`${HOME_ASSISTANT_URL}`} component={Other}/>
+            <Route path={`${HOME_ASSISTANT_URL}`} component={HomeAssistant}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeMaster)}>
-            <Route path={`${HOME_MASTER_URL}`} component={Other}/>
+            <Route path={`${HOME_MASTER_URL}`} component={HomeMaster}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initForum)}>
-            <Route path={`${FORUM_URL}`} component={Other}/>
+            <Route path={`${FORUM_URL}`} component={Forum}/>
           </Route>
 
           <Route path={`${OTHERS_URL}`} component={Other}/>

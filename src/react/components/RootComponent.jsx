@@ -2,11 +2,9 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import RootStore from '../stores/root.store';
+import StyleStore from '../stores/style/style.store';
 
 import {
-  OBVIUS_ID,
-  MAIN_ID,
-  PSYCHOLOGICALLY_ID,
   MENU,
 } from '../constants/constants';
 
@@ -23,7 +21,9 @@ class RootComponent extends React.Component {
 
   getCurrentState() {
     return {
-      menu: MENU
+      menu: MENU,
+      defaultColor: StyleStore.getDefaultColor(),
+      backgroundImage: StyleStore.getBackgroundImage(),
     };
   }
 
@@ -33,21 +33,23 @@ class RootComponent extends React.Component {
 
   componentDidMount() {
     RootStore.addChangeListener(this.onChange);
+    StyleStore.addChangeListener(this.onChange);
   }
 
   componentWillUnmount() {
     RootStore.removeChangeListener(this.onChange);
+    StyleStore.removeChangeListener(this.onChange);
   }
 
   getMenuProperties(){
     return MENU;
   }
 
-  getChildMenu(item){
+  getChildMenu(item, style){
     return (
       <li key={item.id} className='nav-item dropdown' >
         <Link className={'nav-link dropdown-toggle'} to={item.url}>{item.name}</Link>
-        <div className='dropdown-menu' x-placement='bottom-start' style={{position: 'absolute', transform: 'translate3d(235px, 0px, 0px)', top: '0px', left: '0px', willChange: 'transform', border: 'none'}}>
+        <div className='dropdown-menu navigation-items-child-dropdown-menu' x-placement='bottom-start' style={style}>
           {
             item.children && item.children.length > 0 ? item.children.map(child => {
                 return <Link key={child.id} className='dropdown-item nav-link' to={child.url ? child.url : '/'}>{child.name}</Link>
@@ -58,17 +60,17 @@ class RootComponent extends React.Component {
     );
   }
 
-  getNavigationItems(){
+  getNavigationItems(style){
     const menu = this.getMenuProperties();
     return menu && menu.length > 0 ? menu.map(item => {
       return (
         <li key={item.id} className='nav-item dropdown'>
           <Link className={`nav-link${this.isActive(item.id) ? ' active' : ''} dropdown-toggle`} to={item.url} style={{textTransform: 'uppercase', textAlign: 'left'}}>{item.name}</Link>
-          <div className='dropdown-menu' x-placement='bottom-start' style={{position: 'absolute', transform: 'translate3d(0px, 24px, 0px)', top: '0px', left: '0px', willChange: 'transform', border: 'none', width: '240px'}}>
+          <div className='dropdown-menu navigation-items-dropdown-menu' x-placement='bottom-start' style={style}>
             {
               item.children && item.children.length > 0 ? item.children.map(child => {
                   return child.isGroup ?
-                    this.getChildMenu(child)
+                    this.getChildMenu(child, style)
                     : <Link key={child.id} className='dropdown-item nav-link' to={child.url ? child.url : '/'}>{child.name}</Link>
                 }) : null
             }
@@ -108,7 +110,7 @@ class RootComponent extends React.Component {
           <div className={'sm-nav-link'} style={{marginLeft: `${paddingLeft}px`}} onClick={this.openChildrenInSmallNav.bind(this, item.id)}>
             {
               item.isGroup ?
-                `${item.name} >`
+                <Link style={{color: 'white'}} key={item.id} to={item.url ? item.url : '/'}>{`${item.name} >`}</Link>
               :
                 <Link style={{color: 'white'}} key={item.id} to={item.url ? item.url : '/'}>{item.name}</Link>
             }
@@ -124,17 +126,18 @@ class RootComponent extends React.Component {
   }
 
   render() {
-    const {menu} = this.state;
-    const navigationItems = this.getNavigationItems();
-    const smallNavigationItems = this.getSmallMenu(menu, 0);
+    const {menu, defaultColor, backgroundImage} = this.state;
+    const navbarStyle = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
+    const navigationItems = this.getNavigationItems(navbarStyle);
+    const smallNavigationItems = this.getSmallMenu(menu, 0, navbarStyle);
     return (
       <div style={{textAlign: '-webkit-center', marginTop: '20px'}}>
         <div style={{width: '80%', maxWidth: '1280px'}}>
-          <nav className='navbar navbar-expand-sm navbar-dark bg-primary' style={{borderRadius: '10px', fontSize: '12px', fontFamily: 'PT Sans'}}>
+          <nav className='navbar navbar-expand-sm navbar-dark bg-primary main-navbar' style={navbarStyle}>
             <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor02' aria-controls='navbarColor02' aria-expanded='false' aria-label='Toggle navigation'>
               <span className='navbar-toggler-icon' />
             </button>
-            <div className='collapse navbar-collapse'>
+            <div className='collapse navbar-collapse' style={navbarStyle}>
               <ul className='navbar-nav mr-auto'>
                 {navigationItems}
               </ul>

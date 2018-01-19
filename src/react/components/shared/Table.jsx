@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import PsychService from '../../services/home/PsychService';
+
 class Table extends React.Component {
 
   getThs(){
@@ -16,6 +18,10 @@ class Table extends React.Component {
     this.props.onChange(file);
   }
 
+  setImages(value){
+    PsychService.setImages(value.data);
+  }
+
   getTrs(){
     const {data} = this.props;
     return data.map(item => {
@@ -24,7 +30,16 @@ class Table extends React.Component {
           {
             item.values.map((value, index) => {
               return (
-                <td key={`${index}`}><a href={value.file} target="_blank">{value.name}</a></td>
+                <td key={`${index}`}>
+                  <a href={value.file} target="_blank">{value.name}</a>
+                  {
+                    !value.data ? null : (
+                      <span style={{paddingLeft: '10px', cursor: 'pointer', float: 'right'}} onClick={this.setImages.bind(this, value)}>
+                        <img src='view.png' width={20}/>
+                      </span>
+                    )
+                  }
+                </td>
               );
             })
           }
@@ -37,16 +52,18 @@ class Table extends React.Component {
     const ths = this.getThs();
     const trs = this.getTrs();
     return (
-      <table className='table table-hover'>
-        <thead>
-        <tr>
-          {ths}
-        </tr>
-        </thead>
-        <tbody>
-        {trs}
-        </tbody>
-      </table>
+      <div className='table-home-psych'>
+        <table className='table table-hover'>
+          <thead>
+          <tr>
+            {ths}
+          </tr>
+          </thead>
+          <tbody>
+          {trs}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
