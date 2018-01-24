@@ -86,7 +86,7 @@ class SingWindow extends React.Component {
       </div>
       <div className='modal-body'>
         <div className='form-group'>
-          <input type='email' value={username} onChange={this.onChangeValue.bind(this, 'username')} className={`form-control ${ error.username ? 'is-invalid' : ''}`} id='email' aria-describedby='emailHelp' placeholder='Адрес электронной почты' />
+          <input type='email' value={username} onChange={this.onChangeValue.bind(this, 'username')} className={`form-control ${ error.username ? 'is-invalid' : ''}`} id='email' aria-describedby='emailHelp' placeholder='Адрес электронной почты' autofocus/>
           <div className='invalid-feedback'>{error.username}</div>
         </div>
         <div className='form-group'>

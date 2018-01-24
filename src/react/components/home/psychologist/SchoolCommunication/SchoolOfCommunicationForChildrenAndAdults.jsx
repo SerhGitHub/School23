@@ -1,15 +1,15 @@
 import React from 'react';
 
-import PsychStore from '../../../stores/home/psych.store';
-import StyleStore from '../../../stores/style/style.store';
+import PsychStore from '../../../../stores/home/psych.store';
+import StyleStore from '../../../../stores/style/style.store';
 
-import PsychService from '../../../services/home/PsychService';
+import PsychService from '../../../../services/home/PsychService';
 
-import AuthSuccess from '../../auth/AuthSuccess';
-import RootComponent from '../../RootComponent';
-import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
-import Table from '../../shared/Table';
-import ImagesBox from '../../shared/ImagesBox';
+import AuthSuccess from '../../../auth/AuthSuccess';
+import RootComponent from '../../../RootComponent';
+import ContentAndUserInfo from '../../../shared/ContentAndUserInfo';
+import Table from '../../../shared/Table';
+import ImagesBox from '../../../shared/ImagesBox';
 
 const ths = ['Искусство красноречия'];
 const data = [
@@ -158,7 +158,7 @@ const data = [
   },
 ];
 
-class HomePsychologist extends React.Component {
+class SchoolOfCommunicationForChildrenAndAdults extends React.Component {
 
   constructor(props, context) {
     super(props, context);
@@ -230,4 +230,4 @@ class HomePsychologist extends React.Component {
   }
 }
 
-export default HomePsychologist;
+export default SchoolOfCommunicationForChildrenAndAdults;

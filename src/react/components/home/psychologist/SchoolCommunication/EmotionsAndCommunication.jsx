@@ -1,13 +1,13 @@
 import React from 'react';
 
-import StyleStore from '../../../stores/style/style.store';
+import StyleStore from '../../../../stores/style/style.store';
 
-import AuthSuccess from '../../auth/AuthSuccess';
-import RootComponent from '../../RootComponent';
-import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
+import AuthSuccess from '../../../auth/AuthSuccess';
+import RootComponent from '../../../RootComponent';
+import ContentAndUserInfo from '../../../shared/ContentAndUserInfo';
+import ImagesBox from '../../../shared/ImagesBox';
 
-class HomeTutor extends React.Component {
-
+class EmotionsAndCommunication extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = this.getCurrentState();
@@ -35,11 +35,13 @@ class HomeTutor extends React.Component {
   render() {
     const {backgroundImage, defaultColor} = this.state;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
+    const path ='EmociiObshenay';
+    const images = ['0001.jpg', '0002.jpg', '0003.jpg'];
     const content = (
       <AuthSuccess>
         <div>
           <div className='jumbotron home-psych-main-content' style={style}>
-            Пока нет информации
+            <ImagesBox path={`pdfImg/${path}`} images={images}/>
           </div>
         </div>
       </AuthSuccess>
@@ -52,4 +54,4 @@ class HomeTutor extends React.Component {
   }
 }
 
-export default HomeTutor;
+export default EmotionsAndCommunication;

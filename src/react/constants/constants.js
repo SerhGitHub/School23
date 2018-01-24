@@ -41,6 +41,41 @@ export const HOME_ASSISTANT_URL = 'homeAssistant';
 export const HOME_MASTER_URL = 'homeMaster';
 export const FORUM_URL = 'forum';
 
+//Home psychologist -> School Communication
+export const SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS = 'adults';
+export const DISPUTE_WITHOUT_QUARREL = 'dispute';
+export const EMOTIONAL_COLORING_OF_SPEECH = 'emotional';
+export const EMOTIONS_ADN_COMMUNICATION = 'emotions';
+export const FACIAL_EXPRESSIONS_AND_GESTURES = 'facial';
+export const HOW_TO_BEHAVE_AT_A_PARTY = 'atParty';
+export const HOW_TO_MAKE_FRIENDS_WITH_STRANGERS = 'strangers';
+export const HOW_TO_RECEIVE_GUESTS = 'guests';
+export const LISTENING_SPEAKING = 'listening';
+export const ORAL_SPEECH = 'speech';
+export const REQUEST_AND_REFUSAL = 'refusal';
+export const TALKING_ON_THE_PHONE = 'phone';
+
+//Home tutor -> We expand our horizons
+export const WE_EXPAND_OUR_HORIZONS = 'expandOurHorizons';
+export const IN_THE_WORLD_OF_NATURE = 'InTheWorldOfNature';
+export const WORK_OF_PEOPLE = 'WorkOfPeople';
+export const THE_WORLD = 'TheWorld';
+//Home tutor -> In the world of mathematics
+export const In_the_world_of_mathematics = 'mathematics';
+export const World_of_numbers = 'numbers';
+export const Solve_examples = 'examples';
+export const The_World_of_Geometry = 'geometry';
+export const Orient_in_time_and_space = 'space';
+//Home tutor -> Learning to speak beautifully
+export const Learning_to_speak_beautifully = 'beautifully';
+export const Playing_with_words = 'words';
+export const Learning_to_compose = 'compose';
+//Home tutor -> Learning to read
+export const Learning_to_read = 'read';
+export const Sounds_and_letters = 'letters';
+export const Learning_the_alphabet = 'alphabet';
+export const Favorite_works = 'FavoriteWorks';
+
 export const MENU = [
   {
     id: MAIN_ID,
@@ -170,25 +205,65 @@ export const MENU = [
         ]
       },
       {
-        id: OTHERS_URL + '59',
+        id: SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS,
         isGroup: true,
         name: 'Школа общения для детей и взрослых',
-        url: `/${OTHERS_URL}`,
+        url: `/${SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS}`,
         children: [
           {
-            id: OTHERS_URL + '58',
-            name: 'Искусство красноречия',
-            url: `/${OTHERS_URL}`,
+            id: DISPUTE_WITHOUT_QUARREL,
+            name: 'Спор без ссоры',
+            url: `/${DISPUTE_WITHOUT_QUARREL}`,
           },
           {
-            id: OTHERS_URL + '57',
-            name: 'Устная речь',
-            url: `/${OTHERS_URL}`,
+            id: EMOTIONAL_COLORING_OF_SPEECH,
+            name: 'Эмоциональная окраска речи',
+            url: `/${EMOTIONAL_COLORING_OF_SPEECH}`,
           },
           {
-            id: OTHERS_URL + '56',
+            id: EMOTIONS_ADN_COMMUNICATION,
+            name: 'Эмоции и общение',
+            url: `/${EMOTIONS_ADN_COMMUNICATION}`,
+          },
+          {
+            id: FACIAL_EXPRESSIONS_AND_GESTURES,
+            name: 'Мимика и жесты',
+            url: `/${FACIAL_EXPRESSIONS_AND_GESTURES}`,
+          },
+          {
+            id: HOW_TO_BEHAVE_AT_A_PARTY,
+            name: 'Как вести себя в гостях',
+            url: `/${HOW_TO_BEHAVE_AT_A_PARTY}`,
+          },
+          {
+            id: HOW_TO_MAKE_FRIENDS_WITH_STRANGERS,
+            name: 'Как подружиться с незнакомыми ребятами',
+            url: `/${HOW_TO_MAKE_FRIENDS_WITH_STRANGERS}`,
+          },
+          {
+            id: HOW_TO_RECEIVE_GUESTS,
+            name: 'Как принимать гостей',
+            url: `/${HOW_TO_RECEIVE_GUESTS}`,
+          },
+          {
+            id: LISTENING_SPEAKING,
             name: 'Слушаем. Говорим',
-            url: `/${OTHERS_URL}`,
+            url: `/${LISTENING_SPEAKING}`,
+          },
+          {
+            id: ORAL_SPEECH,
+            name: 'Устная речь',
+            url: `/${ORAL_SPEECH}`,
+          },
+          {
+            id: REQUEST_AND_REFUSAL,
+            name: 'Просьба и отказ',
+            url: `/${REQUEST_AND_REFUSAL}`,
+          },
+          {
+            id: TALKING_ON_THE_PHONE,
+            name: 'Разговор по телефону',
+            url: `/${TALKING_ON_THE_PHONE}`,
           },
         ]
       },
@@ -284,133 +359,94 @@ export const MENU = [
     url: `/${HOME_TUTOR_URL}`,
     children: [
       {
-        id: OTHERS_URL + '40',
+        id: WE_EXPAND_OUR_HORIZONS,
+        isGroup: true,
         name: 'Расширяем кругозор',
-        url: `/${OTHERS_URL}`,
+        url: `/${WE_EXPAND_OUR_HORIZONS}`,
         children: [
           {
-            id: OTHERS_URL + '39',
-            name: 'Времена года года',
-            url: `/${OTHERS_URL}`,
+            id: IN_THE_WORLD_OF_NATURE,
+            name: 'В мире природы',
+            url: `/${IN_THE_WORLD_OF_NATURE}`,
           },
           {
-            id: OTHERS_URL + '38',
+            id: WORK_OF_PEOPLE,
             name: 'Труд людей',
-            url: `/${OTHERS_URL}`,
+            url: `/${WORK_OF_PEOPLE}`,
           },
           {
-            id: OTHERS_URL + '37',
-            name: 'Живая и неживая природа',
-            url: `/${OTHERS_URL}`,
-          },
-          {
-            id: OTHERS_URL + '36',
-            name: 'Моя страна',
-            url: `/${OTHERS_URL}`,
-          },
-          {
-            id: OTHERS_URL + '35',
-            name: 'Город, в котором я живу',
-            url: `/${OTHERS_URL}`,
+            id: THE_WORLD,
+            name: 'Окружающий мир',
+            url: `/${THE_WORLD}`,
           },
         ]
       },
       {
-        id: OTHERS_URL + '34',
+        id: In_the_world_of_mathematics,
         isGroup: true,
         name: 'В мире математики',
-        url: `/${OTHERS_URL}`,
+        url: `/${In_the_world_of_mathematics}`,
         children: [
           {
-            id: OTHERS_URL + '33',
-            name: 'Счет  в пределах 10',
-            url: `/${OTHERS_URL}`,
+            id: World_of_numbers,
+            name: 'Мир чисел',
+            url: `/${World_of_numbers}`,
           },
           {
-            id: OTHERS_URL + '32',
-            name: 'Логические задачи',
-            url: `/${OTHERS_URL}`,
+            id: Solve_examples,
+            name: 'Решаем примеры',
+            url: `/${Solve_examples}`,
           },
           {
-            id: OTHERS_URL + '31',
-            name: 'Ребусы, головоломки',
-            url: `/${OTHERS_URL}`,
+            id: The_World_of_Geometry,
+            name: 'Мир геометрии',
+            url: `/${The_World_of_Geometry}`,
           },
           {
-            id: OTHERS_URL + '30',
-            name: 'Ребусы-раскраски',
-            url: `/${OTHERS_URL}`,
+            id: Orient_in_time_and_space,
+            name: 'Ориентируемся во времени и пространстве',
+            url: `/${Orient_in_time_and_space}`,
           },
         ]
       },
       {
-        id: OTHERS_URL + '29',
+        id: Learning_to_speak_beautifully,
         isGroup: true,
         name: 'Учимся красиво говорить',
-        url: `/${OTHERS_URL}`,
+        url: `/${Learning_to_speak_beautifully}`,
         children: [
           {
-            id: OTHERS_URL + '28',
-            name: 'Скороговорки и чистоговрки',
-            url: `/${OTHERS_URL}`,
+            id: Playing_with_words,
+            name: 'Играем со словами',
+            url: `/${Playing_with_words}`,
           },
           {
-            id: OTHERS_URL + '27',
-            name: 'Игры на словоизменение',
-            url: `/${OTHERS_URL}`,
-          },
-          {
-            id: OTHERS_URL + '26',
-            name: 'Составление связных высказываний',
-            url: `/${OTHERS_URL}`,
-          },
-          {
-            id: OTHERS_URL + '25',
+            id: Learning_to_compose,
             name: 'Учимся сочинять',
-            url: `/${OTHERS_URL}`,
-          },
-          {
-            id: OTHERS_URL + '24',
-            name: 'Детская библиотека',
-            url: `/${OTHERS_URL}`,
+            url: `/${Learning_to_compose}`,
           },
         ]
       },
       {
-        id: OTHERS_URL + '23',
+        id: Learning_to_read,
         isGroup: true,
-        name: 'Размаўляем па-беларуску dzietki.org',
-        url: `/${OTHERS_URL}`,
+        name: 'Учимся читать',
+        url: `/${Learning_to_read}`,
         children: [
           {
-            id: OTHERS_URL + '22',
-            name: 'Скорагаворкі',
-            url: `/${OTHERS_URL}`,
+            id: Sounds_and_letters,
+            name: 'Звуки и буквы',
+            url: `/${Sounds_and_letters}`,
           },
           {
-            id: OTHERS_URL + '21',
-            name: 'Слухаем казкі',
-            url: `/${OTHERS_URL}`,
+            id: Learning_the_alphabet,
+            name: 'Учим алфавит',
+            url: `/${Learning_the_alphabet}`,
           },
           {
-            id: OTHERS_URL + '20',
-            name: 'Слухаем і спяваем',
-            url: `/${OTHERS_URL}`,
-          },
-          {
-            id: OTHERS_URL + '19',
-            name: 'Беларускія мультфільмы',
-            url: `/${OTHERS_URL}`,
-          },
-          {
-            id: OTHERS_URL + '18',
-            name: 'Гуляем з бацькамі “Перакладчык”',
-            url: `/${OTHERS_URL}`,
-          },
-          {
-            id: OTHERS_URL + '17',
-            name: 'Мама, пачытай!',
-            url: `/${OTHERS_URL}`,
+            id: Favorite_works,
+            name: 'Любимые произведения',
+            url: `/${Favorite_works}`,
           },
         ]
       },
@@ -538,3 +574,7 @@ export const CLEAN_IMAGES_HOME_PSYCH = 'CLEAN_IMAGES_HOME_PSYCH';
 
 //STYLE
 export const CHANGE_BACKGROUND_IMAGE = 'CHANGE_BACKGROUND_IMAGE';
+
+//TEST
+export const SET_TEST_URL = 'SET_TEST_URL';
+export const CLEAN_TEST_URL = 'CLEAN_TEST_URL';

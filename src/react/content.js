@@ -8,12 +8,42 @@ import MainComponent from './components/main/MainComponent';
 import AboutProjectComponent from './components/main/AboutProjectComponent';
 import Other from './components/other/Other';
 
-import HomePsychologist from './components/home/psychologist/HomePsychologist';
 import HomeAssistant from './components/home/assistant/HomeAssistant';
 import HomeDoctor from './components/home/doctor/HomeDoctor';
 import HomeMaster from './components/home/master/HomeMaster';
 import HomeTutor from './components/home/tutor/HomeTutor';
 import Forum from './components/forum/Forum';
+
+import HomePsychologist from './components/home/psychologist/HomePsychologist';
+import SchoolOfCommunicationForChildrenAndAdults from './components/home/psychologist/SchoolCommunication/SchoolOfCommunicationForChildrenAndAdults';
+import HowToBehaveAtAParty from './components/home/psychologist/SchoolCommunication/HowToBehaveAtAParty';
+import HowToReceiveGuests from './components/home/psychologist/SchoolCommunication/HowToReceiveGuests';
+import HowToMakeFriendsWithStrangers from './components/home/psychologist/SchoolCommunication/HowToMakeFriendsWithStrangers';
+import DisputeWithoutQuarrel from './components/home/psychologist/SchoolCommunication/DisputeWithoutQuarrel';
+import EmotionalColoringOfSpeech from './components/home/psychologist/SchoolCommunication/EmotionalColoringOfSpeech';
+import EmotionsAndCommunication from './components/home/psychologist/SchoolCommunication/EmotionsAndCommunication';
+import FacialExpressionsAndGestures from './components/home/psychologist/SchoolCommunication/FacialExpressionsAndGestures';
+import ListeningSpeaking from './components/home/psychologist/SchoolCommunication/ListeningSpeaking';
+import OralSpeech from './components/home/psychologist/SchoolCommunication/OralSpeech';
+import RequestAndRefusal from './components/home/psychologist/SchoolCommunication/RequestAndRefusal';
+import TalkingOnThePhone from './components/home/psychologist/SchoolCommunication/TalkingOnThePhone';
+
+import InTheWorldOfNature from './components/home/tutor/expandOurHorizons/InTheWorldOfNature';
+import WorkOfPeople from './components/home/tutor/expandOurHorizons/WorkOfPeople';
+import TheWorld from './components/home/tutor/expandOurHorizons/TheWorld';
+
+import SolveExamples from './components/home/tutor/inTheWorldOfMathematics/SolveExamples';
+import OrientInTimeAndSpace from './components/home/tutor/inTheWorldOfMathematics/OrientInTimeAndSpace';
+import TheWorldOfGeometry from './components/home/tutor/inTheWorldOfMathematics/TheWorldOfGeometry';
+import WorldOfNumbers from './components/home/tutor/inTheWorldOfMathematics/WorldOfNumbers';
+
+import LearningToCompose from './components/home/tutor/learningToSpeakBeautifully/LearningToCompose';
+import PlayingWithWords from './components/home/tutor/learningToSpeakBeautifully/PlayingWithWords';
+
+import FavoriteWorks from './components/home/tutor/learningToRead/FavoriteWorks';
+import SoundsAndLetters from './components/home/tutor/learningToRead/SoundsAndLetters';
+import LearningTheAlphbet from './components/home/tutor/learningToRead/LearningTheAlphbet';
+
 
 import {
   MAIN_ID,
@@ -42,7 +72,32 @@ import {
   HOME_ASSISTANT_URL,
   HOME_TUTOR_URL,
   HOME_MASTER_URL,
-  FORUM_URL
+  FORUM_URL,
+  SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS,
+  DISPUTE_WITHOUT_QUARREL,
+  EMOTIONAL_COLORING_OF_SPEECH,
+  EMOTIONS_ADN_COMMUNICATION,
+  FACIAL_EXPRESSIONS_AND_GESTURES,
+  HOW_TO_BEHAVE_AT_A_PARTY,
+  HOW_TO_MAKE_FRIENDS_WITH_STRANGERS,
+  HOW_TO_RECEIVE_GUESTS,
+  LISTENING_SPEAKING,
+  ORAL_SPEECH,
+  REQUEST_AND_REFUSAL,
+  TALKING_ON_THE_PHONE,
+  IN_THE_WORLD_OF_NATURE,
+  WORK_OF_PEOPLE,
+  THE_WORLD,
+  World_of_numbers,
+  Solve_examples,
+  The_World_of_Geometry,
+  Orient_in_time_and_space,
+  Playing_with_words,
+  Learning_to_compose,
+  Sounds_and_letters,
+  Learning_the_alphabet,
+  Favorite_works,
+
 } from './constants/constants';
 //These libraries can really be a part of extension, but for performance reasons you can use standalone dependencies
 
@@ -96,6 +151,34 @@ ReactDOM.render(
             <Route path={`/${EMOCIONALNAY_GOTOVNOCCT_URL}`} component={Other}/>
             <Route path={`/${MOTIVACIY_UCHENIKA_URL}`} component={Other}/>
             <Route path={`/${FORNIROVANIE_VOLEVIH_KACHEVSTV_URL}`} component={Other}/>
+            <Route path={`/${SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS}`} component={SchoolOfCommunicationForChildrenAndAdults}/>
+            <Route path={`/${DISPUTE_WITHOUT_QUARREL}`} component={DisputeWithoutQuarrel}/>
+            <Route path={`/${EMOTIONAL_COLORING_OF_SPEECH}`} component={EmotionalColoringOfSpeech}/>
+            <Route path={`/${EMOTIONS_ADN_COMMUNICATION}`} component={EmotionsAndCommunication}/>
+            <Route path={`/${FACIAL_EXPRESSIONS_AND_GESTURES}`} component={FacialExpressionsAndGestures}/>
+            <Route path={`/${HOW_TO_BEHAVE_AT_A_PARTY}`} component={HowToBehaveAtAParty}/>
+            <Route path={`/${HOW_TO_MAKE_FRIENDS_WITH_STRANGERS}`} component={HowToMakeFriendsWithStrangers}/>
+            <Route path={`/${HOW_TO_RECEIVE_GUESTS}`} component={HowToReceiveGuests}/>
+            <Route path={`/${LISTENING_SPEAKING}`} component={ListeningSpeaking}/>
+            <Route path={`/${ORAL_SPEECH}`} component={OralSpeech}/>
+            <Route path={`/${REQUEST_AND_REFUSAL}`} component={RequestAndRefusal}/>
+            <Route path={`/${TALKING_ON_THE_PHONE}`} component={TalkingOnThePhone}/>
+
+            <Route path={`/${IN_THE_WORLD_OF_NATURE}`} component={InTheWorldOfNature}/>
+            <Route path={`/${WORK_OF_PEOPLE}`} component={WorkOfPeople}/>
+            <Route path={`/${THE_WORLD}`} component={TheWorld}/>
+
+            <Route path={`/${World_of_numbers}`} component={WorldOfNumbers}/>
+            <Route path={`/${Solve_examples}`} component={SolveExamples}/>
+            <Route path={`/${The_World_of_Geometry}`} component={TheWorldOfGeometry}/>
+            <Route path={`/${Orient_in_time_and_space}`} component={OrientInTimeAndSpace}/>
+
+            <Route path={`/${Learning_to_compose}`} component={LearningToCompose}/>
+            <Route path={`/${Playing_with_words}`} component={PlayingWithWords}/>
+
+            <Route path={`/${Sounds_and_letters}`} component={SoundsAndLetters}/>
+            <Route path={`/${Learning_the_alphabet}`} component={LearningTheAlphbet}/>
+            <Route path={`/${Favorite_works}`} component={FavoriteWorks}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeDoctor)}>
