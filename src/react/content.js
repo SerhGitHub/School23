@@ -44,8 +44,21 @@ import FavoriteWorks from './components/home/tutor/learningToRead/FavoriteWorks'
 import SoundsAndLetters from './components/home/tutor/learningToRead/SoundsAndLetters';
 import LearningTheAlphbet from './components/home/tutor/learningToRead/LearningTheAlphbet';
 
+import Hygiene from './components/home/doctor/physicalReadiness/Hygiene';
+import DailyRegime from './components/home/doctor/physicalReadiness/DailyRegime';
+import Hardening from './components/home/doctor/physicalReadiness/Hardening';
+import HyperactiveChild from './components/home/doctor/HyperactiveChild';
+
+import FormationStudentsPosition from './components/home/psychologist/personalReadiness/FormationStudentsPosition';
+import Habits from './components/home/psychologist/personalReadiness/Habits';
+
+import AggressiveChild from './components/home/psychologist/emotionalVolitionalWillingness/AggressiveChild';
+
+import BelarusianCartoons from './components/home/tutor/weTalk/BelarusianCartoons';
+
 
 import {
+  Aggressive_child,
   MAIN_ID,
   ABOUT_PROJECT_ID,
   ABOUT_US_URL,
@@ -97,7 +110,13 @@ import {
   Sounds_and_letters,
   Learning_the_alphabet,
   Favorite_works,
-
+  Fizicheskay_gotovnost,
+  HYGIENE,
+  Daily_regime,
+  It_is_interesting,
+  HARDENING,
+  Hyperactive_child,
+  Belarusian_cartoons,
 } from './constants/constants';
 //These libraries can really be a part of extension, but for performance reasons you can use standalone dependencies
 
@@ -146,8 +165,6 @@ ReactDOM.render(
             <Route path={`/${IN_FRIENDS_URL}`} component={Other}/>
             <Route path={`/${IN_OTHERS_URL}`} component={Other}/>
             <Route path={`/${LICHNOSTNAY_URL}`} component={Other}/>
-            <Route path={`/${FORMIROVANIE_POSICII_SHKOLNIKA_URL}`} component={Other}/>
-            <Route path={`/${PRIVICHKA_URL}`} component={Other}/>
             <Route path={`/${EMOCIONALNAY_GOTOVNOCCT_URL}`} component={Other}/>
             <Route path={`/${MOTIVACIY_UCHENIKA_URL}`} component={Other}/>
             <Route path={`/${FORNIROVANIE_VOLEVIH_KACHEVSTV_URL}`} component={Other}/>
@@ -179,14 +196,26 @@ ReactDOM.render(
             <Route path={`/${Sounds_and_letters}`} component={SoundsAndLetters}/>
             <Route path={`/${Learning_the_alphabet}`} component={LearningTheAlphbet}/>
             <Route path={`/${Favorite_works}`} component={FavoriteWorks}/>
+
+
+            <Route path={`/${FORMIROVANIE_POSICII_SHKOLNIKA_URL}`} component={FormationStudentsPosition}/>
+            <Route path={`/${PRIVICHKA_URL}`} component={Habits}/>
+
+            <Route path={`/${Aggressive_child}`} component={AggressiveChild}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeDoctor)}>
             <Route path={`${HOME_DOCTOR_URL}`} component={HomeDoctor}/>
+            <Route path={`/${HYGIENE}`} component={Hygiene}/>
+            <Route path={`/${Daily_regime}`} component={DailyRegime}/>
+            <Route path={`/${HARDENING}`} component={Hardening}/>
+            <Route path={`/${Hyperactive_child}`} component={HyperactiveChild}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeTutor)}>
             <Route path={`${HOME_TUTOR_URL}`} component={HomeTutor}/>
+
+            <Route path={`${Belarusian_cartoons}`} component={BelarusianCartoons}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeAssistant)}>

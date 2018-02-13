@@ -55,6 +55,8 @@ export const ORAL_SPEECH = 'speech';
 export const REQUEST_AND_REFUSAL = 'refusal';
 export const TALKING_ON_THE_PHONE = 'phone';
 
+export const Aggressive_child = 'AggressiveChild';
+
 //Home tutor -> We expand our horizons
 export const WE_EXPAND_OUR_HORIZONS = 'expandOurHorizons';
 export const IN_THE_WORLD_OF_NATURE = 'InTheWorldOfNature';
@@ -75,6 +77,22 @@ export const Learning_to_read = 'read';
 export const Sounds_and_letters = 'letters';
 export const Learning_the_alphabet = 'alphabet';
 export const Favorite_works = 'FavoriteWorks';
+
+
+export const Belarusian_cartoons = 'Belarusian cartoons';
+export const We_talk = 'WeTalk';
+export const Tongue_Twisters = 'TongueTwisters';
+export const Listening_to_fairy_tales = 'ListeningToFairyTales';
+export const Listen_and_sing = 'ListenAndSing';
+
+//Home doctor
+export const Fizicheskay_gotovnost = 'PhysicalReadiness';
+export const HYGIENE = 'hygiene';
+export const Daily_regime = 'Daily regime';
+export const It_is_interesting = 'interesting';
+export const HARDENING = 'Hardening';
+
+export const Hyperactive_child = 'HyperactiveChild';
 
 export const MENU = [
   {
@@ -198,9 +216,9 @@ export const MENU = [
             url: `/${FORNIROVANIE_VOLEVIH_KACHEVSTV_URL}`,
           },
           {
-            id: OTHERS_URL + '60',
+            id: Aggressive_child,
             name: 'Агрессивный ребенок',
-            url: `/${OTHERS_URL}`,
+            url: `/${Aggressive_child}`,
           },
         ]
       },
@@ -276,40 +294,39 @@ export const MENU = [
     url: `/${HOME_DOCTOR_URL}`,
     children: [
       {
-        id: OTHERS_URL + '53',
+        id: Fizicheskay_gotovnost,
         isGroup: true,
         name: 'Физическая готовность к школе',
-        url: `/${OTHERS_URL}`,
+        url: `/${Fizicheskay_gotovnost}`,
         children: [
-          {
-            id: OTHERS_URL + '52',
+          /*{
+            id: It_is_interesting,
             name: 'Это интересно',
-            url: `/${OTHERS_URL}`,
-          },
+            url: `/${It_is_interesting}`,
+          },*/
           {
-            id: OTHERS_URL + '51',
+            id: Daily_regime,
             name: 'Режим дня',
-            url: `/${OTHERS_URL}`,
+            url: `/${Daily_regime}`,
           },
           {
-            id: OTHERS_URL + '50',
+            id: HYGIENE,
             name: 'Гигиена',
-            url: `/${OTHERS_URL}`,
+            url: `/${HYGIENE}`,
           },
           {
-            id: OTHERS_URL + '49',
+            id: HARDENING,
             name: 'Закаливание',
-            url: `/${OTHERS_URL}`,
+            url: `/${HARDENING}`,
+          },
+          {
+            id: Hyperactive_child,
+            name: 'Гиперактивный ребенок',
+            url: `/${Hyperactive_child}`,
           },
         ]
       },
-      {
-        id: OTHERS_URL + '48',
-        isGroup: true,
-        name: 'Гиперактивный ребенок',
-        url: `/${OTHERS_URL}`,
-      },
-      {
+     /* {
         id: OTHERS_URL + '47',
         isGroup: true,
         name: 'Мышечный аппарат',
@@ -349,7 +366,7 @@ export const MENU = [
         id: OTHERS_URL + '41',
         name: 'Переутомление',
         url: `/${OTHERS_URL}`,
-      },
+      },*/
     ]
   },
   {
@@ -450,6 +467,35 @@ export const MENU = [
           },
         ]
       },
+      {
+        id: We_talk,
+        name: 'Размаўляем па-беларуску',
+        isGroup: true,
+        url: `/${We_talk}`,
+        children: [
+          {
+            id: Tongue_Twisters,
+            name: 'Скорагаворкі',
+            url: `/${Tongue_Twisters}`
+          },
+          {
+            id: Listening_to_fairy_tales,
+            name: 'Слухаем казкі',
+            url: `/${Listening_to_fairy_tales}`
+          },
+          {
+            id: Listen_and_sing,
+            name: 'Слухаем і спяваем',
+            url: `/${Listen_and_sing}`
+          },
+          {
+            id: Belarusian_cartoons,
+            name: 'Беларускія мультфільмы',
+            url: `/${Belarusian_cartoons}`
+          },
+        ]
+      },
+
     ]
   },
   {
@@ -578,3 +624,7 @@ export const CHANGE_BACKGROUND_IMAGE = 'CHANGE_BACKGROUND_IMAGE';
 //TEST
 export const SET_TEST_URL = 'SET_TEST_URL';
 export const CLEAN_TEST_URL = 'CLEAN_TEST_URL';
+
+//VIDEO
+export const SET_VIDEO_URL = 'SET_VIDEO_URL';
+export const CLEAN_VIDEO_URL = 'CLEAN_VIDEO_URL';
