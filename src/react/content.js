@@ -55,7 +55,16 @@ import Habits from './components/home/psychologist/personalReadiness/Habits';
 import AggressiveChild from './components/home/psychologist/emotionalVolitionalWillingness/AggressiveChild';
 
 import BelarusianCartoons from './components/home/tutor/weTalk/BelarusianCartoons';
+import ListeningToFairyTales from './components/home/tutor/weTalk/ListeningToFairyTales';
+import ListenAndSing from './components/home/tutor/weTalk/ListenAndSing';
 
+import BreathingExercises from './components/home/doctor/speechApparatus/BreathingExercises';
+
+import ArticulatoryGymnastics from './components/home/tutor/articulatoryGymnastics/ArticulatoryGymnastics';
+
+import TonguesAndTongueTwisters from './components/home/tutor/tonguesAndTongueTwisters/TonguesAndTongueTwisters';
+import TongueTwisters from './components/home/tutor/tonguesAndTongueTwisters/TongueTwisters';
+import PagodaInPictures from './components/home/tutor/tonguesAndTongueTwisters/PagodaInPictures';
 
 import {
   Aggressive_child,
@@ -117,6 +126,13 @@ import {
   HARDENING,
   Hyperactive_child,
   Belarusian_cartoons,
+  Listening_to_fairy_tales,
+  Listen_and_sing,
+  Breathing_exercises,
+  Articulatory_gymnastics,
+  Tongues_and_tongue_twisters,
+  Tongue_twisters1,
+  Pagoda_in_pictures,
 } from './constants/constants';
 //These libraries can really be a part of extension, but for performance reasons you can use standalone dependencies
 
@@ -210,12 +226,22 @@ ReactDOM.render(
             <Route path={`/${Daily_regime}`} component={DailyRegime}/>
             <Route path={`/${HARDENING}`} component={Hardening}/>
             <Route path={`/${Hyperactive_child}`} component={HyperactiveChild}/>
+
+            <Route path={`/${Breathing_exercises}`} component={BreathingExercises}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeTutor)}>
             <Route path={`${HOME_TUTOR_URL}`} component={HomeTutor}/>
 
             <Route path={`${Belarusian_cartoons}`} component={BelarusianCartoons}/>
+            <Route path={`${Listening_to_fairy_tales}`} component={ListeningToFairyTales}/>
+            <Route path={`${Listen_and_sing}`} component={ListenAndSing}/>
+
+            <Route path={`${Articulatory_gymnastics}`} component={ArticulatoryGymnastics}/>
+
+            <Route path={`${Tongues_and_tongue_twisters}`} component={TonguesAndTongueTwisters}/>
+            <Route path={`${Tongue_twisters1}`} component={TongueTwisters}/>
+            <Route path={`${Pagoda_in_pictures}`} component={PagodaInPictures}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeAssistant)}>

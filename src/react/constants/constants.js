@@ -94,6 +94,14 @@ export const HARDENING = 'Hardening';
 
 export const Hyperactive_child = 'HyperactiveChild';
 
+export const Speech_apparatus = 'SpeechApparatus';
+export const Breathing_exercises = 'BreathingExercises';
+
+export const Articulatory_gymnastics = 'ArticulatoryGymnastics';
+export const Tongues_and_tongue_twisters = 'TonguesAndTongueTwisters';
+export const Tongue_twisters1 = 'TongueTwisters';
+export const Pagoda_in_pictures = 'PagodaInPictures';
+
 export const MENU = [
   {
     id: MAIN_ID,
@@ -348,21 +356,21 @@ export const MENU = [
             url: `/${OTHERS_URL}`,
           },
         ]
-      },
+      },*/
       {
-        id: OTHERS_URL + '43',
+        id: Speech_apparatus,
         isGroup: true,
         name: 'Речевой аппарат',
-        url: `/${OTHERS_URL}`,
+        url: `/${Speech_apparatus}`,
         children: [
           {
-            id: OTHERS_URL + '42',
+            id: Breathing_exercises,
             name: 'Дыхательная гимнастика',
-            url: `/${OTHERS_URL}`,
+            url: `/${Breathing_exercises}`,
           },
         ]
       },
-      {
+      /*{
         id: OTHERS_URL + '41',
         name: 'Переутомление',
         url: `/${OTHERS_URL}`,
@@ -441,6 +449,26 @@ export const MENU = [
             id: Learning_to_compose,
             name: 'Учимся сочинять',
             url: `/${Learning_to_compose}`,
+          },
+          {
+            id: Articulatory_gymnastics,
+            name: 'Артикуляционная гимнастика',
+            url: `/${Articulatory_gymnastics}`,
+          },
+          {
+            id: Tongues_and_tongue_twisters,
+            name: 'Чистоговорки и скороговорки',
+            url: `/${Tongues_and_tongue_twisters}`,
+          },
+          {
+            id: Tongue_twisters1,
+            name: 'Скороговорки',
+            url: `/${Tongue_twisters1}`,
+          },
+          {
+            id: Pagoda_in_pictures,
+            name: 'Скороговорки в картинках',
+            url: `/${Pagoda_in_pictures}`,
           },
         ]
       },
@@ -628,3 +656,11 @@ export const CLEAN_TEST_URL = 'CLEAN_TEST_URL';
 //VIDEO
 export const SET_VIDEO_URL = 'SET_VIDEO_URL';
 export const CLEAN_VIDEO_URL = 'CLEAN_VIDEO_URL';
+
+//AUDIO
+export const SET_AUDIO_URL = 'SET_AUDIO_URL';
+export const CLEAN_AUDIO_URL = 'CLEAN_AUDIO_URL';
+
+//PRESENTATION
+export const SET_PRESENTATION_URL = 'SET_PRESENTATION_URL';
+export const CLEAN_PRESENTATION_URL = 'CLEAN_PRESENTATION_URL';

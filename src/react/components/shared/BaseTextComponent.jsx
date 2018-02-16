@@ -45,7 +45,7 @@ class BaseTextComponent extends React.Component {
   }
 
   render() {
-    const {data, epigraph, title} = this.props;
+    const {data, epigraph, links, title} = this.props;
     const {backgroundImage, defaultColor, url} = this.state;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     const content = (
@@ -67,7 +67,7 @@ class BaseTextComponent extends React.Component {
     );
     return (
       <RootComponent>
-        <ContentAndUserInfo content={content}/>
+        <ContentAndUserInfo content={content} links={links}/>
       </RootComponent>
     );
   }
@@ -75,6 +75,7 @@ class BaseTextComponent extends React.Component {
 
 BaseTextComponent.propTypes = {
   data: PropTypes.array,
+  links: PropTypes.array,
   title: PropTypes.string,
   epigraph: PropTypes.string,
 };

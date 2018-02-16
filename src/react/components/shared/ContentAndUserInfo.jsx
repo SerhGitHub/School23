@@ -40,7 +40,7 @@ class ContentAndUserInfo extends React.Component {
 
   render() {
     const {user, defaultColor, backgroundImage} = this.state;
-    const {carousel, content} = this.props;
+    const {carousel, content, links} = this.props;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     return (
       <div>
@@ -59,7 +59,7 @@ class ContentAndUserInfo extends React.Component {
             <UserInfo />
           </RightContentCard>
           <RightContentCard>
-            <FriendlyLinks />
+            <FriendlyLinks data={links}/>
           </RightContentCard>
           {
             user && user.username === 'teacher' ? (
@@ -75,6 +75,7 @@ class ContentAndUserInfo extends React.Component {
 }
 
 ContentAndUserInfo.propTypes = {
+  links: PropTypes.array,
   carousel: PropTypes.node,
   content: PropTypes.node,
 };

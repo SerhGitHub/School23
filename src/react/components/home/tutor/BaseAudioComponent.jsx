@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import StyleStore from '../../../stores/style/style.store';
-import VideoStore from '../../../stores/home/video.store';
+import AudioStore from '../../../stores/home/audio.store';
 
-import VideoService from '../../../services/home/VideoService';
+import AudioService from '../../../services/home/AudioService';
 
 import AuthSuccess from '../../auth/AuthSuccess';
 import RootComponent from '../../RootComponent';
 import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
-import TableForVideo from '../../shared/TableForVideo';
+import TableForAudio from '../../shared/TableForAudio';
 
-class BaseVideosComponent extends React.Component {
+class BaseAudioComponent extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-    VideoService.cleanUrl();
+    AudioService.cleanUrl();
     this.state = this.getCurrentState();
   }
 
@@ -23,7 +23,7 @@ class BaseVideosComponent extends React.Component {
     return {
       defaultColor: StyleStore.getDefaultColor(),
       backgroundImage: StyleStore.getBackgroundImage(),
-      url: VideoStore.getUrl(),
+      url: AudioStore.getUrl(),
     };
   }
 
@@ -33,16 +33,16 @@ class BaseVideosComponent extends React.Component {
 
   componentDidMount() {
     StyleStore.addChangeListener(this.onChange);
-    VideoStore.addChangeListener(this.onChange);
+    AudioStore.addChangeListener(this.onChange);
   }
 
   componentWillUnmount() {
     StyleStore.removeChangeListener(this.onChange);
-    VideoStore.removeChangeListener(this.onChange);
+    AudioStore.removeChangeListener(this.onChange);
   }
 
   back(){
-    VideoService.cleanUrl();
+    AudioService.cleanUrl();
   }
 
   render() {
@@ -53,19 +53,7 @@ class BaseVideosComponent extends React.Component {
       <AuthSuccess>
         <div>
           <div className='jumbotron home-psych-main-content' style={style}>
-            {
-              url ? (
-                  <div>
-                    <div className='back-button' onClick={this.back.bind(this)}><img src='back.png' width={60}/></div>
-                    <iframe frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media"
-                            title="YouTube video player" style={{minHeight: '500px', width: '100%'}}
-                            src={`https://www.youtube.com/embed/${url}?autoplay=1&enablejsapi=1&widgetid=3`}
-                            />
-                  </div>
-                ) : (
-                  <TableForVideo ths={[title]} data={data}/>
-                )
-            }
+            <TableForAudio ths={[title]} data={data}/>
           </div>
         </div>
       </AuthSuccess>
@@ -78,9 +66,9 @@ class BaseVideosComponent extends React.Component {
   }
 }
 
-BaseVideosComponent.propTypes = {
+BaseAudioComponent.propTypes = {
   data: PropTypes.array,
   title: PropTypes.string
 };
 
-export default BaseVideosComponent;
+export default BaseAudioComponent;
