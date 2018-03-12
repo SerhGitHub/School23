@@ -15,7 +15,11 @@ class Style extends React.Component {
   getCurrentState() {
     return {
       images: StyleStore.getAllimages(),
+      mainImages: StyleStore.getAllMainimages(),
       currentImg: StyleStore.getBackgroundImage(),
+      currentMainImg: StyleStore.getMainBackgroundImage(),
+      defaultColor: StyleStore.getDefaultColor(),
+      backgroundImage: StyleStore.getBackgroundImage(),
     };
   }
 
@@ -32,7 +36,15 @@ class Style extends React.Component {
   }
 
   changeImage = (e) => {
-    StyleService.setBackgroundImage(e.target.value);
+    const val = e.target.value;
+    StyleService.setBackgroundImage(val);
+  };
+
+  changeMainImage = (e) => {
+    const val = e.target.value;
+    document.getElementById('html').style.backgroundImage = `url(${val})`;
+    document.getElementById('mainBody').style.backgroundImage = `url(${val})`;
+    StyleService.setMainBackgroundImage(val);
   };
 
   getImageOptions(){
@@ -44,16 +56,34 @@ class Style extends React.Component {
     });
   }
 
+  getMainImageOptions(){
+    const {mainImages, currentMainImg} = this.state;
+    return mainImages.map(img => {
+      return (
+        <option key={img.name} value={img.url} selected={currentMainImg === img.url}>{img.name}</option>
+      );
+    });
+  }
+
   render() {
     const options = this.getImageOptions();
+    const mainOptions = this.getMainImageOptions();
+    const {defaultColor, backgroundImage} = this.state;
+    const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     return (
-      <div className='card bg-light mb-3'>
-        <div className='card-body' style={{padding: '0px'}}>
-          <div className='card-header'>Установки для сайта</div>
-          <div className='form-group' style={{padding: '5px'}}>
-            <label for='background'>Фоны для сайта</label>
+      <div className='card bg-light mb-3' style={{color: 'white'}}>
+        <div className='card-body' style={{padding: '0px', borderRadius: '5px', ...style}}>
+          <div className='card-header card-box-shadow' style={style}>Установки для сайта</div>
+          <div className='form-group' style={{marginTop: '15px', padding: '5px', ...style}}>
+            <label for='background'>Фоны для блоков сайта</label>
             <select className='form-control' id='background' onChange={this.changeImage}>
               {options}
+            </select>
+          </div>
+          <div className='form-group' style={{padding: '5px'}}>
+            <label for='backgroundMain'>Фон сайта</label>
+            <select className='form-control' id='backgroundMain' onChange={this.changeMainImage}>
+              {mainOptions}
             </select>
           </div>
         </div>

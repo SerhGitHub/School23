@@ -50,7 +50,7 @@ class TonguesAndTongueTwisters extends React.Component {
         <br/>{'     '}Громко нам гроза грозит.
         <br/>{'     '}Не гремите, не грозите,
         <br/>{'     '}Дождём грядки напоите.
-        <br/>{'     '}{<a href="https://nsportal.ru/detskiy-sad/materialy-dlya-roditeley/2015/08/04/rekomendatsii-dlya-roditeley-chistogovorki-dlya">Опубликовано 04.08.2015 - Онипко Наталья Викторовна</a>}
+        <br/>{'     '}Опубликовано 04.08.2015 - Онипко Наталья Викторовна. https://nsportal.ru/detskiy-sad/materialy-dlya-roditeley/2015/08/04/rekomendatsii-dlya-roditeley-chistogovorki-dlya
         <br/>{'     '}
         <br/>{'     '}<b style={{color: 'blue'}}>СКОРОГОВОРКИ</b>
         <br/>{'     '}
@@ -118,7 +118,7 @@ class TonguesAndTongueTwisters extends React.Component {
         <br/>{'     '}<i style={{color: 'red'}}>На сочетании звуков:</i>
         <br/>{'     '}Бык тупогуб,
         <br/>{'     '}У быка губа тупа.
-        <br/>{'     '}(<a href="http://forum.ditenok.com/showthread.php?p=89928">дифференциация звуков "Б" и "П"</a>)
+        <br/>{'     '}(дифференциация звуков "Б" и "П") http://forum.ditenok.com/showthread.php?p=89928
         <br/>{'     '}
         <br/>{'     '}<b style={{color: 'blue'}}>Чистоговорки.</b>
         <br/>{'     '}
@@ -198,7 +198,7 @@ class TonguesAndTongueTwisters extends React.Component {
         <br/>{'     '}Осип орет. Архип не отстает. Кто кого переорет? Осип охрип, Архип осип.
         <br/>{'     '}Сорок сорок воровали горох, сорок ворон отогнали сорок. Сорок орлов напугали ворон, сорок коров разогнали орлов.
         <br/>{'     '}
-        <br/>{'     '}{<a href="http://www.razvitierebenka.com">Опубликовано 06.05.2014 - Теренко Наталья Анатольевна</a>}
+        <br/>{'     '}Опубликовано 06.05.2014 - Теренко Наталья Анатольевна. http://www.razvitierebenka.com
         <br/>{'     '}
         <br/>{'     '}<b style={{color: 'blue'}}>Скороговорки для детей 5-6 лет</b>
         <br/>{'     '}
@@ -264,7 +264,7 @@ class TonguesAndTongueTwisters extends React.Component {
         <br/>{'     '}
         <br/>{'     '}У Кондрата куртка коротковата.
         <br/>{'     '}
-        <br/>{'     '}<a href="http://irinazaytseva.ru/skorogovorki.html">Источник</a>
+        <br/>{'     '}Источник. http://irinazaytseva.ru/skorogovorki.html
         <br/>{'     '}
         <br/>{'     '}<b style={{color: 'blue'}}>Скороговорки для детей 7-8 лет</b>
         <br/>{'     '}
@@ -519,7 +519,7 @@ class TonguesAndTongueTwisters extends React.Component {
         <br/>{'     '}И матросы три недели
         <br/>{'     '}Карамель на мели ели.
         <br/>{'     '}
-        <br/>{'     '}<a href="http://irinazaytseva.ru/skorogovorki.html">Источник</a>
+        <br/>{'     '}Источник. http://irinazaytseva.ru/skorogovorki.html
       </p>
     );
   }

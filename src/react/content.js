@@ -66,6 +66,16 @@ import TonguesAndTongueTwisters from './components/home/tutor/tonguesAndTongueTw
 import TongueTwisters from './components/home/tutor/tonguesAndTongueTwisters/TongueTwisters';
 import PagodaInPictures from './components/home/tutor/tonguesAndTongueTwisters/PagodaInPictures';
 
+import IndicatorsOfParentalReadiness from './components/home/psychologist/IndicatorsOfParentalReadiness/IndicatorsOfParentalReadiness';
+import ReadinessForSchool from './components/home/psychologist/IndicatorsOfParentalReadiness/ReadinessForSchool';
+import FrequentMisconceptionsOfParents from './components/home/psychologist/IndicatorsOfParentalReadiness/FrequentMisconceptionsOfParents';
+import HowToPrepareAChildForSchool from './components/home/psychologist/IndicatorsOfParentalReadiness/HowToPrepareAChildForSchool';
+import TestForParentsAtSchool from './components/home/psychologist/IndicatorsOfParentalReadiness/TestForParentsAtSchool';
+import TestChildReadyToSchool from './components/home/psychologist/IndicatorsOfParentalReadiness/TestChildReadyToSchool';
+import AManSteps from './components/home/psychologist/IndicatorsOfParentalReadiness/AManSteps';
+import MemoToParentsOfFuture from './components/home/psychologist/IndicatorsOfParentalReadiness/MemoToParentsOfFuture';
+import HowParentsCanHelpAChild from './components/home/psychologist/IndicatorsOfParentalReadiness/HowParentsCanHelpAChild';
+
 import {
   Aggressive_child,
   MAIN_ID,
@@ -133,6 +143,15 @@ import {
   Tongues_and_tongue_twisters,
   Tongue_twisters1,
   Pagoda_in_pictures,
+  Indicators_of_parental_readiness,
+  Readiness_for_school,
+  Frequent_misconceptions_of_parents,
+  How_to_prepare_a_child_for_school,
+  TestForParents_atSchool,
+  TestForParents_ChildReadyToSchool,
+  A_man_steps_into_the_school,
+  Memo_to_parents_of_future_first_graders,
+  How_parents_can_help_a_child,
 } from './constants/constants';
 //These libraries can really be a part of extension, but for performance reasons you can use standalone dependencies
 
@@ -218,6 +237,16 @@ ReactDOM.render(
             <Route path={`/${PRIVICHKA_URL}`} component={Habits}/>
 
             <Route path={`/${Aggressive_child}`} component={AggressiveChild}/>
+
+            <Route path={`/${Indicators_of_parental_readiness}`} component={IndicatorsOfParentalReadiness}/>
+            <Route path={`/${Readiness_for_school}`} component={ReadinessForSchool}/>
+            <Route path={`/${Frequent_misconceptions_of_parents}`} component={FrequentMisconceptionsOfParents}/>
+            <Route path={`/${How_to_prepare_a_child_for_school}`} component={HowToPrepareAChildForSchool}/>
+            <Route path={`/${TestForParents_atSchool}`} component={TestForParentsAtSchool}/>
+            <Route path={`/${TestForParents_ChildReadyToSchool}`} component={TestChildReadyToSchool}/>
+            <Route path={`/${A_man_steps_into_the_school}`} component={AManSteps}/>
+            <Route path={`/${Memo_to_parents_of_future_first_graders}`} component={MemoToParentsOfFuture}/>
+            <Route path={`/${How_parents_can_help_a_child}`} component={HowParentsCanHelpAChild}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeDoctor)}>

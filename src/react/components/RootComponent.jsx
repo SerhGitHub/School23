@@ -8,11 +8,14 @@ import {
   MENU,
 } from '../constants/constants';
 
+const NAV_WIDTH = {width: '220px'};
+
 class RootComponent extends React.Component {
 
   constructor(props, context) {
     super(props, context);
     this.state = this.getCurrentState();
+    document.getElementById('html').style.backgroundImage = `url(mainBackgrounddefault.jpg)`;
   }
 
   isActive(item) {
@@ -105,19 +108,20 @@ class RootComponent extends React.Component {
 
   getSmallMenu(menu, paddingLeft){
     return menu.map(item => {
+      const {children, id, name, url} = item;
       return (
         <div className={'smallNavItem'} style={{fontSize: '11px', fontFamily: 'PT Sans'}}>
-          <div className={'sm-nav-link'} style={{marginLeft: `${paddingLeft}px`}} onClick={this.openChildrenInSmallNav.bind(this, item.id)}>
+          <div className={'sm-nav-link'} style={{marginLeft: `${paddingLeft}px`}} onClick={this.openChildrenInSmallNav.bind(this, id)}>
             {
               item.isGroup ?
-                <Link style={{color: 'white'}} key={item.id} to={item.url ? item.url : '/'}>{`${item.name} >`}</Link>
+                <Link style={{color: 'white'}} key={id} to={url ? url : '/'}>{`${name} >`}</Link>
               :
-                <Link style={{color: 'white'}} key={item.id} to={item.url ? item.url : '/'}>{item.name}</Link>
+                <Link style={{color: 'white'}} key={id} to={url ? url : '/'}>{name}</Link>
             }
           </div>
           {
             item.isGroup && item.showChildren ?
-              this.getSmallMenu(item.children, paddingLeft + 10)
+              this.getSmallMenu(children, paddingLeft + 10)
               : null
           }
         </div>
@@ -131,13 +135,13 @@ class RootComponent extends React.Component {
     const navigationItems = this.getNavigationItems(navbarStyle);
     const smallNavigationItems = this.getSmallMenu(menu, 0, navbarStyle);
     return (
-      <div style={{textAlign: '-webkit-center', marginTop: '20px'}}>
-        <div style={{width: '80%', maxWidth: '1280px'}}>
+      <div id='mainBody' style={{textAlign: '-webkit-center', marginTop: '20px', backgroundImage: 'url(mainBackgrounddefault.jpg)'}}>
+        <div style={{width: '98%'}}>
           <nav className='navbar navbar-expand-sm navbar-dark bg-primary main-navbar' style={navbarStyle}>
             <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor02' aria-controls='navbarColor02' aria-expanded='false' aria-label='Toggle navigation'>
               <span className='navbar-toggler-icon' />
             </button>
-            <div className='collapse navbar-collapse' style={navbarStyle}>
+            <div className='collapse navbar-collapse'>
               <ul className='navbar-nav mr-auto'>
                 {navigationItems}
               </ul>

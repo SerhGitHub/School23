@@ -10,6 +10,7 @@ import AuthSuccess from '../../auth/AuthSuccess';
 import RootComponent from '../../RootComponent';
 import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
 import TableForAudio from '../../shared/TableForAudio';
+import Jumbotron from '../../shared/Jumbotron';
 
 class BaseAudioComponent extends React.Component {
 
@@ -52,9 +53,9 @@ class BaseAudioComponent extends React.Component {
     const content = (
       <AuthSuccess>
         <div>
-          <div className='jumbotron home-psych-main-content' style={style}>
+          <Jumbotron style={style}>
             <TableForAudio ths={[title]} data={data}/>
-          </div>
+          </Jumbotron>
         </div>
       </AuthSuccess>
     );

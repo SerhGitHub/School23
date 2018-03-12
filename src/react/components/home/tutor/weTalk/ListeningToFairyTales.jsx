@@ -5,7 +5,7 @@ import BaseAudioComponent from '../BaseAudioComponent';
 const data = [
   {
     id: '1',
-    name: 'Вол i осёл',
+    name: 'Вол i асёл',
     link: 'https://drive.google.com/uc?id=1mGAsC--vOJrLppxHHC5SxwO4QA32-CUQ&authuser=0&export=download',
   },
   {
@@ -20,7 +20,7 @@ const data = [
   },
   {
     id: '4',
-    name: 'Зайкава хатка.mp3',
+    name: 'Зайкава хатка',
     link: 'https://drive.google.com/uc?id=1G9LYil9RHnvclrYeqSz3VoLaMGjpFwnP&authuser=0&export=download',
   },
   {

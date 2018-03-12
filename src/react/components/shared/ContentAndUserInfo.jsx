@@ -43,7 +43,7 @@ class ContentAndUserInfo extends React.Component {
     const {carousel, content, links} = this.props;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     return (
-      <div>
+      <div >
         {
           carousel ? (
               <div className='jumbotron custom-carousel' style={style}>
@@ -58,9 +58,13 @@ class ContentAndUserInfo extends React.Component {
           <RightContentCard>
             <UserInfo />
           </RightContentCard>
-          <RightContentCard>
-            <FriendlyLinks data={links}/>
-          </RightContentCard>
+          {
+            user && user.username === 'teacher' ? (
+                <RightContentCard>
+                  <FriendlyLinks data={links}/>
+                </RightContentCard>
+              ) : null
+          }
           {
             user && user.username === 'teacher' ? (
                 <RightContentCard>

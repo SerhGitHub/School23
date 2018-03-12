@@ -6,6 +6,7 @@ import AuthSuccess from '../../../auth/AuthSuccess';
 import RootComponent from '../../../RootComponent';
 import ContentAndUserInfo from '../../../shared/ContentAndUserInfo';
 import ImagesBox from '../../../shared/ImagesBox';
+import Jumbotron from '../../../shared/Jumbotron';
 
 class FacialExpressionsAndGestures extends React.Component {
   constructor(props, context) {
@@ -40,9 +41,9 @@ class FacialExpressionsAndGestures extends React.Component {
     const content = (
       <AuthSuccess>
         <div>
-          <div className='jumbotron home-psych-main-content' style={style}>
+          <Jumbotron style={style}>
             <ImagesBox path={`pdfImg/${path}`} images={images}/>
-          </div>
+          </Jumbotron>
         </div>
       </AuthSuccess>
     );

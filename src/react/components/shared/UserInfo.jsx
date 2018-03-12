@@ -7,6 +7,7 @@ import AuthStore from '../../stores/auth.store';
 
 import RegWindow from '../shared/RegWindow';
 import SingWindow from '../shared/SingWindow';
+import StyleStore from '../../stores/style/style.store';
 
 class UserInfo extends React.Component {
 
@@ -18,6 +19,8 @@ class UserInfo extends React.Component {
   getCurrentState() {
     return {
       user: AuthStore.getUser(),
+      defaultColor: StyleStore.getDefaultColor(),
+      backgroundImage: StyleStore.getBackgroundImage(),
     };
   }
 
@@ -27,10 +30,12 @@ class UserInfo extends React.Component {
 
   componentDidMount() {
     AuthStore.addChangeListener(this.onChange);
+    StyleStore.addChangeListener(this.onChange);
   }
 
   componentWillUnmount() {
     AuthStore.removeChangeListener(this.onChange);
+    StyleStore.removeChangeListener(this.onChange);
   }
 
   showRegW = () => {
@@ -46,17 +51,27 @@ class UserInfo extends React.Component {
   };
 
   render() {
-    const {user} = this.state;
+    const {user, defaultColor, backgroundImage} = this.state;
+    const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     return (
-      <div className='card bg-light mb-3'>
-        <div className='card-body' style={{padding: '0px'}}>
-          <div className='card-header'>Добро пожаловать!</div>
-          <p>Здравствуйте, <b>{user ? user.username : 'Гость'}</b>!</p>
+      <div className='card bg-light mb-3' style={{color: 'white'}}>
+        <div className='card-body' style={{padding: '0px', borderRadius: '5px', ...style}}>
+          <div className='card-header card-box-shadow' style={style}>Добро пожаловать!</div>
+          <p style={{paddingTop: '5px'}}>Здравствуйте, <b>{user ? user.username : 'Гость'}</b>!</p>
           {
             user ?
-              <p><a href='#' onClick={this.logOut}>выход</a></p>
+              <p>
+                <a href='#' onClick={this.logOut}>
+                  <img src={'logout.png'} width={60} height={60} />
+                </a>
+              </p>
               :
-              <p>{/*<div className='link-custom-style' onClick={this.showRegW}>регистрация</div>|*/}<div className='link-custom-style' onClick={this.showSingW}>вход</div></p>
+              <p>
+                {/*<div className='link-custom-style' onClick={this.showRegW}>регистрация</div>|*/}
+                <div className='link-custom-style' onClick={this.showSingW}>
+                  <img src={'login.png'} width={60} height={60} />
+                </div>
+              </p>
           }
         </div>
         <RegWindow />

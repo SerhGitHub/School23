@@ -36,8 +36,8 @@ class MainComponent extends React.Component {
     const {backgroundImage, defaultColor} = this.state;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     const content = (
-      <div className='card text-white bg-primary mb-3 main-content' style={style}>
-        <div className='card-body'>
+      <div className='card text-white bg-primary mb-3 main-content'>
+        <div className='card-body' style={style}>
           <h4 className='card-title'>Заголовок для информации на главной страницы</h4>
           <p className='card-text'>Какой-то текст, который должен быть на главной странице. Здесь могут быть и фотографии.</p>
         </div>

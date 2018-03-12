@@ -3,6 +3,7 @@ import React from 'react';
 import AuthSuccess from '../../auth/AuthSuccess';
 import RootComponent from '../../RootComponent';
 import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
+import Jumbotron from '../../shared/Jumbotron';
 
 class HomeMaster extends React.Component {
 
@@ -10,9 +11,9 @@ class HomeMaster extends React.Component {
     const content = (
       <AuthSuccess>
         <div>
-          <div className='jumbotron home-psych-main-content'>
+          <Jumbotron>
             Пока нет информации
-          </div>
+          </Jumbotron>
         </div>
       </AuthSuccess>
     );

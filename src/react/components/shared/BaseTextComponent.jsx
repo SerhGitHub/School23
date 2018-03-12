@@ -9,6 +9,7 @@ import TestService from '../../services/home/TestService';
 import AuthSuccess from '../auth/AuthSuccess';
 import RootComponent from '../RootComponent';
 import ContentAndUserInfo from '../shared/ContentAndUserInfo';
+import Jumbotron from '../shared/Jumbotron';
 
 class BaseTextComponent extends React.Component {
 
@@ -51,7 +52,7 @@ class BaseTextComponent extends React.Component {
     const content = (
       <AuthSuccess>
         <div>
-          <div className='jumbotron home-psych-main-content' style={style}>
+          <Jumbotron style={style}>
             <div style={{padding: '10px'}}>
               <div style={{textAlign: 'right'}}>
                 <div style={{width: '50%', marginLeft: '50%'}}>
@@ -61,7 +62,7 @@ class BaseTextComponent extends React.Component {
               <h1>{title}</h1>
               {data}
             </div>
-          </div>
+          </Jumbotron>
         </div>
       </AuthSuccess>
     );

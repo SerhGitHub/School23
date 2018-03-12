@@ -37,8 +37,13 @@ class SingWindow extends React.Component {
     AuthStore.removeChangeListener(this.onChange);
   }
 
-  onChangeValue = (entity, e) => {
-    this.state[entity] = e.target.value;
+  onChangeUsername = (e) => {
+    this.state.username = e.target.value;
+    this.setState(this.state);
+  };
+
+  onChangePassword = (e) => {
+    this.state.password = e.target.value;
     this.setState(this.state);
   };
 
@@ -81,16 +86,16 @@ class SingWindow extends React.Component {
     return (
     <Modal isOpen={showWindow} onRequestHide={this.close}>
       <div className='modal-header'>
-        <h4 className='modal-title'>Вход</h4>
+        <h4 className='modal-title'>{'Вход'}</h4>
         <ModalClose onClick={this.close}/>
       </div>
       <div className='modal-body'>
         <div className='form-group'>
-          <input type='email' value={username} onChange={this.onChangeValue.bind(this, 'username')} className={`form-control ${ error.username ? 'is-invalid' : ''}`} id='email' aria-describedby='emailHelp' placeholder='Адрес электронной почты' autofocus/>
+          <input type='email' value={username} onChange={this.onChangeUsername} className={`form-control ${ error.username ? 'is-invalid' : ''}`} id='email' aria-describedby='emailHelp' placeholder='Адрес электронной почты' autofocus/>
           <div className='invalid-feedback'>{error.username}</div>
         </div>
         <div className='form-group'>
-          <input type='password' value={password} onChange={this.onChangeValue.bind(this, 'password')} className={`form-control ${ error.password ? 'is-invalid' : ''}`} placeholder='Пароль' />
+          <input type='password' value={password} onChange={this.onChangePassword} className={`form-control ${ error.password ? 'is-invalid' : ''}`} placeholder='Пароль' />
           <div style={{paddingBottom: '5px'}}/>
           <div className='invalid-feedback'>{error.password}</div>
         </div>

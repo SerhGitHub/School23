@@ -5,6 +5,7 @@ import StyleStore from '../../../stores/style/style.store';
 import AuthSuccess from '../../auth/AuthSuccess';
 import RootComponent from '../../RootComponent';
 import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
+import Jumbotron from '../../shared/Jumbotron';
 
 class HomeTutor extends React.Component {
 
@@ -38,9 +39,9 @@ class HomeTutor extends React.Component {
     const content = (
       <AuthSuccess>
         <div>
-          <div className='jumbotron home-psych-main-content' style={style}>
+          <Jumbotron style={style}>
             Пока нет информации
-          </div>
+          </Jumbotron>
         </div>
       </AuthSuccess>
     );

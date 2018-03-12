@@ -347,7 +347,7 @@ class TongueTwisters extends React.Component {
         <br/><br/><img src={'home_tutor_ton_20.jpg'} style={{width: '100%'}}/>
         <br/><br/><img src={'home_tutor_ton_21.jpg'} style={{width: '100%'}}/>
         <br/><br/><img src={'home_tutor_ton_22.jpg'} style={{width: '100%'}}/>
-        <br/>{'     '}<a href="http://heaclub.ru/skorogovorki-dlya-detej-dlya-razvitiya-rechi-i-dikcii-po-godam-skorogovorki-dlya-detej-na-bukvy-r-l-sh-shh">Источник</a>
+        <br/>{'     '}Источник. http://heaclub.ru/skorogovorki-dlya-detej-dlya-razvitiya-rechi-i-dikcii-po-godam-skorogovorki-dlya-detej-na-bukvy-r-l-sh-shh
       </p>
     );
   }

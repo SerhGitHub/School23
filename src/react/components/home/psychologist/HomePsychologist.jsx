@@ -10,6 +10,7 @@ import RootComponent from '../../RootComponent';
 import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
 import Table from '../../shared/Table';
 import ImagesBox from '../../shared/ImagesBox';
+import Jumbotron from '../../shared/Jumbotron';
 
 const ths = ['Искусство красноречия'];
 const data = [
@@ -203,7 +204,7 @@ class HomePsychologist extends React.Component {
     const content = (
       <AuthSuccess>
         <div>
-          <div className='jumbotron home-psych-main-content' style={style}>
+          <Jumbotron>
             {
               path ? (
                 <div>
@@ -218,7 +219,7 @@ class HomePsychologist extends React.Component {
                   </span>
                 )
             }
-          </div>
+          </Jumbotron>
         </div>
       </AuthSuccess>
     );

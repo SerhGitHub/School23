@@ -10,6 +10,7 @@ import AuthSuccess from '../../auth/AuthSuccess';
 import RootComponent from '../../RootComponent';
 import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
 import TableForTests from '../../shared/TableForTests';
+import Jumbotron from '../../shared/Jumbotron';
 
 class BaseTestComponent extends React.Component {
 
@@ -53,7 +54,7 @@ class BaseTestComponent extends React.Component {
     const content = (
       <AuthSuccess>
         <div>
-          <div className='jumbotron home-psych-main-content' style={style}>
+          <Jumbotron style={style}>
             {
               url ? (
                   <div>
@@ -64,7 +65,7 @@ class BaseTestComponent extends React.Component {
                   <TableForTests ths={[title]} data={data}/>
                 )
             }
-          </div>
+          </Jumbotron>
         </div>
       </AuthSuccess>
     );

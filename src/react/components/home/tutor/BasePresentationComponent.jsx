@@ -11,6 +11,7 @@ import RootComponent from '../../RootComponent';
 import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
 import TableForPresentation from '../../shared/TableForPresentation';
 import CustomCarousel from '../../shared/CustomCarousel';
+import Jumbotron from '../../shared/Jumbotron';
 
 class BasePresentationComponent extends React.Component {
 
@@ -55,7 +56,7 @@ class BasePresentationComponent extends React.Component {
     const content = (
       <AuthSuccess>
         <div>
-          <div className='jumbotron home-psych-main-content' style={style}>
+          <Jumbotron style={style}>
             {
               url ? (
                     <div>
@@ -81,7 +82,7 @@ class BasePresentationComponent extends React.Component {
                   <TableForPresentation ths={[title]} data={data}/>
                 )
             }
-          </div>
+          </Jumbotron>
         </div>
       </AuthSuccess>
     );

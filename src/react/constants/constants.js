@@ -102,6 +102,16 @@ export const Tongues_and_tongue_twisters = 'TonguesAndTongueTwisters';
 export const Tongue_twisters1 = 'TongueTwisters';
 export const Pagoda_in_pictures = 'PagodaInPictures';
 
+export const Indicators_of_parental_readiness = 'IndicatorsOfParentalReadiness';
+export const Readiness_for_school = 'ReadinessForSchool';
+export const Frequent_misconceptions_of_parents = 'FrequentMisconceptionsOfParents';
+export const How_to_prepare_a_child_for_school = 'HowToPrepareAChildForSchool';
+export const TestForParents_atSchool = 'TestForParentsAtSchool';
+export const TestForParents_ChildReadyToSchool = 'TestChildReadyToSchool';
+export const A_man_steps_into_the_school = 'AManSteps';
+export const Memo_to_parents_of_future_first_graders = 'MemoToParentsOfFuture';
+export const How_parents_can_help_a_child = 'HowParentsCanHelpAChild';
+
 export const MENU = [
   {
     id: MAIN_ID,
@@ -144,7 +154,64 @@ export const MENU = [
       {
         id: DO_PARENTS_READY_TO_SCHOOL_URL,
         name: 'Готовы ли родители к школе',
+        isGroup: true,
         url: `/${DO_PARENTS_READY_TO_SCHOOL_URL}`,
+        children: [
+          {
+            id: Indicators_of_parental_readiness,
+            name: 'Показатели родительской готовности к поступлению ребёнка в школу',
+            fullName: 'Показатели родительской готовности к поступлению ребёнка в школу',
+            url: `/${Indicators_of_parental_readiness}`,
+          },
+          {
+            id: Readiness_for_school,
+            name: 'Готовность к школе. Беседа с психологом',
+            fullName: 'Готовность к школе. Беседа с психологом',
+            url: `/${Readiness_for_school}`,
+          },
+          {
+            id: Frequent_misconceptions_of_parents,
+            name: 'Готовим ребенка к школе. Частые заблуждения родителей',
+            fullName: 'Готовим ребенка к школе. Частые заблуждения родителей',
+            url: `/${Frequent_misconceptions_of_parents}`,
+          },
+          {
+            id: How_to_prepare_a_child_for_school,
+            name: 'Как подготовить ребенка к школе',
+            fullName: 'Как подготовить ребенка к школе',
+            url: `/${How_to_prepare_a_child_for_school}`,
+          },
+          {
+            id: TestForParents_atSchool,
+            name: 'Тест для родителей. Готовы ли Вы отдать своего ребенка в школу',
+            fullName: 'Тест для родителей. Готовы ли Вы отдать своего ребенка в школу',
+            url: `/${TestForParents_atSchool}`,
+          },
+          {
+            id: TestForParents_ChildReadyToSchool,
+            name: 'Тест для родителей. Насколько Ваш ребенок подготовлен к школе',
+            fullName: 'Тест для родителей. Насколько Ваш ребенок подготовлен к школе',
+            url: `/${TestForParents_ChildReadyToSchool}`,
+          },
+          {
+            id: A_man_steps_into_the_school,
+            name: 'Человек шагает в школу',
+            fullName: 'Человек шагает в школу',
+            url: `/${A_man_steps_into_the_school}`,
+          },
+          {
+            id: Memo_to_parents_of_future_first_graders,
+            name: 'Памятка родителям будущих первоклассников',
+            fullName: 'Памятка родителям будущих первоклассников',
+            url: `/${Memo_to_parents_of_future_first_graders}`,
+          },
+          {
+            id: How_parents_can_help_a_child,
+            name: 'Памятка для родителей. Как родители могут помочь ребенку избежать некоторых трудностей',
+            fullName: 'Памятка для родителей. Как родители могут помочь ребенку избежать некоторых трудностей',
+            url: `/${How_parents_can_help_a_child}`,
+          },
+        ]
       },
       {
         id: TESTS_FOR_PARENTS_URL,
@@ -237,24 +304,24 @@ export const MENU = [
         url: `/${SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS}`,
         children: [
           {
-            id: DISPUTE_WITHOUT_QUARREL,
-            name: 'Спор без ссоры',
-            url: `/${DISPUTE_WITHOUT_QUARREL}`,
+            id: ORAL_SPEECH,
+            name: 'Устная речь',
+            url: `/${ORAL_SPEECH}`,
           },
           {
-            id: EMOTIONAL_COLORING_OF_SPEECH,
-            name: 'Эмоциональная окраска речи',
-            url: `/${EMOTIONAL_COLORING_OF_SPEECH}`,
+            id: LISTENING_SPEAKING,
+            name: 'Слушаем. Говорим',
+            url: `/${LISTENING_SPEAKING}`,
           },
           {
-            id: EMOTIONS_ADN_COMMUNICATION,
-            name: 'Эмоции и общение',
-            url: `/${EMOTIONS_ADN_COMMUNICATION}`,
+            id: TALKING_ON_THE_PHONE,
+            name: 'Разговор по телефону',
+            url: `/${TALKING_ON_THE_PHONE}`,
           },
           {
-            id: FACIAL_EXPRESSIONS_AND_GESTURES,
-            name: 'Мимика и жесты',
-            url: `/${FACIAL_EXPRESSIONS_AND_GESTURES}`,
+            id: HOW_TO_RECEIVE_GUESTS,
+            name: 'Как принимать гостей',
+            url: `/${HOW_TO_RECEIVE_GUESTS}`,
           },
           {
             id: HOW_TO_BEHAVE_AT_A_PARTY,
@@ -267,19 +334,19 @@ export const MENU = [
             url: `/${HOW_TO_MAKE_FRIENDS_WITH_STRANGERS}`,
           },
           {
-            id: HOW_TO_RECEIVE_GUESTS,
-            name: 'Как принимать гостей',
-            url: `/${HOW_TO_RECEIVE_GUESTS}`,
+            id: EMOTIONS_ADN_COMMUNICATION,
+            name: 'Эмоции и общение',
+            url: `/${EMOTIONS_ADN_COMMUNICATION}`,
           },
           {
-            id: LISTENING_SPEAKING,
-            name: 'Слушаем. Говорим',
-            url: `/${LISTENING_SPEAKING}`,
+            id: EMOTIONAL_COLORING_OF_SPEECH,
+            name: 'Эмоциональная окраска речи',
+            url: `/${EMOTIONAL_COLORING_OF_SPEECH}`,
           },
           {
-            id: ORAL_SPEECH,
-            name: 'Устная речь',
-            url: `/${ORAL_SPEECH}`,
+            id: FACIAL_EXPRESSIONS_AND_GESTURES,
+            name: 'Мимика и жесты',
+            url: `/${FACIAL_EXPRESSIONS_AND_GESTURES}`,
           },
           {
             id: REQUEST_AND_REFUSAL,
@@ -287,9 +354,9 @@ export const MENU = [
             url: `/${REQUEST_AND_REFUSAL}`,
           },
           {
-            id: TALKING_ON_THE_PHONE,
-            name: 'Разговор по телефону',
-            url: `/${TALKING_ON_THE_PHONE}`,
+            id: DISPUTE_WITHOUT_QUARREL,
+            name: 'Спор без ссоры',
+            url: `/${DISPUTE_WITHOUT_QUARREL}`,
           },
         ]
       },
@@ -648,6 +715,7 @@ export const CLEAN_IMAGES_HOME_PSYCH = 'CLEAN_IMAGES_HOME_PSYCH';
 
 //STYLE
 export const CHANGE_BACKGROUND_IMAGE = 'CHANGE_BACKGROUND_IMAGE';
+export const CHANGE_MAIN_BACKGROUND_IMAGE = 'CHANGE_MAIN_BACKGROUND_IMAGE';
 
 //TEST
 export const SET_TEST_URL = 'SET_TEST_URL';
