@@ -59,7 +59,7 @@ class ContentAndUserInfo extends React.Component {
             <UserInfo />
           </RightContentCard>
           {
-            user && user.username === 'teacher' ? (
+            links ? (
                 <RightContentCard>
                   <FriendlyLinks data={links}/>
                 </RightContentCard>

@@ -10,6 +10,10 @@ export default {
     AuthAction.showSingWindow(data);
   },
 
+  showConsultationWindow(data) {
+    AuthAction.showConsultationWindow(data);
+  },
+
   createUser(username, password){
     AuthAction.createUser(username, password);
   },

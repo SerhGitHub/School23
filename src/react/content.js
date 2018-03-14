@@ -41,7 +41,6 @@ import LearningToCompose from './components/home/tutor/learningToSpeakBeautifull
 import PlayingWithWords from './components/home/tutor/learningToSpeakBeautifully/PlayingWithWords';
 
 import FavoriteWorks from './components/home/tutor/learningToRead/FavoriteWorks';
-import SoundsAndLetters from './components/home/tutor/learningToRead/SoundsAndLetters';
 import LearningTheAlphbet from './components/home/tutor/learningToRead/LearningTheAlphbet';
 
 import Hygiene from './components/home/doctor/physicalReadiness/Hygiene';
@@ -76,7 +75,58 @@ import AManSteps from './components/home/psychologist/IndicatorsOfParentalReadin
 import MemoToParentsOfFuture from './components/home/psychologist/IndicatorsOfParentalReadiness/MemoToParentsOfFuture';
 import HowParentsCanHelpAChild from './components/home/psychologist/IndicatorsOfParentalReadiness/HowParentsCanHelpAChild';
 
+import Parents from './components/parents/Parents';
+import HealthyChild from './components/parents/healthyChild/HealthyChild';
+import LeftHand from './components/parents/healthyChild/LeftHand';
+import LeadingHand from './components/parents/healthyChild/LeadingHand';
+import BirthPupil from './components/parents/healthyChild/BirthPupil';
+import SecretsOfEducation from './components/parents/healthyChild/SecretsOfEducation';
+import FingerGymnastics from './components/parents/healthyChild/FingerGymnastics';
+import ParentsReadyToSchool from './components/parents/parentsReadyToSchool/ParentsReadyToSchool';
+import TestsForParents from './components/parents/TestsForParents';
+import Genius from './components/parents/Genius';
+
+import SoundsAndLetters from './components/soundsAndLetters/SoundsAndLetters';
+import SpeechIndicators from './components/soundsAndLetters/SpeechIndicators';
+import ArticulatoryExercises from './components/soundsAndLetters/articulatoryExercises/ArticulatoryExercises';
+import GamesWithLetters from './components/soundsAndLetters/gamesWithLetters/GamesWithLetters';
+
+import TalkInBelarusian from './components/talkInBelarusian/TalkInBelarusian';
+import TongueTwistersBel from './components/talkInBelarusian/TongueTwistersBel';
+import Puzzels from './components/talkInBelarusian/Puzzels';
+import Counters from './components/talkInBelarusian/Counters';
+import ThematicIssues from './components/talkInBelarusian/learningToReson/ThematicIssues';
+import DQuestions from './components/talkInBelarusian/learningToReson/DQuestions';
+import WantAllKnow from './components/talkInBelarusian/learningToReson/WantAllKnow';
+import TalkForYou from './components/talkInBelarusian/learningToReson/TalkForYou';
+import LearningToReason from './components/talkInBelarusian/learningToReson/LearningToReason';
+import Games from './components/talkInBelarusian/learningToReson/Games';
+
+import World from './components/world/World';
+import QuestionsForChildSix from './components/world/QuestionsForChildSix';
+import GamesRus from './components/world/GamesRus';
+
+import WorldOfMathematic from './components/worldOfMathematic/WorldOfMathematic';
+import IndicatorsMathDev from './components/worldOfMathematic/IndicatorsMathDev';
+import GamesMath from './components/worldOfMathematic/GamesMath';
+
+import WorldBeautiful from './components/worldBeatiful/WorldBeautiful';
+import GamesBeautiful from './components/worldBeatiful/GamesBeautiful';
+import Cartoons from './components/worldBeatiful/Cartoons';
+import LearningToSculpt from './components/worldBeatiful/leaningToSculpt/LearningToSculpt';
+import MoldPlasticine from './components/worldBeatiful/leaningToSculpt/MoldPlasticine';
+import MoldWithChildren from './components/worldBeatiful/leaningToSculpt/MoldWithChildren';
+import Bird from './components/worldBeatiful/leaningToSculpt/Bird';
+import Dinosaurs from './components/worldBeatiful/leaningToSculpt/Dinosaurs';
+import Pony from './components/worldBeatiful/leaningToSculpt/Pony';
+import Smeshariki from './components/worldBeatiful/leaningToSculpt/Smeshariki';
+import Ship from './components/worldBeatiful/leaningToSculpt/Ship';
+
+import AboutUs from './components/main/AboutUs';
+import Guest from './components/main/Guest';
+
 import {
+  TEST_FOR_PARENTS,
   Aggressive_child,
   MAIN_ID,
   ABOUT_PROJECT_ID,
@@ -152,6 +202,46 @@ import {
   A_man_steps_into_the_school,
   Memo_to_parents_of_future_first_graders,
   How_parents_can_help_a_child,
+  FOR_PARENTS,
+  HEALTHY_CHILD,
+  LEFT_HAND,
+  LEADING_HAND,
+  BIRTH_PUPIL,
+  SECRETS_OF_EDUCATION,
+  FINGER_GYMNASTICS,
+  SOUNDS_LETTERS,
+  SPEECH_INDICATORS,
+  ARTICULATORY_EXERCISES,
+  GAMES_WITH_LETTERS_AND_SOUNDS,
+  TALK_IN_BELARUSIAN,
+  Tongue_Twisters_Bel,
+  PUZZELS,
+  COUNTERS,
+  TALK_FOR_YOU,
+  WANT_ALL_KNOW,
+  D_QUESTIONS,
+  THEMATIC_ISSUES,
+  LEARNING_TO_REASON,
+  GAMES_BEL,
+  WORLD,
+  QUESTIONS_FOR_CHILD_SIX_YEAR,
+  GAMES_RUS,
+  WORLD_OF_MATHEMATIC,
+  INDICATORS_OF_MATHEMATICAL_DEVELOPMENT,
+  GAMES_MATH,
+  WORLD_BEAUTIFUL,
+  GAMES_BEAUTIFUL,
+  CARTOONS,
+  LEANING_TO_SCULPT,
+  MOLD_PLASTICINE,
+  MOLD_WITH_CHILDREN,
+  BIRD,
+  DINOSAURS,
+  PONY,
+  SMESHARIKI,
+  SHIP,
+  GUEST,
+  GENIUS,
 } from './constants/constants';
 //These libraries can really be a part of extension, but for performance reasons you can use standalone dependencies
 
@@ -183,14 +273,106 @@ ReactDOM.render(
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initMain)}>
             <Route path={'/'} component={MainComponent}/>
             <Route path={`/${ABOUT_PROJECT_ID}`} component={AboutProjectComponent}/>
-            <Route path={`/${ABOUT_US_URL}`} component={Other}/>
-            <Route path={`/${AUTHORS_URL}`} component={Other}/>
+            <Route path={`/${ABOUT_US_URL}`} component={AboutUs}/>
+            <Route path={`/${GUEST}`} component={Guest}/>
+          </Route>
+
+          <Route onEnter={onNewInnerRouteEnter(RoutingService.initParents)}>
+            <Route path={`${FOR_PARENTS}`} component={Parents}/>
+            <Route path={`${HEALTHY_CHILD}`} component={HealthyChild}/>
+            <Route path={`/${Daily_regime}`} component={DailyRegime}/>
+            <Route path={`/${HYGIENE}`} component={Hygiene}/>
+            <Route path={`/${HARDENING}`} component={Hardening}/>
+            <Route path={`/${Hyperactive_child}`} component={HyperactiveChild}/>
+            <Route path={`/${PRIVICHKA_URL}`} component={Habits}/>
+            <Route path={`/${LEFT_HAND}`} component={LeftHand}/>
+            <Route path={`/${LEADING_HAND}`} component={LeadingHand}/>
+            <Route path={`/${BIRTH_PUPIL}`} component={BirthPupil}/>
+            <Route path={`/${SECRETS_OF_EDUCATION}`} component={SecretsOfEducation}/>
+            <Route path={`${Articulatory_gymnastics}`} component={ArticulatoryGymnastics}/>
+            <Route path={`/${Breathing_exercises}`} component={BreathingExercises}/>
+            <Route path={`/${FINGER_GYMNASTICS}`} component={FingerGymnastics}/>
+
+            <Route path={`/${DO_PARENTS_READY_TO_SCHOOL_URL}`} component={ParentsReadyToSchool}/>
+            <Route path={`/${Indicators_of_parental_readiness}`} component={IndicatorsOfParentalReadiness}/>
+            <Route path={`/${Frequent_misconceptions_of_parents}`} component={FrequentMisconceptionsOfParents}/>
+            <Route path={`/${Memo_to_parents_of_future_first_graders}`} component={MemoToParentsOfFuture}/>
+            <Route path={`/${How_parents_can_help_a_child}`} component={HowParentsCanHelpAChild}/>
+
+            <Route path={`/${SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS}`} component={SchoolOfCommunicationForChildrenAndAdults}/>
+            <Route path={`/${LISTENING_SPEAKING}`} component={ListeningSpeaking}/>
+            <Route path={`/${ORAL_SPEECH}`} component={OralSpeech}/>
+            <Route path={`/${TALKING_ON_THE_PHONE}`} component={TalkingOnThePhone}/>
+            <Route path={`/${EMOTIONAL_COLORING_OF_SPEECH}`} component={EmotionalColoringOfSpeech}/>
+            <Route path={`/${EMOTIONS_ADN_COMMUNICATION}`} component={EmotionsAndCommunication}/>
+            <Route path={`/${FACIAL_EXPRESSIONS_AND_GESTURES}`} component={FacialExpressionsAndGestures}/>
+            <Route path={`/${HOW_TO_BEHAVE_AT_A_PARTY}`} component={HowToBehaveAtAParty}/>
+            <Route path={`/${HOW_TO_MAKE_FRIENDS_WITH_STRANGERS}`} component={HowToMakeFriendsWithStrangers}/>
+            <Route path={`/${HOW_TO_RECEIVE_GUESTS}`} component={HowToReceiveGuests}/>
+            <Route path={`/${REQUEST_AND_REFUSAL}`} component={RequestAndRefusal}/>
+            <Route path={`/${DISPUTE_WITHOUT_QUARREL}`} component={DisputeWithoutQuarrel}/>
+
+            <Route path={`/${TEST_FOR_PARENTS}`} component={TestsForParents}/>
+            <Route path={`/${GENIUS}`} component={Genius}/>
+          </Route>
+
+          <Route onEnter={onNewInnerRouteEnter(RoutingService.initSoundsAndLetters)}>
+            <Route path={`/${SOUNDS_LETTERS}`} component={SoundsAndLetters}/>
+            <Route path={`/${SPEECH_INDICATORS}`} component={SpeechIndicators}/>
+            <Route path={`/${ARTICULATORY_EXERCISES}`} component={ArticulatoryExercises}/>
+            <Route path={`${Tongues_and_tongue_twisters}`} component={TonguesAndTongueTwisters}/>
+            <Route path={`${Tongue_twisters1}`} component={TongueTwisters}/>
+            <Route path={`${Pagoda_in_pictures}`} component={PagodaInPictures}/>
+            <Route path={`${GAMES_WITH_LETTERS_AND_SOUNDS}`} component={GamesWithLetters}/>
+          </Route>
+
+          <Route onEnter={onNewInnerRouteEnter(RoutingService.initTalkInBelarusian)}>
+            <Route path={`/${TALK_IN_BELARUSIAN}`} component={TalkInBelarusian}/>
+            <Route path={`/${Tongue_Twisters_Bel}`} component={TongueTwistersBel}/>
+            <Route path={`/${PUZZELS}`} component={Puzzels}/>
+            <Route path={`/${COUNTERS}`} component={Counters}/>
+            <Route path={`/${LEARNING_TO_REASON}`} component={LearningToReason}/>
+            <Route path={`/${TALK_FOR_YOU}`} component={TalkForYou}/>
+            <Route path={`/${WANT_ALL_KNOW}`} component={WantAllKnow}/>
+            <Route path={`/${D_QUESTIONS}`} component={DQuestions}/>
+            <Route path={`/${THEMATIC_ISSUES}`} component={ThematicIssues}/>
+            <Route path={`${Belarusian_cartoons}`} component={BelarusianCartoons}/>
+            <Route path={`${Listening_to_fairy_tales}`} component={ListeningToFairyTales}/>
+            <Route path={`${Listen_and_sing}`} component={ListenAndSing}/>
+            <Route path={`${GAMES_BEL}`} component={Games}/>
+          </Route>
+
+          <Route onEnter={onNewInnerRouteEnter(RoutingService.initWorld)}>
+            <Route path={`/${WORLD}`} component={World}/>
+            <Route path={`/${QUESTIONS_FOR_CHILD_SIX_YEAR}`} component={QuestionsForChildSix}/>
+            <Route path={`/${GAMES_RUS}`} component={GamesRus}/>
+          </Route>
+
+          <Route onEnter={onNewInnerRouteEnter(RoutingService.initWorldOfMathematic)}>
+            <Route path={`/${WORLD_OF_MATHEMATIC}`} component={WorldOfMathematic}/>
+            <Route path={`/${INDICATORS_OF_MATHEMATICAL_DEVELOPMENT}`} component={IndicatorsMathDev}/>
+            <Route path={`/${GAMES_MATH}`} component={GamesMath}/>
+
+          </Route>
+
+          <Route onEnter={onNewInnerRouteEnter(RoutingService.initWorldBeautiful)}>
+            <Route path={`/${WORLD_BEAUTIFUL}`} component={WorldBeautiful}/>
+            <Route path={`/${GAMES_BEAUTIFUL}`} component={GamesBeautiful}/>
+            <Route path={`/${CARTOONS}`} component={Cartoons}/>
+            <Route path={`/${LEANING_TO_SCULPT}`} component={LearningToSculpt}/>
+            <Route path={`/${MOLD_PLASTICINE}`} component={MoldPlasticine}/>
+            <Route path={`/${MOLD_WITH_CHILDREN}`} component={MoldWithChildren}/>
+            <Route path={`/${BIRD}`} component={Bird}/>
+            <Route path={`/${DINOSAURS}`} component={Dinosaurs}/>
+            <Route path={`/${PONY}`} component={Pony}/>
+            <Route path={`/${SMESHARIKI}`} component={Smeshariki}/>
+            <Route path={`/${SHIP}`} component={Ship}/>
+
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomePsychologically)}>
             <Route path={`/${HOME_PSYCHOLOGICALLY_URL}`} component={HomePsychologist}/>
             <Route path={`/${FROM_CHILD_ROOM_TO_SCHOOL_URL}`} component={Other}/>
-            <Route path={`/${DO_PARENTS_READY_TO_SCHOOL_URL}`} component={Other}/>
             <Route path={`/${TESTS_FOR_PARENTS_URL}`} component={Other}/>
             <Route path={`/${PSICHOLOGICHESKAY_GOTOVNOST_URL}`} component={Other}/>
             <Route path={`/${INTELECTUALNAY_GOTOVNOST_URL}`} component={Other}/>
@@ -203,18 +385,6 @@ ReactDOM.render(
             <Route path={`/${EMOCIONALNAY_GOTOVNOCCT_URL}`} component={Other}/>
             <Route path={`/${MOTIVACIY_UCHENIKA_URL}`} component={Other}/>
             <Route path={`/${FORNIROVANIE_VOLEVIH_KACHEVSTV_URL}`} component={Other}/>
-            <Route path={`/${SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS}`} component={SchoolOfCommunicationForChildrenAndAdults}/>
-            <Route path={`/${DISPUTE_WITHOUT_QUARREL}`} component={DisputeWithoutQuarrel}/>
-            <Route path={`/${EMOTIONAL_COLORING_OF_SPEECH}`} component={EmotionalColoringOfSpeech}/>
-            <Route path={`/${EMOTIONS_ADN_COMMUNICATION}`} component={EmotionsAndCommunication}/>
-            <Route path={`/${FACIAL_EXPRESSIONS_AND_GESTURES}`} component={FacialExpressionsAndGestures}/>
-            <Route path={`/${HOW_TO_BEHAVE_AT_A_PARTY}`} component={HowToBehaveAtAParty}/>
-            <Route path={`/${HOW_TO_MAKE_FRIENDS_WITH_STRANGERS}`} component={HowToMakeFriendsWithStrangers}/>
-            <Route path={`/${HOW_TO_RECEIVE_GUESTS}`} component={HowToReceiveGuests}/>
-            <Route path={`/${LISTENING_SPEAKING}`} component={ListeningSpeaking}/>
-            <Route path={`/${ORAL_SPEECH}`} component={OralSpeech}/>
-            <Route path={`/${REQUEST_AND_REFUSAL}`} component={RequestAndRefusal}/>
-            <Route path={`/${TALKING_ON_THE_PHONE}`} component={TalkingOnThePhone}/>
 
             <Route path={`/${IN_THE_WORLD_OF_NATURE}`} component={InTheWorldOfNature}/>
             <Route path={`/${WORK_OF_PEOPLE}`} component={WorkOfPeople}/>
@@ -234,43 +404,28 @@ ReactDOM.render(
 
 
             <Route path={`/${FORMIROVANIE_POSICII_SHKOLNIKA_URL}`} component={FormationStudentsPosition}/>
-            <Route path={`/${PRIVICHKA_URL}`} component={Habits}/>
 
             <Route path={`/${Aggressive_child}`} component={AggressiveChild}/>
 
-            <Route path={`/${Indicators_of_parental_readiness}`} component={IndicatorsOfParentalReadiness}/>
             <Route path={`/${Readiness_for_school}`} component={ReadinessForSchool}/>
-            <Route path={`/${Frequent_misconceptions_of_parents}`} component={FrequentMisconceptionsOfParents}/>
             <Route path={`/${How_to_prepare_a_child_for_school}`} component={HowToPrepareAChildForSchool}/>
             <Route path={`/${TestForParents_atSchool}`} component={TestForParentsAtSchool}/>
             <Route path={`/${TestForParents_ChildReadyToSchool}`} component={TestChildReadyToSchool}/>
             <Route path={`/${A_man_steps_into_the_school}`} component={AManSteps}/>
-            <Route path={`/${Memo_to_parents_of_future_first_graders}`} component={MemoToParentsOfFuture}/>
-            <Route path={`/${How_parents_can_help_a_child}`} component={HowParentsCanHelpAChild}/>
-          </Route>
+            </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeDoctor)}>
             <Route path={`${HOME_DOCTOR_URL}`} component={HomeDoctor}/>
-            <Route path={`/${HYGIENE}`} component={Hygiene}/>
-            <Route path={`/${Daily_regime}`} component={DailyRegime}/>
-            <Route path={`/${HARDENING}`} component={Hardening}/>
-            <Route path={`/${Hyperactive_child}`} component={HyperactiveChild}/>
 
-            <Route path={`/${Breathing_exercises}`} component={BreathingExercises}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeTutor)}>
             <Route path={`${HOME_TUTOR_URL}`} component={HomeTutor}/>
 
-            <Route path={`${Belarusian_cartoons}`} component={BelarusianCartoons}/>
-            <Route path={`${Listening_to_fairy_tales}`} component={ListeningToFairyTales}/>
-            <Route path={`${Listen_and_sing}`} component={ListenAndSing}/>
 
-            <Route path={`${Articulatory_gymnastics}`} component={ArticulatoryGymnastics}/>
 
-            <Route path={`${Tongues_and_tongue_twisters}`} component={TonguesAndTongueTwisters}/>
-            <Route path={`${Tongue_twisters1}`} component={TongueTwisters}/>
-            <Route path={`${Pagoda_in_pictures}`} component={PagodaInPictures}/>
+
+
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeAssistant)}>

@@ -4,28 +4,17 @@ import BasicStore from '../basic.store';
 
 import {
   CHANGE_BACKGROUND_IMAGE,
-  CHANGE_MAIN_BACKGROUND_IMAGE
+  CHANGE_MAIN_BACKGROUND_IMAGE,
+  CHANGE_DEFAULT_COLOR
 } from '../../constants/constants';
 
 let backgroundImage = null;
 let mainBackgroundImage = null;
-let defaultColor = '#78C2AD';
+let defaultColor = '#3D0F5E';
 let allBackgroundImages = [
   {
     name: 'background01',
     url: 'background01.png',
-  },
-  {
-    name: 'background02',
-    url: 'background02.png',
-  },
-  {
-    name: 'background04',
-    url: 'background04.png',
-  },
-  {
-    name: 'background05',
-    url: 'background05.png',
   },
   {
     name: 'background07',
@@ -50,14 +39,6 @@ let allMainBackgroundImages = [
     url: 'mainBackground1.jpg',
   },
   {
-    name: '2',
-    url: 'mainBackground2.jpg',
-  },
-  {
-    name: '3',
-    url: 'mainBackground3.jpg',
-  },
-  {
     name: '4',
     url: 'mainBackground4.jpg',
   },
@@ -78,16 +59,8 @@ let allMainBackgroundImages = [
     url: 'mainBackground8.jpg',
   },
   {
-    name: '9',
-    url: 'mainBackground9.jpg',
-  },
-  {
     name: '10',
     url: 'mainBackground10.jpg',
-  },
-  {
-    name: '11',
-    url: 'mainBackground11.jpg',
   },
   {
     name: '12',
@@ -102,11 +75,22 @@ let allMainBackgroundImages = [
     url: 'mainBackground14.jpg',
   },
   {
-    name: '15',
-    url: 'mainBackground15.jpg',
+    name: '16',
+    url: 'mainBackground16.jpg',
+  },
+  {
+    name: '17',
+    url: 'mainBackground17.jpg',
+  },
+  {
+    name: '18',
+    url: 'mainBackground18.jpg',
+  },
+  {
+    name: '19',
+    url: 'mainBackground19.jpg',
   },
 ];
-
 
 class StyleStore extends BasicStore {
 
@@ -142,6 +126,10 @@ AppDispatcher.register(function(payload) {
       break;
     case CHANGE_MAIN_BACKGROUND_IMAGE:
       mainBackgroundImage = action.data;
+      styleStoreInstance.emitChange();
+      break;
+    case CHANGE_DEFAULT_COLOR:
+      defaultColor = action.data;
       styleStoreInstance.emitChange();
       break;
   }

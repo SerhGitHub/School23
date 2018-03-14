@@ -38,7 +38,7 @@ class MainComponent extends React.Component {
     const content = (
       <div className='card text-white bg-primary mb-3 main-content'>
         <div className='card-body' style={style}>
-          <h4 className='card-title'>Заголовок для информации на главной страницы</h4>
+          <h4 className='card-title'>ШКОЛА для будущих первоклассников и классных их родителей «ЗОЛОТОЙ КЛЮЧИК».</h4>
           <p className='card-text'>Какой-то текст, который должен быть на главной странице. Здесь могут быть и фотографии.</p>
         </div>
       </div>

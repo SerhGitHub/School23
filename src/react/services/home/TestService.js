@@ -6,6 +6,10 @@ export default {
     TestAction.setUrl(data);
   },
 
+  setText(data) {
+    TestAction.setText(data);
+  },
+
   cleanUrl() {
     TestAction.cleanUrl();
   },

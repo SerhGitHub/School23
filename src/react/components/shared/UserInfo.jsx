@@ -7,6 +7,7 @@ import AuthStore from '../../stores/auth.store';
 
 import RegWindow from '../shared/RegWindow';
 import SingWindow from '../shared/SingWindow';
+import ConsultationWindow from '../shared/ConsultationWindow';
 import StyleStore from '../../stores/style/style.store';
 
 class UserInfo extends React.Component {
@@ -46,6 +47,10 @@ class UserInfo extends React.Component {
     AuthService.showSingWindow(true);
   };
 
+  showConsultationW = () => {
+    AuthService.showConsultationWindow(true);
+  };
+
   logOut = () => {
     AuthService.logOut();
   };
@@ -72,10 +77,14 @@ class UserInfo extends React.Component {
                   <img src={'login.png'} width={60} height={60} />
                 </div>
               </p>
-          }
+          }<br/>
+          <div className='link-custom-style' style={{textAlign: 'right'}} onClick={this.showConsultationW}>
+            <img src={'onlineAnswer.png'} width={200} height={85}/>
+          </div>
         </div>
         <RegWindow />
         <SingWindow />
+        <ConsultationWindow />
       </div>
     );
   }

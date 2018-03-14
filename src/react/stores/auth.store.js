@@ -7,6 +7,7 @@ import {
   LOGOUT,
   SHOW_REGISTRATION_WINDOW,
   SHOW_SING_WINDOW,
+  SHOW_CONSULTATION_WINDOW,
 } from '../constants/constants';
 
 const customUser = {username: 'teacher', password: 'test', role: 'test'};
@@ -15,6 +16,7 @@ let showRegistrationWindow = false;
 let showSingWindow = false;
 let users = new Map();
 let user;
+let showConsultationWindow = false;
 
 class AuthStore extends BasicStore {
 
@@ -24,6 +26,10 @@ class AuthStore extends BasicStore {
 
   isShowSingWindow() {
     return showSingWindow;
+  }
+
+  isShowConsultationWindow() {
+    return showConsultationWindow;
   }
 
   getUserByUsername(username){
@@ -50,6 +56,10 @@ AppDispatcher.register(function(payload) {
       break;
     case SHOW_SING_WINDOW:
       showSingWindow = action.data;
+      authStoreInstance.emitChange();
+      break;
+    case SHOW_CONSULTATION_WINDOW:
+      showConsultationWindow = action.data;
       authStoreInstance.emitChange();
       break;
     case LOGOUT:

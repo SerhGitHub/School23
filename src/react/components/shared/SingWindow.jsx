@@ -86,7 +86,7 @@ class SingWindow extends React.Component {
     return (
     <Modal isOpen={showWindow} onRequestHide={this.close}>
       <div className='modal-header'>
-        <h4 className='modal-title'>{'Вход'}</h4>
+        <h4 className='modal-title' style={{color: 'black'}}>{'Введите данные для входа'}</h4>
         <ModalClose onClick={this.close}/>
       </div>
       <div className='modal-body'>

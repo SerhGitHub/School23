@@ -16,6 +16,22 @@ class TableForTests extends React.Component {
 
   setUrl(item){
     TestService.setUrl(item.link);
+    TestService.setText(item.text);
+  }
+
+  getContent(item){
+    return item.isHref ? (
+        <td>
+          <a href={item.link} target='_blank'>{item.name}</a>
+        </td>
+      ) : (
+      <td>
+        <a onClick={this.setUrl.bind(this, item)} style={{cursor: 'pointer'}}>{item.name}</a>
+        <span style={{paddingLeft: '10px', cursor: 'pointer', float: 'right'}} onClick={this.setUrl.bind(this, item)}>
+          <img src='view.png' width={20}/>
+        </span>
+      </td>
+    );
   }
 
   getTrs(){
@@ -23,12 +39,7 @@ class TableForTests extends React.Component {
     return data.map(item => {
       return (
         <tr key={item.id}>
-          <td>
-            <a onClick={this.setUrl.bind(this, item)} style={{cursor: 'pointer'}}>{item.name}</a>
-            <span style={{paddingLeft: '10px', cursor: 'pointer', float: 'right'}} onClick={this.setUrl.bind(this, item)}>
-              <img src='view.png' width={20}/>
-            </span>
-          </td>
+          {this.getContent(item)}
         </tr>
       );
     });

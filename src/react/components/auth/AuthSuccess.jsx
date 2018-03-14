@@ -29,11 +29,12 @@ class AuthSuccess extends React.Component {
 
   render() {
     const {user} = this.state;
+    return this.props.children;/*
     return user ? this.props.children : (
         <div className='jumbotron' style={{marginTop: '10px'}}>
           Вы не имеете доступа к этой странице, выполните вход на сайт.
         </div>
-      );
+      );*/
   }
 }
 

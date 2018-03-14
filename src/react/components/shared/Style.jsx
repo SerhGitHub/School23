@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { SketchPicker } from 'react-color';
 
 import StyleStore from '../../stores/style/style.store';
 
@@ -40,6 +41,10 @@ class Style extends React.Component {
     StyleService.setBackgroundImage(val);
   };
 
+  changeDefaultColor = (color) => {
+    StyleService.setDefaultColor(color.hex);
+  };
+
   changeMainImage = (e) => {
     const val = e.target.value;
     document.getElementById('html').style.backgroundImage = `url(${val})`;
@@ -75,7 +80,11 @@ class Style extends React.Component {
         <div className='card-body' style={{padding: '0px', borderRadius: '5px', ...style}}>
           <div className='card-header card-box-shadow' style={style}>Установки для сайта</div>
           <div className='form-group' style={{marginTop: '15px', padding: '5px', ...style}}>
-            <label for='background'>Фоны для блоков сайта</label>
+            <label for='defaultColor'>Фоны для блоков сайта</label>
+            <SketchPicker id='defaultColor' color={defaultColor} onChangeComplete={this.changeDefaultColor}/>
+          </div>
+          <div className='form-group' style={{marginTop: '15px', padding: '5px', ...style}}>
+            <label for='background'>Цвет для блоков сайта</label>
             <select className='form-control' id='background' onChange={this.changeImage}>
               {options}
             </select>

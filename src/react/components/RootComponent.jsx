@@ -9,6 +9,7 @@ import {
 } from '../constants/constants';
 
 const NAV_WIDTH = {width: '220px'};
+const NAV_ITEM_STYLE = {textTransform: 'uppercase'};
 
 class RootComponent extends React.Component {
 
@@ -51,11 +52,11 @@ class RootComponent extends React.Component {
   getChildMenu(item, style){
     return (
       <li key={item.id} className='nav-item dropdown' >
-        <Link className={'nav-link dropdown-toggle'} to={item.url}>{item.name}</Link>
+        <Link className={'nav-link dropdown-toggle'} to={item.url} style={{textTransform: 'uppercase'}}>{item.name}</Link>
         <div className='dropdown-menu navigation-items-child-dropdown-menu' x-placement='bottom-start' style={style}>
           {
             item.children && item.children.length > 0 ? item.children.map(child => {
-                return <Link key={child.id} className='dropdown-item nav-link' to={child.url ? child.url : '/'}>{child.name}</Link>
+                return <Link key={child.id} className='dropdown-item nav-link whiteSpace' to={child.url ? child.url : '/'} style={NAV_ITEM_STYLE}>{child.name}</Link>
               }) : null
           }
         </div>
@@ -65,16 +66,18 @@ class RootComponent extends React.Component {
 
   getNavigationItems(style){
     const menu = this.getMenuProperties();
+    let navStyle = {textTransform: 'uppercase', textAlign: 'left', color: 'white'};
     return menu && menu.length > 0 ? menu.map(item => {
+      navStyle = this.isActive(item.id) ? {...navStyle, fontWeight: 'bolder', fontSize: '15px'} : {...navStyle, fontWeight: 'normal', fontSize: '14px'};
       return (
         <li key={item.id} className='nav-item dropdown'>
-          <Link className={`nav-link${this.isActive(item.id) ? ' active' : ''} dropdown-toggle`} to={item.url} style={{textTransform: 'uppercase', textAlign: 'left'}}>{item.name}</Link>
+          <Link className={`nav-link${this.isActive(item.id) ? ' active' : ''} dropdown-toggle`} to={item.url} style={navStyle}>{item.name}</Link>
           <div className='dropdown-menu navigation-items-dropdown-menu' x-placement='bottom-start' style={style}>
             {
               item.children && item.children.length > 0 ? item.children.map(child => {
                   return child.isGroup ?
                     this.getChildMenu(child, style)
-                    : <Link key={child.id} className='dropdown-item nav-link' to={child.url ? child.url : '/'}>{child.name}</Link>
+                    : <Link key={child.id} className='dropdown-item nav-link whiteSpace' to={child.url ? child.url : '/'} style={NAV_ITEM_STYLE}>{child.name}</Link>
                 }) : null
             }
           </div>
@@ -137,9 +140,9 @@ class RootComponent extends React.Component {
     return (
       <div id='mainBody' style={{textAlign: '-webkit-center', marginTop: '20px', backgroundImage: 'url(mainBackgrounddefault.jpg)'}}>
         <div style={{width: '98%'}}>
-          <nav className='navbar navbar-expand-sm navbar-dark bg-primary main-navbar' style={navbarStyle}>
+          <nav className='navbar navbar-expand-sm navbar-dark main-navbar' style={navbarStyle}>
             <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor02' aria-controls='navbarColor02' aria-expanded='false' aria-label='Toggle navigation'>
-              <span className='navbar-toggler-icon' />
+              <span className='navbar-toggler-icon'/>
             </button>
             <div className='collapse navbar-collapse'>
               <ul className='navbar-nav mr-auto'>

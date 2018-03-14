@@ -5,6 +5,7 @@ import {
   LOGOUT,
   SHOW_REGISTRATION_WINDOW,
   SHOW_SING_WINDOW,
+  SHOW_CONSULTATION_WINDOW,
 } from '../constants/constants';
 
 let AuthAction = {
@@ -17,6 +18,12 @@ let AuthAction = {
   showSingWindow(data) {
     AppDispatcher.handleViewAction({
       actionType: SHOW_SING_WINDOW,
+      data: data
+    });
+  },
+  showConsultationWindow(data) {
+    AppDispatcher.handleViewAction({
+      actionType: SHOW_CONSULTATION_WINDOW,
       data: data
     });
   },

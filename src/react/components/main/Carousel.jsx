@@ -33,19 +33,57 @@ class Carousel extends React.Component {
       {
         id: '1',
         img: '1.jpg',
-        title: 'Заголовок для первой картинке',
+        title: 'КАК ПОНЯТЬ СВОЕГО РЕБЕНКА?',
+        epigraph: (
+          <p style={{textAlign: 'right'}}>
+            <i>
+              Будьте сами и человеком, и младенцем, чтобы учить ребенка.
+              <br/>В. Одоевский
+            </i>
+          </p>
+        ),
         alt: ''
       },
       {
         id: '2',
         img: '2.jpg',
-        title: 'Заголовок для второй картинке',
+        title: 'КАК РАЗВИВАТЬ РЕЧЬ?',
+        epigraph: (
+          <p style={{textAlign: 'right'}}>
+            <i>
+              Язык – это среда, в которой объединяется «Я» и мир.
+              <br/>Х. Гадамер
+            </i>
+          </p>
+        ),
         alt: ''
       },
       {
         id: '3',
         img: '3.jpg',
-        title: 'Заголовок для третьей картинке',
+        title: 'ЯК АВАЛОДАЦЬ РОДНАЙ МОВАЙ?',
+        epigraph: (
+          <p style={{textAlign: 'right'}}>
+            <i>
+              Трэба любіць, ведаць і шанаваць мову свайго народа і ўмець  дасканала   валодаць ёю.
+              <br/>Я. Колас
+            </i>
+          </p>
+        ),
+        alt: ''
+      },
+      {
+        id: '4',
+        img: '4.jpg',
+        title: 'ЧТО ПРЕДСТАВЛЯЕТ СОБОЙ ОКРУЖАЮЩИЙ МИР?',
+        epigraph: (
+          <p style={{textAlign: 'right'}}>
+            <i>
+              Жизнь для ребенка - один огромный эксперимент.
+              <br/>А. Адлер
+            </i>
+          </p>
+        ),
         alt: ''
       },
     ];
@@ -65,6 +103,9 @@ class Carousel extends React.Component {
                   <div className='caption' style={style}>
                     <div className='caption-title' style={{padding: '10px 8px 5px'}}>
                       {item.title}
+                    </div>
+                    <div className='caption-body'>
+                      {item.epigraph}
                     </div>
                   </div>
                 </div>

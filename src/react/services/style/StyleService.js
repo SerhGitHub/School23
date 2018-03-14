@@ -7,6 +7,9 @@ export default {
   setMainBackgroundImage(img) {
     StyleAction.setMainBackgroundImage(img);
   },
+  setDefaultColor(color) {
+    StyleAction.setDefaultColor(color);
+  },
 }
 
 

@@ -2,7 +2,8 @@ import AppDispatcher from '../../dispatcher/Dispatcher';
 
 import {
   CHANGE_BACKGROUND_IMAGE,
-  CHANGE_MAIN_BACKGROUND_IMAGE
+  CHANGE_MAIN_BACKGROUND_IMAGE,
+  CHANGE_DEFAULT_COLOR
 } from '../../constants/constants';
 
 let StyleAction = {
@@ -16,6 +17,12 @@ let StyleAction = {
     AppDispatcher.handleViewAction({
       actionType: CHANGE_MAIN_BACKGROUND_IMAGE,
       data: img
+    });
+  },
+  setDefaultColor(color) {
+    AppDispatcher.handleViewAction({
+      actionType: CHANGE_DEFAULT_COLOR,
+      data: color
     });
   }
 };

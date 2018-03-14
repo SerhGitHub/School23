@@ -32,6 +32,4 @@ node_modules/
 # Bower
 bower_components/
 
-# Build directory
-dist/
 

@@ -5,14 +5,20 @@ import BasicStore from '../basic.store';
 import {
   CLEAN_TEST_URL,
   SET_TEST_URL,
+  SET_TEST_TEXT,
 } from '../../constants/constants';
 
 let url = null;
+let text = null;
 
 class Test extends BasicStore {
 
   getUrl(){
     return url;
+  }
+
+  getText(){
+    return text;
   }
 }
 
@@ -25,8 +31,13 @@ AppDispatcher.register(function(payload) {
       url = action.data;
       testStoreInstance.emitChange();
       break;
+    case SET_TEST_TEXT:
+      text = action.data;
+      testStoreInstance.emitChange();
+      break;
     case CLEAN_TEST_URL:
       url = null;
+      text = null;
       testStoreInstance.emitChange();
       break;
   }

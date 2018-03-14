@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router';
 
 import StyleStore from '../../stores/style/style.store';
 import TestStore from '../../stores/home/test.store';
@@ -45,22 +46,34 @@ class BaseTextComponent extends React.Component {
     TestService.cleanUrl();
   }
 
+  getEpigraph(){
+    const {epigraph} = this.props;
+    return epigraph ? (
+      <div style={{textAlign: 'right', width: '50%', marginLeft: '50%'}}>
+        <i>{epigraph}</i>
+      </div>
+    ) : null;
+  }
+
   render() {
-    const {data, epigraph, links, title} = this.props;
+    const {data, links, title} = this.props;
     const {backgroundImage, defaultColor, url} = this.state;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
+    const titleContent = title ? <h1>{title}</h1> : null;
+    const epigraph = this.getEpigraph();
     const content = (
       <AuthSuccess>
         <div>
           <Jumbotron style={style}>
             <div style={{padding: '10px'}}>
-              <div style={{textAlign: 'right'}}>
-                <div style={{width: '50%', marginLeft: '50%'}}>
-                  <i>{epigraph}</i>
-                </div>
-              </div>
-              <h1>{title}</h1>
+              {epigraph}
+              {titleContent}
               {data}
+              <div style={{textAlign: 'right'}}>
+                <Link to={`/`} >
+                  <img src={'key.jpg'} width={70} height={30}/>
+                </Link>
+              </div>
             </div>
           </Jumbotron>
         </div>

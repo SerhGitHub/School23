@@ -1,18 +1,21 @@
 import React from 'react';
 
-import RootComponent from '../RootComponent';
+import BaseTextComponent from '../shared/BaseTextComponent';
 
 class AboutProjectComponent extends React.Component {
 
+  getData(){
+    const width = '100%';
+    return <img src={'aboutProject.png'} style={{width: width}}/>;
+  }
+
   render() {
+    const data = this.getData();
     return (
-      <RootComponent>
-        <div className='jumbotron' style={{marginTop: '10px'}}>
-          Здесь должен быть текст или картинки с информацией для страницы "О проекте"
-        </div>
-      </RootComponent>
+      <BaseTextComponent data={data}/>
     );
   }
 }
 
 export default AboutProjectComponent;
+
