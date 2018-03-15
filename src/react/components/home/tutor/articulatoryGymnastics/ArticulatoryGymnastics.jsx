@@ -7,8 +7,8 @@ class ArticulatoryGymnastics extends React.Component {
   getData(){
     return (
       <p style={{textAlign: 'left', whiteSpace: 'pre-wrap'}}>
-        <img src={'home_tutor_art_1.jpg'} style={{width: '100%'}}/>
-        <br/><img src={'home_tutor_art_2.jpg'} style={{width: '100%'}}/>
+        <img src={'home_tutor_art_1.jpg'} style={{width: '80%'}}/>
+        <br/><img src={'home_tutor_art_2.jpg'} style={{width: '80%'}}/>
         <br/>{'     '}<b style={{color: 'blue'}}>Памятка для родителей по проведению артикуляционной гимнастики</b>
         <br/>{'     '}<b style={{color: 'purple'}}>Цель артикуляционной гимнастики</b> - выработка полноценных движений и определенных положений органов артикуляционного аппарата, необходимых для правильного произношения звуков.
         <br/>{'     '}<span style={{color: 'purple'}}>Рекомендации:</span>
@@ -31,11 +31,6 @@ class ArticulatoryGymnastics extends React.Component {
         <br/>{'     '}5. Для того, чтобы ребенок нашел правильное положение языка, например, облизал верхнюю губу, намазать ее вареньем, шоколадом или чем-то еще, что любит ваш ребенок. Подходить к выполнению упражнений творчески.
         <br/>{'     '}Сначала при выполнении детьми упражнений наблюдается напряженность движений органов артикуляционного аппарата. Постепенно напряжение исчезает, движения становятся непринужденными и вместе с тем координированными.
         <br/>{'     '}Система упражнений по развитию артикуляционной моторики должна включать как статические упражнения, так и упражнения, направленные на развитие динамической координации речевых движений.
-        <br/>{'     '}
-        <br/>{'     '}<b style={{color: 'red'}}>Артикуляционные упражнения</b>
-        <br/><img src={'home_tutor_art_3.jpg'} style={{width: '100%'}}/>
-        <br/><img src={'home_tutor_art_4.jpg'} style={{width: '100%'}}/>
-        <br/><img src={'home_tutor_art_5.jpg'} style={{width: '100%'}}/>
         <br/>{'     '}Источник. https://www.google.ru/search?q=%D0%B0%D1%80%D1%82%D0%B8%D0%BA%D1%83%D0%BB%D1%8F%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5+%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F&newwindow=1&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwixlZK0t6XZAhVI8ywKHWT3Db8QsAQIKA&biw=1600&bih=769#imgrc=RByq6T20-wIpQM:
       </p>
     );

@@ -159,6 +159,7 @@ export const GUEST = 'guest';
 
 export const TEST_FOR_PARENTS = 'testsForParents';
 export const GENIUS = 'genius';
+export const PERFECTING_THE_SPEECH = 'perfectingTheSpeech';
 
 export const MENU = [
   {
@@ -177,11 +178,6 @@ export const MENU = [
         name: 'О нас',
         url: `/${ABOUT_US_URL}`
       },
-      {
-        id: GUEST,
-        name: 'Посетителю сайта',
-        url: `/${GUEST}`
-      },
     ]
   },
   {
@@ -192,7 +188,7 @@ export const MENU = [
     children: [
       {
         id: HEALTHY_CHILD,
-        isGroup: true,
+        isGroup: false,
         name: 'Здоровый ребенок',
         url: `/${HEALTHY_CHILD}`,
         children: [
@@ -261,7 +257,7 @@ export const MENU = [
       {
         id: DO_PARENTS_READY_TO_SCHOOL_URL,
         name: 'Готовы ли родители к школе',
-        isGroup: true,
+        isGroup: false,
         url: `/${DO_PARENTS_READY_TO_SCHOOL_URL}`,
         children: [
           {
@@ -405,6 +401,11 @@ export const MENU = [
         name: 'Игры с буквами и звуками',
         url: `/${GAMES_WITH_LETTERS_AND_SOUNDS}`,
       },
+      {
+        id: PERFECTING_THE_SPEECH,
+        name: 'Совершенствуем речь',
+        url: `/${PERFECTING_THE_SPEECH}`
+      },
     ]
   },
   {
@@ -430,7 +431,7 @@ export const MENU = [
       },
       {
         id: LEARNING_TO_REASON,
-        isGroup: true,
+        isGroup: false,
         name: 'Вучымся разважаць',
         url: `/${LEARNING_TO_REASON}`,
         children: [
@@ -575,6 +576,11 @@ export const MENU = [
       },
     ]
   },
+  {
+    id: FORUM_URL,
+    name: 'Форум',
+    url: `/${FORUM_URL}`,
+  }
   /*{
     id: HOME_PSYCHOLOGICALLY_URL,
     isGroup: true,
@@ -995,46 +1001,16 @@ export const MENU = [
       },
     ]
   },
-  {
-    id: FORUM_URL,
-    isGroup: true,
-    name: 'Форум',
-    url: `/${FORUM_URL}`,
-    children: [
-      {
-        id: OTHERS_URL + '5',
-        isGroup: true,
-        name: 'Устами младенца',
-        url: `/${OTHERS_URL}`,
-        children: [
-          {
-            id: OTHERS_URL + '4',
-            name: 'Школа - это',
-            url: `/${OTHERS_URL}`,
-          },
-          {
-            id: OTHERS_URL + '3',
-            name: 'Современный учитель глазами детей',
-            url: `/${OTHERS_URL}`,
-          },
-        ]
-      },
-      {
-        id: OTHERS_URL + '2',
-        name: 'Белорусский в 1 классе',
-        url: `/${OTHERS_URL}`,
-      },
-      {
-        id: OTHERS_URL + '1',
-        name: 'Отзывы родителей',
-        url: `/${OTHERS_URL}`,
-      },
-    ]
-  },*/
+  ,*/
 ];
 
 //root actions consts
 export const SELECT_TAB_MENU_ITEM = 'SELECT_TAB_MENU_ITEM';
+
+//custom test
+export const SET_TEST = 'SET_TEST';
+export const SET_QUESTION = 'SET_QUESTION';
+export const SET_ANSWER_IN_QUESTION = 'SET_ANSWER_IN_QUESTION';
 
 //auth consts
 export const SHOW_REGISTRATION_WINDOW = 'SHOW_REGISTRATION_WINDOW';

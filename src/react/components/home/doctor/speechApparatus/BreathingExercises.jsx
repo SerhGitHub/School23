@@ -209,7 +209,7 @@ class BreathingExercises extends React.Component {
     const data = this.getData();
     const links = this.getLinks();
     return (
-      <BaseTextComponent title={'Дыхательная гимнастика'} data={data} links={links}/>
+      <BaseTextComponent title={'Дыхательная гимнастика'} data={data} links={links} video={['vJXbjhcNSe4', '9lihy1csNvU']}/>
     );
   }
 }

@@ -138,7 +138,8 @@ class RootComponent extends React.Component {
     const navigationItems = this.getNavigationItems(navbarStyle);
     const smallNavigationItems = this.getSmallMenu(menu, 0, navbarStyle);
     return (
-      <div id='mainBody' style={{textAlign: '-webkit-center', marginTop: '20px', backgroundImage: 'url(mainBackgrounddefault.jpg)'}}>
+      <div id='mainBody' style={{textAlign: '-webkit-center', backgroundImage: 'url(mainBackgrounddefault.jpg)'}}>
+        <span style={{color: 'yellow', fontSize: '28px', fontWeight: 'bolder', textShadow: `${defaultColor} 0 0px 5px`}}>{'ШКОЛА для будущих первоклассников и классных их родителей «ЗОЛОТОЙ КЛЮЧИК»'}</span>
         <div style={{width: '98%'}}>
           <nav className='navbar navbar-expand-sm navbar-dark main-navbar' style={navbarStyle}>
             <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor02' aria-controls='navbarColor02' aria-expanded='false' aria-label='Toggle navigation'>

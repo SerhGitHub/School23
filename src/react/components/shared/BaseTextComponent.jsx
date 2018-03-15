@@ -55,12 +55,25 @@ class BaseTextComponent extends React.Component {
     ) : null;
   }
 
+  getVideos(videos){
+    return videos.map((url, index) => {
+      return (
+        <iframe key={url} frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media"
+                title="YouTube video player" style={{minHeight: '500px', width: '100%'}}
+                src={`https://www.youtube.com/embed/${url}?${index === 0 ? 'autoplay=1&' : ''}enablejsapi=1&widgetid=3`}
+        />
+      );
+    }
+    );
+  }
+
   render() {
-    const {data, links, title} = this.props;
+    const {data, links, title, video} = this.props;
     const {backgroundImage, defaultColor, url} = this.state;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     const titleContent = title ? <h1>{title}</h1> : null;
     const epigraph = this.getEpigraph();
+    const videos = video ? this.getVideos(video) : null;
     const content = (
       <AuthSuccess>
         <div>
@@ -68,6 +81,7 @@ class BaseTextComponent extends React.Component {
             <div style={{padding: '10px'}}>
               {epigraph}
               {titleContent}
+              {videos}
               {data}
               <div style={{textAlign: 'right'}}>
                 <Link to={`/`} >
@@ -92,6 +106,7 @@ BaseTextComponent.propTypes = {
   links: PropTypes.array,
   title: PropTypes.string,
   epigraph: PropTypes.string,
+  video: PropTypes.array
 };
 
 export default BaseTextComponent;

@@ -125,7 +125,10 @@ import Ship from './components/worldBeatiful/leaningToSculpt/Ship';
 import AboutUs from './components/main/AboutUs';
 import Guest from './components/main/Guest';
 
+import PerfectingTheSpeech from './components/soundsAndLetters/PerfectingTheSpeech';
+
 import {
+  PERFECTING_THE_SPEECH,
   TEST_FOR_PARENTS,
   Aggressive_child,
   MAIN_ID,
@@ -324,6 +327,7 @@ ReactDOM.render(
             <Route path={`${Tongue_twisters1}`} component={TongueTwisters}/>
             <Route path={`${Pagoda_in_pictures}`} component={PagodaInPictures}/>
             <Route path={`${GAMES_WITH_LETTERS_AND_SOUNDS}`} component={GamesWithLetters}/>
+            <Route path={`${PERFECTING_THE_SPEECH}`} component={PerfectingTheSpeech}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initTalkInBelarusian)}>

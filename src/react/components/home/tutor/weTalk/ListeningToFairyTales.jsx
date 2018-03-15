@@ -64,7 +64,7 @@ class ListeningToFairyTales extends React.Component {
 
   render() {
     return (
-      <BaseAudioComponent title={'Слухаем казкі'} data={data} />
+      <BaseAudioComponent title={'Слухаем казкі. http://kazki.by/byelaruskiya-narodnyya-kazki-w-mp3'} data={data} />
     );
   }
 }

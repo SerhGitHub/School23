@@ -10,7 +10,7 @@ import {
 
 let backgroundImage = null;
 let mainBackgroundImage = null;
-let defaultColor = '#3D0F5E';
+let defaultColor = '#020655';
 let allBackgroundImages = [
   {
     name: 'background01',
@@ -45,14 +45,6 @@ let allMainBackgroundImages = [
   {
     name: '5',
     url: 'mainBackground5.jpg',
-  },
-  {
-    name: '6',
-    url: 'mainBackground6.jpg',
-  },
-  {
-    name: '7',
-    url: 'mainBackground7.jpg',
   },
   {
     name: '8',

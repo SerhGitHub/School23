@@ -255,7 +255,7 @@ class ListenAndSing extends React.Component {
 
   render() {
     return (
-      <BasePresentationComponent title={'Слухаем и спяваем'} data={data} />
+      <BasePresentationComponent title={'Слухаем i спяваем'} data={data} />
     );
   }
 }

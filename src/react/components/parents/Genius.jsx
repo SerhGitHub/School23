@@ -6,17 +6,17 @@ const data = [
   {
     id: '1',
     name: 'Кто такой вундеркинд?',
-    link: 'Tuuaaaaa',
+    link: 'Y8GhM4hMPiA',
   },
   {
     id: '2',
     name: 'Где его можно встретить?',
-    link: 'BaDaaa',
+    link: 'UbDqakrE0Iw',
   },
   {
     id: '3',
     name: 'А ты - одаренный ребенок?',
-    link: 'v4aaa',
+    link: 'QRN43MDAYwQ',
   },
 ];
 
