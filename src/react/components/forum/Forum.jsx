@@ -3,17 +3,16 @@ import React from 'react';
 import AuthSuccess from '../auth/AuthSuccess';
 import RootComponent from '../RootComponent';
 import ContentAndUserInfo from '../shared/ContentAndUserInfo';
+import Jumbotron from '../shared/Jumbotron';
 
 class Forum extends React.Component {
 
   render() {
     const content = (
       <AuthSuccess>
-        <div>
-          <div className='jumbotron home-psych-main-content'>
-            Пока нет информации
-          </div>
-        </div>
+        <Jumbotron>
+          Пока нет информации
+        </Jumbotron>
       </AuthSuccess>
     );
     return (

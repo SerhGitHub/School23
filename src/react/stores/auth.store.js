@@ -3,14 +3,30 @@ import AppDispatcher from '../dispatcher/Dispatcher';
 import BasicStore from './basic.store';
 
 import {
+  ADMIN,
   CREATE_USER,
   LOGOUT,
   SHOW_REGISTRATION_WINDOW,
   SHOW_SING_WINDOW,
   SHOW_CONSULTATION_WINDOW,
+  TEACHER
 } from '../constants/constants';
 
 const customUser = {username: 'teacher', password: 'test', role: 'test'};
+const customUsers = {
+  teacher: {
+    username: 'teacher',
+    password: 'test',
+    role: TEACHER,
+    roleLabel: 'Учитель'
+  },
+  admin: {
+    username: 'admin',
+    password: 'admin',
+    role: ADMIN,
+    roleLabel: 'Администратор'
+  },
+};
 
 let showRegistrationWindow = false;
 let showSingWindow = false;
@@ -43,6 +59,10 @@ class AuthStore extends BasicStore {
   getUser(){
     return user;
   }
+
+  getCustomUsers(){
+    return customUsers;
+  }
 }
 
 let authStoreInstance = new AuthStore();
@@ -71,7 +91,9 @@ AppDispatcher.register(function(payload) {
       users.set(username, password);
       user = {
         username: username,
-        password: password
+        password: password,
+        role: customUsers[username].role,
+        roleLabel: customUsers[username].roleLabel
       };
       authStoreInstance.emitChange();
       break;

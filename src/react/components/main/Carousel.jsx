@@ -69,7 +69,7 @@ class Carousel extends React.Component {
         epigraph: this.getEpigraph('Жизнь для ребенка - один огромный эксперимент.', 'А. Адлер'),
         alt: ''
       },
-      {
+      /*{
         id: '5',
         img: '5.jpg',
         title: 'ЧТО ДЛЯ МЕНЯ МАТЕМАТИКА?',
@@ -82,7 +82,7 @@ class Carousel extends React.Component {
         title: 'ЧТО ТАКОЕ «МИР ПРЕКРАСНОГО»?',
         epigraph: this.getEpigraph('Дети должны жить в мире красоты, игры, сказки, музыки, рисунка, фантазии, творчества.', 'В. Сухомлинский'),
         alt: ''
-      },
+      },*/
     ];
   }
 
@@ -123,8 +123,8 @@ class Carousel extends React.Component {
           <li data-target='#carouselExampleIndicators' data-slide-to='1'/>
           <li data-target='#carouselExampleIndicators' data-slide-to='2'/>
           <li data-target='#carouselExampleIndicators' data-slide-to='3'/>
-          <li data-target='#carouselExampleIndicators' data-slide-to='4'/>
-          <li data-target='#carouselExampleIndicators' data-slide-to='5'/>
+          {/*<li data-target='#carouselExampleIndicators' data-slide-to='4'/>
+          <li data-target='#carouselExampleIndicators' data-slide-to='5'/>*/}
         </ol>
       </div>
     );

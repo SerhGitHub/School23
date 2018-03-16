@@ -16,6 +16,7 @@ class SingWindow extends React.Component {
     return {
       showWindow: AuthStore.isShowSingWindow(),
       customUser: AuthStore.getCustomUser(),
+      customUsers: AuthStore.getCustomUser(),
       username: '',
       password: '',
       error: {
@@ -48,8 +49,8 @@ class SingWindow extends React.Component {
   };
 
   checkPassword(){
-    const {customUser, password, error} = this.state;
-    if(customUser.password !== password ){
+    const {customUsers, username, password, error} = this.state;
+    if(customUsers[username] && customUsers[username].password !== password ){
       error.password = 'Неверный пароль';
     } else {
       error.password = false;
@@ -58,8 +59,8 @@ class SingWindow extends React.Component {
   }
 
   checkUsername(){
-    const {customUser, username, error} = this.state;
-    if(customUser.username !== username ){
+    const {customUsers, username, error} = this.state;
+    if(customUsers[username] && customUsers[username].username !== username ){
       error.username = 'Неверное имя пользователя';
     } else {
       error.username = false;

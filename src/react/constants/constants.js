@@ -1007,6 +1007,11 @@ export const MENU = [
 //root actions consts
 export const SELECT_TAB_MENU_ITEM = 'SELECT_TAB_MENU_ITEM';
 
+//forum actions consts
+export const SET_SUBJECT_ITEM = 'SET_SUBJECT_ITEM';
+export const SET_SUBJECTS_ITEM = 'SET_SUBJECTS_ITEM';
+export const ADD_SUBJECT_ITEM = 'ADD_SUBJECT_ITEM';
+
 //custom test
 export const SET_TEST = 'SET_TEST';
 export const SET_QUESTION = 'SET_QUESTION';
@@ -1047,3 +1052,7 @@ export const CLEAN_AUDIO_URL = 'CLEAN_AUDIO_URL';
 //PRESENTATION
 export const SET_PRESENTATION_URL = 'SET_PRESENTATION_URL';
 export const CLEAN_PRESENTATION_URL = 'CLEAN_PRESENTATION_URL';
+
+//ROLES
+export const ADMIN = 'admin';
+export const TEACHER = 'teacher';

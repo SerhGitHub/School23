@@ -9,6 +9,8 @@ import Style from '../shared/Style';
 import RightContentCard from '../shared/RightContentCard';
 import FriendlyLinks from '../shared/FriendlyLinks';
 
+import {ADMIN} from '../../constants/constants';
+
 class ContentAndUserInfo extends React.Component {
 
   constructor(props, context) {
@@ -66,7 +68,7 @@ class ContentAndUserInfo extends React.Component {
               ) : null
           }
           {
-            user && user.username === 'teacher' ? (
+            user && user.role === ADMIN ? (
                 <RightContentCard>
                   <Style />
                 </RightContentCard>
