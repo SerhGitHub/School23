@@ -26,7 +26,7 @@ const data = [
   {
     id: '5',
     name: 'Вучэбныя заняткі ',
-    link: 'https://learningapps.org/watch??v=pux56g7pa18',
+    link: 'https://learningapps.org/watch?v=pux56g7pa18',
   },
   {
     id: '6',

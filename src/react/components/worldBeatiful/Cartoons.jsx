@@ -6,7 +6,7 @@ const data = [
   {
     id: '1',
     name: 'Видеть музыку',
-    link: 'TuuVHOmM1Z',
+    link: 'TuuVHOmM1Zc',
   },
   {
     id: '2',

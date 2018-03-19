@@ -46,7 +46,7 @@ const data = [
   {
     id: '9',
     name: 'Угадай мультфильм',
-    link: 'https://learningapps.org/watch?v=pkwqpfywj18',
+    link: 'https://learningapps.org/watch?v=pgmpuz04t18',
   },
   {
     id: '10',

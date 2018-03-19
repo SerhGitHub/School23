@@ -160,6 +160,7 @@ export const GUEST = 'guest';
 export const TEST_FOR_PARENTS = 'testsForParents';
 export const GENIUS = 'genius';
 export const PERFECTING_THE_SPEECH = 'perfectingTheSpeech';
+export const ART_EXERCISES = 'ArtExercises';
 
 export const MENU = [
   {
@@ -293,8 +294,12 @@ export const MENU = [
         ]
       },
       {
+        id: GENIUS,
+        name: 'Каждый ребенок гениален',
+        url: `/${GENIUS}`
+      },
+      {
         id: SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS,
-        isGroup: true,
         name: 'Школа общения для детей и взрослых',
         url: `/${SCHOOL_OF_COMMUNICATION_FOR_CHILDREN_AND_ADULTS}`,
         children: [
@@ -355,11 +360,6 @@ export const MENU = [
           },
         ]
       },
-      {
-        id: GENIUS,
-        name: 'Каждый ребенок гениален',
-        url: `/${GENIUS}`
-      },
     ]
   },
   {
@@ -374,11 +374,21 @@ export const MENU = [
         url: `/${SPEECH_INDICATORS}`,
       },
       {
-        id: ARTICULATORY_EXERCISES,
+        id: GAMES_WITH_LETTERS_AND_SOUNDS,
+        name: 'Игры с буквами и звуками',
+        url: `/${GAMES_WITH_LETTERS_AND_SOUNDS}`,
+      },
+      {
+        id: PERFECTING_THE_SPEECH,
+        name: 'Совершенствуем речь',
         isGroup: true,
-        name: 'Артикуляционные упражнения',
-        url: `/${ARTICULATORY_EXERCISES}`,
+        url: `/${PERFECTING_THE_SPEECH}`,
         children: [
+          {
+            id: ART_EXERCISES,
+            name: 'Артикуляционные упражнения',
+            url: `/${ART_EXERCISES}`,
+          },
           {
             id: Tongues_and_tongue_twisters,
             name: 'Чистоговорки и скороговорки',
@@ -395,16 +405,6 @@ export const MENU = [
             url: `/${Pagoda_in_pictures}`,
           },
         ]
-      },
-      {
-        id: GAMES_WITH_LETTERS_AND_SOUNDS,
-        name: 'Игры с буквами и звуками',
-        url: `/${GAMES_WITH_LETTERS_AND_SOUNDS}`,
-      },
-      {
-        id: PERFECTING_THE_SPEECH,
-        name: 'Совершенствуем речь',
-        url: `/${PERFECTING_THE_SPEECH}`
       },
     ]
   },

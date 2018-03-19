@@ -62,7 +62,7 @@ class UserInfo extends React.Component {
       <div className='card bg-light mb-3' style={{color: 'white'}}>
         <div className='card-body' style={{padding: '0px', borderRadius: '5px', ...style}}>
           <div className='card-header card-box-shadow' style={style}>Добро пожаловать!</div>
-          <p style={{paddingTop: '5px'}}>Здравствуйте, <b>{user ? user.username : 'Гость'}</b>!</p>
+          {/*<p style={{paddingTop: '5px'}}>Здравствуйте, <b>{user ? user.username : 'Гость'}</b>!</p>
           {
             user ?
               <p>
@@ -72,12 +72,12 @@ class UserInfo extends React.Component {
               </p>
               :
               <p>
-                {/*<div className='link-custom-style' onClick={this.showRegW}>регистрация</div>|*/}
+                /!*<div className='link-custom-style' onClick={this.showRegW}>регистрация</div>|*!/
                 <div className='link-custom-style' onClick={this.showSingW}>
                   <img src={'login.png'} width={60} height={60} />
                 </div>
               </p>
-          }<br/>
+          }<br/>*/}
           <div className='link-custom-style' style={{textAlign: 'right'}} onClick={this.showConsultationW}>
             <img src={'onlineAnswer.png'} width={200} height={85}/>
           </div>

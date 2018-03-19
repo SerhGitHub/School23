@@ -44,11 +44,6 @@ const data = [
     link: 'https://drive.google.com/uc?id=1vNTfA8n8jDmu08pfRkvIF_KtZuKSzQ3Y&authuser=0&export=download',
   },
   {
-    id: '9',
-    name: 'Як курачка пеўніка ратавала',
-    link: 'https://drive.google.com/uc?id=1vNTfA8n8jDmu08pfRkvIF_KtZuKSzQ3Y&authuser=0&export=download',
-  },
-  {
     id: '10',
     name: 'Стары конь',
     link: 'https://drive.google.com/uc?id=1Gr_HswqvbbllRtOYZapOFxQwjQWxlOiG&authuser=0&export=download',

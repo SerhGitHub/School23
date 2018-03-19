@@ -126,8 +126,10 @@ import AboutUs from './components/main/AboutUs';
 import Guest from './components/main/Guest';
 
 import PerfectingTheSpeech from './components/soundsAndLetters/PerfectingTheSpeech';
+import ArtExercises from './components/soundsAndLetters/ArtExercises';
 
 import {
+  ART_EXERCISES,
   PERFECTING_THE_SPEECH,
   TEST_FOR_PARENTS,
   Aggressive_child,
@@ -322,12 +324,12 @@ ReactDOM.render(
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initSoundsAndLetters)}>
             <Route path={`/${SOUNDS_LETTERS}`} component={SoundsAndLetters}/>
             <Route path={`/${SPEECH_INDICATORS}`} component={SpeechIndicators}/>
-            <Route path={`/${ARTICULATORY_EXERCISES}`} component={ArticulatoryExercises}/>
             <Route path={`${Tongues_and_tongue_twisters}`} component={TonguesAndTongueTwisters}/>
             <Route path={`${Tongue_twisters1}`} component={TongueTwisters}/>
             <Route path={`${Pagoda_in_pictures}`} component={PagodaInPictures}/>
             <Route path={`${GAMES_WITH_LETTERS_AND_SOUNDS}`} component={GamesWithLetters}/>
             <Route path={`${PERFECTING_THE_SPEECH}`} component={PerfectingTheSpeech}/>
+            <Route path={`${ART_EXERCISES}`} component={ArtExercises}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initTalkInBelarusian)}>
