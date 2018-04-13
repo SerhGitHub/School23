@@ -3,7 +3,9 @@ import AppDispatcher from '../dispatcher/Dispatcher';
 import {
   SET_TEST,
   SET_ANSWER_IN_QUESTION,
-  SET_QUESTION
+  SET_QUESTION,
+  SET_BEFOR_QUESTION,
+  SET_NEXT_QUESTION
 } from '../constants/constants';
 
 let CustomTestAction = {
@@ -25,6 +27,18 @@ let CustomTestAction = {
       data: question
     });
   },
+  setBeforQuestion() {
+    AppDispatcher.handleViewAction({
+      actionType: SET_BEFOR_QUESTION,
+      data: true
+    });
+  },
+  setNextQuestion() {
+    AppDispatcher.handleViewAction({
+      actionType: SET_NEXT_QUESTION,
+      data: true
+    });
+  }
 };
 
 export default CustomTestAction;

@@ -5,7 +5,7 @@ class Jumbotron extends React.Component {
 
   render() {
     const {children, style} = this.props;
-    const contentStyle = {...style, backgroundColor: 'white', backgroundImage: 'none'};
+    const contentStyle = {...style, backgroundColor: 'white', backgroundImage: 'none', color: 'black'};
     return (
       <div className='jumbotron home-psych-main-content' style={contentStyle}>
         {children}

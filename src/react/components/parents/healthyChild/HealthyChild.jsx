@@ -37,7 +37,7 @@ class HealthyChild extends React.Component {
     const content = (
       <AuthSuccess>
         <Jumbotron>
-          <LinksTable data={data} ths={['Меню']}/>;
+          <LinksTable data={data} ths={['Меню']}/>
         </Jumbotron>
       </AuthSuccess>
     );

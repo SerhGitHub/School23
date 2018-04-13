@@ -2,6 +2,10 @@ import React from 'react';
 
 import BaseTextComponent from '../../shared/BaseTextComponent';
 
+import {LEARNING_TO_REASON} from '../../../constants/constants';
+
+const BACK_LINK = LEARNING_TO_REASON;
+
 class TalkForYou extends React.Component {
 
   getData(){
@@ -130,7 +134,7 @@ class TalkForYou extends React.Component {
   render() {
     const data = this.getData();
     return (
-      <BaseTextComponent data={data} title={'Адкажы пра сябе'}/>
+      <BaseTextComponent data={data} title={'Адкажы пра сябе'} backLink={BACK_LINK}/>
     );
   }
 }

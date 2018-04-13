@@ -68,19 +68,28 @@ class RootComponent extends React.Component {
     const menu = this.getMenuProperties();
     let navStyle = {textTransform: 'uppercase', textAlign: 'left', color: 'white'};
     return menu && menu.length > 0 ? menu.map(item => {
+      const isChild = item.children && item.children.length > 0;
       navStyle = this.isActive(item.id) ? {...navStyle, fontWeight: 'bolder', fontSize: '15px'} : {...navStyle, fontWeight: 'normal', fontSize: '14px'};
       return (
         <li key={item.id} className='nav-item dropdown'>
-          <Link className={`nav-link${this.isActive(item.id) ? ' active' : ''} dropdown-toggle`} to={item.url} style={navStyle}>{item.name}</Link>
-          <div className='dropdown-menu navigation-items-dropdown-menu' x-placement='bottom-start' style={style}>
+          <Link className={`nav-link${this.isActive(item.id) ? ' active' : ''} dropdown-toggle`} to={item.url} style={navStyle}>
             {
-              item.children && item.children.length > 0 ? item.children.map(child => {
-                  return child.isGroup ?
-                    this.getChildMenu(child, style)
-                    : <Link key={child.id} className='dropdown-item nav-link whiteSpace' to={child.url ? child.url : '/'} style={NAV_ITEM_STYLE}>{child.name}</Link>
-                }) : null
+              item.name
             }
-          </div>
+          </Link>
+          {
+            isChild ? (
+                <div className='dropdown-menu navigation-items-dropdown-menu' x-placement='bottom-start' style={style}>
+                  {
+                    item.children.map(child => {
+                        return child.isGroup ?
+                          this.getChildMenu(child, style)
+                          : <Link key={child.id} className='dropdown-item nav-link whiteSpace' to={child.url ? child.url : '/'} style={NAV_ITEM_STYLE}>{child.name}</Link>
+                      })
+                  }
+                </div>
+              ) : null
+          }
         </li>
       );
       }) : null;
@@ -139,9 +148,16 @@ class RootComponent extends React.Component {
     const smallNavigationItems = this.getSmallMenu(menu, 0, navbarStyle);
     return (
       <div id='mainBody' style={{textAlign: '-webkit-center', backgroundImage: 'url(mainBackgrounddefault.jpg)'}}>
-        <span style={{color: 'yellow', fontSize: '28px', fontWeight: 'bolder', textShadow: `${defaultColor} 0 0px 8px`}}>{'ШКОЛА для будущих первоклассников и классных их родителей «ЗОЛОТОЙ КЛЮЧИК»'}</span>
+        {/*<span style={{color: '#DAA520', fontSize: '28px', fontWeight: 'bolder', textShadow: `${defaultColor} 0 0px 8px`}}>{'ШКОЛА для будущих первоклассников и классных их родителей «ЗОЛОТОЙ КЛЮЧИК»'}</span>
+       */}
+       <div style={{textAlign: 'center'}}>
+         <img src={'text.png'} style={{width: '50%'}}/>
+         <img src={'text1.png'} style={{width: '100%'}}/>
+       </div>
+
         <div style={{width: '98%'}}>
           <nav className='navbar navbar-expand-sm navbar-dark main-navbar' style={navbarStyle}>
+            <Link to={'/'}><img src={'keyClose.png'} width={60}/></Link>
             <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor02' aria-controls='navbarColor02' aria-expanded='false' aria-label='Toggle navigation'>
               <span className='navbar-toggler-icon'/>
             </button>

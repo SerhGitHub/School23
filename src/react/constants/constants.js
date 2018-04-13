@@ -161,14 +161,85 @@ export const TEST_FOR_PARENTS = 'testsForParents';
 export const GENIUS = 'genius';
 export const PERFECTING_THE_SPEECH = 'perfectingTheSpeech';
 export const ART_EXERCISES = 'ArtExercises';
+export const LEARNIG_TO_MAKE_OF_PAPER = 'learningToMakeOfPaper';
+export const Materials_For_Paper_Applications = 'MaterialsForPaperApplications';
+export const Crafts_Of_Natural_Material = 'CraftsOfNaturalMaterial';
+export const Making_caterpillar = 'MakingAcaterpillar';
+export const Learning_Draw = 'LearningDraw';
+export const Interactive_Coloring_Pages = 'InteractiveColoringPages';
+export const TEST_FOR_PARENTS_NEW = 'testForParentsNew';
+
+
+export const FIRST_GREDER_2016 = 'Firstgrader2016';
+export const FIRST_GREDER_PARENTS = 'FirstgraderParents';
+
+export const Applications_from_natural_materials = 'ApplicationsFromNaturalMaterials';
+export const BREAKFAST_APPLICATION = 'BREAKFASTAPPLICATION';
+export const AUTUMN_LEAVES = 'AUTUMNLEAVES';
+export const GLADE = 'Glade';
+export const LILAC = 'Lilac';
+export const HEDGEHOG = 'Hedgehog';
+export const CHICK = 'chick';
+export const LADYBUG = 'ladybug';
+export const PUPPIES = 'puppies';
+export const BOUQUET = 'Bouquet';
+export const applications_from_circles = 'applicationsFromCircles';
+export const applications_from_napkins = 'applicationsFromNapkins';
+export const Flower_Basket = 'FlowerBasket';
+export const SNOWDROPS = 'Snowdrops';
+export const benefit_Of_Drawing = 'benefitOfDrawing';
+export const StepByStep_DrawingAnimals = 'StepByStepDrawingAnimals';
+export const StepByStep_Car = 'StepByStepCar';
+export const StepByStep_Flower = 'StepByStepFlower';
+export const StepByStep_Man = 'StepByStepMan';
+export const StepByStep_Cold = 'StepByStepCold';
+export const Autumn_landscape = 'AutumnLandscape';
+
+export const FUN_FROG = 'FunFrog';
+export const Pictures_of_natural_material = 'PicturesOfNaturalMaterial';
+export const Christmas_tree_from_chestnuts = 'ChristmasTreeFromChestnuts';
+export const Crafts_from_chestnuts_and_acorns = 'CraftsFromChestnutsAndAcorns';
+export const SHELL_SCREWS = 'SHELLSCREWS';
+export const PISTACHKOVOE_TREE = 'PISTACHKOVOETREE';
+export const HUMANS_FROM_SHISHEK = 'HUMANSFROMSHISHEK';
+export const STICK_ACRONY_SEASON = 'STICKACRONYSEASON';
+
+export const FOR_USER = 'forUser';
+export const FEATURES = 'Features';
+export const USED_SITE = 'Used_';
+export const TECH_H = 'tech';
+export const GAMES_LOG = 'Gameslog';
 
 export const MENU = [
   {
     id: MAIN_ID,
     isGroup: true,
     name: 'Главная',
+    img: ['nav_1.png'],
     url: '/',
     children: [
+      {
+        id: FOR_USER,
+        name: 'Пользователю',
+        url: `/${FOR_USER}`,
+        children: [
+          {
+            id: FEATURES,
+            name: 'Возможности сайта',
+            url: `/${FEATURES}`
+          },
+          {
+            id: USED_SITE,
+            name: 'Рекомендации по использованию',
+            url: `/${USED_SITE}`
+          },
+          {
+            id: TECH_H,
+            name: 'Технические характеристики',
+            url: `/${TECH_H}`
+          },
+        ]
+      },
       {
         id: ABOUT_PROJECT_ID,
         name: 'О проекте',
@@ -185,6 +256,7 @@ export const MENU = [
     id: FOR_PARENTS,
     isGroup: true,
     name: 'Для вас, родители!',
+    img: ['nav_2_1.png', 'nav_2_2.png'],
     url: `/${FOR_PARENTS}`,
     children: [
       {
@@ -285,11 +357,17 @@ export const MENU = [
             fullName: 'Памятка для родителей. Как родители могут помочь ребенку избежать некоторых трудностей',
             url: `/${How_parents_can_help_a_child}`,
           },
-          {
+          /*{
             id: TEST_FOR_PARENTS,
             name: 'Тесты для родителей',
             fullName: 'Тесты для родителей',
             url: `/${TEST_FOR_PARENTS}`,
+          },*/
+          {
+            id: TEST_FOR_PARENTS_NEW,
+            name: 'Тесты для родителей',
+            fullName: 'Тесты для родителей',
+            url: `/${TEST_FOR_PARENTS_NEW}`,
           },
         ]
       },
@@ -365,7 +443,7 @@ export const MENU = [
   {
     id: SOUNDS_LETTERS,
     isGroup: true,
-    name: 'В мире звуков и букв',
+    name: 'В мире\nзвуков и букв',
     url: `/${SOUNDS_LETTERS}`,
     children: [
       {
@@ -381,7 +459,6 @@ export const MENU = [
       {
         id: PERFECTING_THE_SPEECH,
         name: 'Совершенствуем речь',
-        isGroup: true,
         url: `/${PERFECTING_THE_SPEECH}`,
         children: [
           {
@@ -533,7 +610,6 @@ export const MENU = [
       },
       {
         id: LEANING_TO_SCULPT,
-        isGroup: true,
         name: 'Учимся лепить',
         url: `/${LEANING_TO_SCULPT}`,
         children: [
@@ -571,6 +647,187 @@ export const MENU = [
             id: SHIP,
             name: 'Кораблик',
             url: `/${SHIP}`
+          },
+        ]
+      },
+      {
+        id: LEARNIG_TO_MAKE_OF_PAPER,
+        name: 'Учимся мастерить из бумаги',
+        url: `/${LEARNIG_TO_MAKE_OF_PAPER}`,
+        children: [
+          {
+            id: Materials_For_Paper_Applications,
+            name: 'Материалы для бумажной аппликации',
+            url: `/${Materials_For_Paper_Applications}`
+          },
+          {
+            id: BREAKFAST_APPLICATION,
+            name: 'Обрывная аппликация «Цветы в вазе»',
+            url: `/${BREAKFAST_APPLICATION}`
+          },
+          {
+            id: AUTUMN_LEAVES,
+            name: 'Осенние листья',
+            url: `/${AUTUMN_LEAVES}`
+          },
+          {
+            id: GLADE,
+            name: 'Поляна',
+            url: `/${GLADE}`
+          },
+          {
+            id: LILAC,
+            name: 'Сирень',
+            url: `/${LILAC}`
+          },
+          {
+            id: HEDGEHOG,
+            name: 'Аппликация «Ёжик из ладошек»',
+            url: `/${HEDGEHOG}`
+          },
+          {
+            id: CHICK,
+            name: 'Аппликация «Цыпа»',
+            url: `/${CHICK}`
+          },
+          {
+            id: LADYBUG,
+            name: 'Божья коровка',
+            url: `/${LADYBUG}`
+          },
+          {
+            id: PUPPIES,
+            name: 'Куколки - красавицы',
+            url: `/${PUPPIES}`
+          },
+          {
+            id: BOUQUET,
+            name: 'Букет',
+            url: `/${BOUQUET}`
+          },
+          {
+            id: applications_from_circles,
+            name: 'Идеи аппликации из кружков',
+            url: `/${applications_from_circles}`
+          },
+          {
+            id: applications_from_napkins,
+            name: 'Идеи аппликации из салфеток',
+            url: `/${applications_from_napkins}`
+          },
+          {
+            id: Flower_Basket,
+            name: 'Цветочная корзина',
+            url: `/${Flower_Basket}`
+          },
+          {
+            id: SNOWDROPS,
+            name: 'Подснежники',
+            url: `/${SNOWDROPS}`
+          },
+        ]
+      },
+      {
+        id: Crafts_Of_Natural_Material,
+        name: 'Поделки из природного материала',
+        url: `/${Crafts_Of_Natural_Material}`,
+        children: [
+          {
+            id: Making_caterpillar,
+            name: 'Гусеница',
+            url: `/${Making_caterpillar}`
+          },
+          {
+            id: Applications_from_natural_materials,
+            name: 'Аппликации из природного материала',
+            url: `/${Applications_from_natural_materials}`
+          },
+          {
+            id: FUN_FROG,
+            name: 'Забавные рожицы из картошки',
+            url: `/${FUN_FROG}`
+          },
+          {
+            id: Pictures_of_natural_material,
+            name: 'Картинки из природного материала',
+            url: `/${Pictures_of_natural_material}`
+          },
+          {
+            id: Christmas_tree_from_chestnuts,
+            name: 'Новогодняя ёлочка из каштанов',
+            url: `/${Christmas_tree_from_chestnuts}`
+          },
+          {
+            id: Crafts_from_chestnuts_and_acorns,
+            name: 'Поделки из каштанов и желудей',
+            url: `/${Crafts_from_chestnuts_and_acorns}`
+          },
+          {
+            id: SHELL_SCREWS,
+            name: 'Поделки из шишек',
+            url: `/${SHELL_SCREWS}`
+          },
+          {
+            id: PISTACHKOVOE_TREE,
+            name: 'Фисташковое дерево',
+            url: `/${PISTACHKOVOE_TREE}`
+          },
+          {
+            id: HUMANS_FROM_SHISHEK,
+            name: 'Человек из шишек',
+            url: `/${HUMANS_FROM_SHISHEK}`
+          },
+          {
+            id: STICK_ACRONY_SEASON,
+            name: 'Шишка, желудь и ракушка',
+            url: `/${STICK_ACRONY_SEASON}`
+          },
+        ]
+      },
+      {
+        id: Learning_Draw,
+        name: 'Учимся рисовать',
+        url: `/${Learning_Draw}`,
+        children: [
+          {
+            id: Interactive_Coloring_Pages,
+            name: 'Интерактивные раскраски',
+            url: `/${Interactive_Coloring_Pages}`
+          },
+          {
+            id: benefit_Of_Drawing,
+            name: 'Польза рисования для детей',
+            url: `/${benefit_Of_Drawing}`
+          },
+          {
+            id: StepByStep_DrawingAnimals,
+            name: 'Поэтапное рисование животных',
+            url: `/${StepByStep_DrawingAnimals}`
+          },
+          {
+            id: StepByStep_Car,
+            name: 'Как поэтапно научить ребенка рисовать машину',
+            url: `/${StepByStep_Car}`
+          },
+          {
+            id: StepByStep_Flower,
+            name: 'Как поэтапно научить ребенка рисовать цветы',
+            url: `/${StepByStep_Flower}`
+          },
+          {
+            id: StepByStep_Man,
+            name: 'Как поэтапно научить ребенка рисовать человека',
+            url: `/${StepByStep_Man}`
+          },
+          {
+            id: StepByStep_Cold,
+            name: 'Как нарисовать Деда Мороза',
+            url: `/${StepByStep_Cold}`
+          },
+          {
+            id: Autumn_landscape,
+            name: 'Осенний пейзаж',
+            url: `/${Autumn_landscape}`
           },
         ]
       },
@@ -1016,6 +1273,8 @@ export const ADD_SUBJECT_ITEM = 'ADD_SUBJECT_ITEM';
 export const SET_TEST = 'SET_TEST';
 export const SET_QUESTION = 'SET_QUESTION';
 export const SET_ANSWER_IN_QUESTION = 'SET_ANSWER_IN_QUESTION';
+export const SET_BEFOR_QUESTION = 'SET_BEFOR_QUESTION';
+export const SET_NEXT_QUESTION = 'SET_NEXT_QUESTION';
 
 //auth consts
 export const SHOW_REGISTRATION_WINDOW = 'SHOW_REGISTRATION_WINDOW';
@@ -1056,3 +1315,12 @@ export const CLEAN_PRESENTATION_URL = 'CLEAN_PRESENTATION_URL';
 //ROLES
 export const ADMIN = 'admin';
 export const TEACHER = 'teacher';
+
+//users
+export const ADD_USER = 'ADD_USER';
+
+//new comment
+export const ADD_NEW_COMMENT = 'ADD_NEW_COMMENT';
+export const SAVE_NEW_COMMENT = 'SAVE_NEW_COMMENT';
+
+export const CLEAN_CURRENT_SUBJECT = 'CLEAN_CURRENT_SUBJECT';

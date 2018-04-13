@@ -72,7 +72,7 @@ class UserInfo extends React.Component {
               </p>
               :
               <p>
-                /!*<div className='link-custom-style' onClick={this.showRegW}>регистрация</div>|*!/
+                <div className='link-custom-style' onClick={this.showRegW}>регистрация</div>
                 <div className='link-custom-style' onClick={this.showSingW}>
                   <img src={'login.png'} width={60} height={60} />
                 </div>

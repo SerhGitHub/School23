@@ -69,7 +69,7 @@ class Carousel extends React.Component {
         epigraph: this.getEpigraph('Жизнь для ребенка - один огромный эксперимент.', 'А. Адлер'),
         alt: ''
       },
-      /*{
+      {
         id: '5',
         img: '5.jpg',
         title: 'ЧТО ДЛЯ МЕНЯ МАТЕМАТИКА?',
@@ -82,13 +82,20 @@ class Carousel extends React.Component {
         title: 'ЧТО ТАКОЕ «МИР ПРЕКРАСНОГО»?',
         epigraph: this.getEpigraph('Дети должны жить в мире красоты, игры, сказки, музыки, рисунка, фантазии, творчества.', 'В. Сухомлинский'),
         alt: ''
-      },*/
+      },
+      {
+        id: '7',
+        img: '7.jpg',
+        title: 'ЧТО ТАКОЕ «МИР ПРЕКРАСНОГО»?',
+        epigraph: this.getEpigraph('Дети должны жить в мире красоты, игры, сказки, музыки, рисунка, фантазии, творчества.', 'В. Сухомлинский'),
+        alt: ''
+      }
     ];
   }
 
   render() {
     const {backgroundImage, defaultColor} = this.state;
-    const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
+    const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`, opacity: '0.4'} : {backgroundColor: defaultColor, opacity: '0.4'};
     return (
       <div id='carouselExampleIndicators' className='carousel slide' data-ride='carousel'>
         <div className='carousel-inner' role='listbox' style={{display: 'inline-block', borderRadius: '20px'}}>
@@ -96,7 +103,7 @@ class Carousel extends React.Component {
             this.getCaruselItems().map((item, index) => {
               return (
                 <div key={item.id} className={`carousel-item${index == 0 ? ' active' : ''}`}>
-                  <img className='d-block' src={item.img} alt={item.alt} style={{width: '100%', height: '100%'}}/>
+                  <img className='d-block' src={item.img} alt={item.alt} style={{width: '100%'}}/>
                   <div className='caption' style={style}>
                     <div className='caption-title' style={{padding: '0px 0px 0px 0px', fontWeight: 'bolder'}}>
                       {item.title}
@@ -123,8 +130,9 @@ class Carousel extends React.Component {
           <li data-target='#carouselExampleIndicators' data-slide-to='1'/>
           <li data-target='#carouselExampleIndicators' data-slide-to='2'/>
           <li data-target='#carouselExampleIndicators' data-slide-to='3'/>
-          {/*<li data-target='#carouselExampleIndicators' data-slide-to='4'/>
-          <li data-target='#carouselExampleIndicators' data-slide-to='5'/>*/}
+          <li data-target='#carouselExampleIndicators' data-slide-to='4'/>
+          <li data-target='#carouselExampleIndicators' data-slide-to='5'/>
+          <li data-target='#carouselExampleIndicators' data-slide-to='6'/>
         </ol>
       </div>
     );

@@ -61,7 +61,7 @@ const data = [
   {
     id: '12',
     name: 'Жывёлы ',
-    link: 'https://learningapps.org/watch?v=p9qtjkrb218',
+    link: 'https://learningapps.org/watch?v=pgak2k81n18',
   },
   {
     id: '13',

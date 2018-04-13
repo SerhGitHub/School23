@@ -2,6 +2,10 @@ import React from 'react';
 
 import BaseTextComponent from '../../shared/BaseTextComponent';
 
+import {LEARNING_TO_REASON} from '../../../constants/constants';
+
+const BACK_LINK = LEARNING_TO_REASON;
+
 class ThematicIssues extends React.Component {
 
   getData(){
@@ -95,7 +99,7 @@ class ThematicIssues extends React.Component {
   render() {
     const data = this.getData();
     return (
-      <BaseTextComponent data={data} title={'Тэматычныя пытанні'}/>
+      <BaseTextComponent data={data} title={'Тэматычныя пытанні'} backLink={BACK_LINK}/>
     );
   }
 }

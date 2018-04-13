@@ -99,10 +99,64 @@ const data = [
     link: 'https://learningapps.org/watch?v=p85rcc04j18',
   },
   {
-    id: '20',
-    name: 'Ребусы-раскраски',
-    isHref: true,
-    link: 'https://rebus-raskraska.blogspot.com.by/p/blog-page_68.html',
+    id: '21',
+    name: 'Символы республики',
+    link: 'https://learningapps.org/watch?v=pj7g49brt18',
+  },
+  {
+    id: '22',
+    name: 'Областные центры республики',
+    link: 'https://learningapps.org/watch?v=p8weff0dk18',
+  },
+  {
+    id: '23',
+    name: 'Моя Беларусь',
+    link: 'https://learningapps.org/watch?v=pvdb28zkj18',
+  },
+  {
+    id: '24',
+    name: 'Моя страна',
+    link: 'https://learningapps.org/watch?v=pecnm74pj18',
+  },
+  {
+    id: '04',
+    name: 'Белорусские спортсмены',
+    link: 'https://learningapps.org/watch?v=p45opygvk18',
+  },
+  {
+    id: '25',
+    name: 'Мой город',
+    link: 'https://learningapps.org/watch?v=p3fnvjvia18',
+  },
+  {
+    id: '26',
+    name: 'Личная гигиена',
+    link: 'https://learningapps.org/watch?v=ph2uooy2a18',
+  },
+  {
+    id: '27',
+    name: 'Правила личной гигиены',
+    link: 'https://learningapps.org/watch?v=pnodirbxa18',
+  },
+  {
+    id: '28',
+    name: 'Перелетные птицы',
+    link: 'https://learningapps.org/watch?v=p1knd31h518',
+  },
+  {
+    id: '29',
+    name: 'Дикие животные',
+    link: 'https://learningapps.org/watch?v=pjqagcsk318',
+  },
+  {
+    id: '30',
+    name: 'Животные зимой',
+    link: 'https://learningapps.org/watch?v=pvthh0wak18',
+  },
+  {
+    id: '31',
+    name: 'Национальные праздники',
+    link: 'https://learningapps.org/watch?v=phqvsq5kn18',
   }
 ];
 

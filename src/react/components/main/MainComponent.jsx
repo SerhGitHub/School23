@@ -14,26 +14,43 @@ const linksData = [
     id: '1',
     link: `/${FOR_PARENTS}`,
     name: 'Родители и дети',
+    img: 'link1.png',
+    width: '35%'
   },
   {
     id: '2',
     link: `/${SOUNDS_LETTERS}`,
     name: 'Развитие речи',
+    img: 'link2.png',
+    width: '35%'
   },
   {
     id: '3',
     link: `/${TALK_IN_BELARUSIAN}`,
     name: 'Овладение родным языком',
+    img: 'link3.png',
+    width: '55%'
   },
   {
     id: '4',
     link: `/${WORLD_OF_MATHEMATIC}`,
     name: 'Формирование математических представлений',
+    img: 'link4.png',
+    width: '70%'
   },
   {
     id: '5',
-    link: `/${WORLD}`,
+    link: `/${WORLD_BEAUTIFUL}`,
     name: 'Знакомство с искусством',
+    img: 'link5.png',
+    width: '45%'
+  },
+  {
+    id: '6',
+    link: `/${WORLD}`,
+    name: 'Расширение кругозора',
+    img: 'link6.png',
+    width: '45%'
   },
 ];
 
@@ -65,22 +82,22 @@ class MainComponent extends React.Component {
 
   render() {
     const {backgroundImage, defaultColor} = this.state;
-    const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
+    let style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor, };
     const content = (
       <div className='card text-white bg-primary mb-3 main-content'>
         <div className='card-body' style={style}>
-          <h4 className='card-title'>ШКОЛА для будущих первоклассников и классных их родителей «ЗОЛОТОЙ КЛЮЧИК».</h4>
-          <img src={'key.jpg'} style={{width: '100%'}}/>
-
-          {linksData.map(link => {
-            return (
-              <Link key={link.id} to={link.link}>
-                <div style={{margin: '10px', fontSize: '28px', display: 'inline-block', padding: '15px', backgroundImage: `url(${'tree.png'})`, borderRadius: '20px'}}>
-                  <span style={{color: 'white', fontSize: '28px', fontWeight: 'bolder', textShadow: `${defaultColor} 0 0px 8px`}}>{link.name}</span>
-                </div>
-              </Link>
-            )
-          })}
+          <div style={{textAlign: 'center'}}>
+            <img src={'text2.png'} style={{width: '50%'}}/>
+            <img src={'text3.png'} style={{width: '100%'}}/>
+            <br />
+            {linksData.map(link => {
+              return (
+                <Link key={link.id} to={link.link}>
+                  <img src={link.img} className='main-img' style={{width: link.width}}/>
+                </Link>
+              )
+            })}
+          </div>
         </div>
       </div>
     );

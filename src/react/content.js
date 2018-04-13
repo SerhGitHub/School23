@@ -128,7 +128,66 @@ import Guest from './components/main/Guest';
 import PerfectingTheSpeech from './components/soundsAndLetters/PerfectingTheSpeech';
 import ArtExercises from './components/soundsAndLetters/ArtExercises';
 
+import LearningToMakeOfPaper from './components/worldBeatiful/leaningToMakeOfPaper/LearningToMakeOfPaper';
+import MaterialsForPaperApplications from './components/worldBeatiful/leaningToMakeOfPaper/MaterialsForPaperApplications';
+import Crafts from './components/worldBeatiful/crafts/Crafts';
+import MakingCaterpillar from './components/worldBeatiful/crafts/MakingCaterpillar';
+import LearningDraw from './components/worldBeatiful/learningDraw/LearningDraw';
+import InteractiveColoringPages from './components/worldBeatiful/learningDraw/InteractiveColoringPages';
+
+import TestsForParentsTemp from './components/parents/TestsForParentsTemp';
+import FirstGrader2016 from './components/forum/FirstGrader2016';
+import FirstGraderParents from './components/forum/FirstGraderParents';
+
+import ApplicationsFromNaturalMaterials from './components/worldBeatiful/crafts/ApplicationsFromNaturalMaterials';
+import BreakfastApplication from './components/worldBeatiful/leaningToMakeOfPaper/BreakfastApplication';
+import AutumnLeaves from './components/worldBeatiful/leaningToMakeOfPaper/AutumnLeaves';
+import Glade from './components/worldBeatiful/leaningToMakeOfPaper/Glade';
+import Lilac from './components/worldBeatiful/leaningToMakeOfPaper/Lilac';
+import Hedgehog from './components/worldBeatiful/leaningToMakeOfPaper/Hedgehog';
+import Chick from './components/worldBeatiful/leaningToMakeOfPaper/Chick';
+import Ladybug from './components/worldBeatiful/leaningToMakeOfPaper/Ladybug';
+import Puppies from './components/worldBeatiful/leaningToMakeOfPaper/Puppies';
+import Bouquet from './components/worldBeatiful/leaningToMakeOfPaper/Bouquet';
+import AppFromCircles from './components/worldBeatiful/leaningToMakeOfPaper/AppFromCircles';
+import AppFromNapkins from './components/worldBeatiful/leaningToMakeOfPaper/AppFromNapkins';
+import FlowerBasket from './components/worldBeatiful/leaningToMakeOfPaper/FlowerBasket';
+import Snowdrops from './components/worldBeatiful/leaningToMakeOfPaper/Snowdrops';
+import BenefitOfDrawing from './components/worldBeatiful/learningDraw/BenefitOfDrawing';
+import StepByStepAnimals from './components/worldBeatiful/learningDraw/StepByStepAnimals';
+import StepByStepCar from './components/worldBeatiful/learningDraw/StepByStepCar';
+import StepByStepFlower from './components/worldBeatiful/learningDraw/StepByStepFlower';
+import StepByStepMan from './components/worldBeatiful/learningDraw/StepByStepMan';
+import StepByStepCold from './components/worldBeatiful/learningDraw/StepByStepCold';
+import AutumnLandscape from './components/worldBeatiful/learningDraw/AutumnLandscape';
+
+import FunFrog from './components/worldBeatiful/crafts/FunFrog';
+import PicturesOfNatural from './components/worldBeatiful/crafts/PicturesOfNatural';
+import ChristmasTreeFromChestnuts from './components/worldBeatiful/crafts/ChristmasTreeFromChestnuts';
+import CraftsFromChestnutsAndAcorns from './components/worldBeatiful/crafts/CraftsFromChestnutsAndAcorns';
+import ShellScrews from './components/worldBeatiful/crafts/ShellScrews';
+import PistachkovoeTree from './components/worldBeatiful/crafts/PistachkovoeTree';
+import HumansFromShishek from './components/worldBeatiful/crafts/HumansFromShishek';
+import StickAcroneSeason from './components/worldBeatiful/crafts/StickAcroneSeason';
+import ForUser from './components/main/forUser/ForUser';
+import Features from './components/main/forUser/Features';
+import Used from './components/main/forUser/Used';
+import Tech from './components/main/forUser/Tech';
+import GamesCatolog from './components/main/forUser/GamesCatolog';
+
 import {
+  FUN_FROG,
+  BOUQUET,
+  LADYBUG,
+  HEDGEHOG,
+  CHICK,
+  AUTUMN_LEAVES,
+  LILAC,
+  GLADE,
+  BREAKFAST_APPLICATION,
+  Applications_from_natural_materials,
+  FIRST_GREDER_2016,
+  LEARNIG_TO_MAKE_OF_PAPER,
   ART_EXERCISES,
   PERFECTING_THE_SPEECH,
   TEST_FOR_PARENTS,
@@ -247,6 +306,37 @@ import {
   SHIP,
   GUEST,
   GENIUS,
+  Materials_For_Paper_Applications,
+  Crafts_Of_Natural_Material,
+  Making_caterpillar,
+  Learning_Draw,
+  Interactive_Coloring_Pages,
+  TEST_FOR_PARENTS_NEW,
+  FIRST_GREDER_PARENTS,
+  PUPPIES,
+  applications_from_circles,
+  applications_from_napkins,
+  Flower_Basket,
+  SNOWDROPS,
+  benefit_Of_Drawing,
+  StepByStep_DrawingAnimals,
+  StepByStep_Car,
+  StepByStep_Flower,
+  StepByStep_Man,
+  StepByStep_Cold,
+  Autumn_landscape,
+  Pictures_of_natural_material,
+  Christmas_tree_from_chestnuts,
+  Crafts_from_chestnuts_and_acorns,
+  SHELL_SCREWS,
+  PISTACHKOVOE_TREE,
+  HUMANS_FROM_SHISHEK,
+  STICK_ACRONY_SEASON,
+  FEATURES,
+  FOR_USER,
+  USED_SITE,
+  TECH_H,
+  GAMES_LOG,
 } from './constants/constants';
 //These libraries can really be a part of extension, but for performance reasons you can use standalone dependencies
 
@@ -280,6 +370,11 @@ ReactDOM.render(
             <Route path={`/${ABOUT_PROJECT_ID}`} component={AboutProjectComponent}/>
             <Route path={`/${ABOUT_US_URL}`} component={AboutUs}/>
             <Route path={`/${GUEST}`} component={Guest}/>
+            <Route path={`/${FOR_USER}`} component={ForUser}/>
+            <Route path={`/${FEATURES}`} component={Features}/>
+            <Route path={`/${USED_SITE}`} component={Used}/>
+            <Route path={`/${TECH_H}`} component={Tech}/>
+            <Route path={`/${GAMES_LOG}`} component={GamesCatolog}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initParents)}>
@@ -319,6 +414,8 @@ ReactDOM.render(
 
             <Route path={`/${TEST_FOR_PARENTS}`} component={TestsForParents}/>
             <Route path={`/${GENIUS}`} component={Genius}/>
+
+            <Route path={`/${TEST_FOR_PARENTS_NEW}`} component={TestsForParentsTemp}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initSoundsAndLetters)}>
@@ -373,6 +470,42 @@ ReactDOM.render(
             <Route path={`/${PONY}`} component={Pony}/>
             <Route path={`/${SMESHARIKI}`} component={Smeshariki}/>
             <Route path={`/${SHIP}`} component={Ship}/>
+            <Route path={`/${LEARNIG_TO_MAKE_OF_PAPER}`} component={LearningToMakeOfPaper}/>
+            <Route path={`/${Materials_For_Paper_Applications}`} component={MaterialsForPaperApplications}/>
+            <Route path={`/${Crafts_Of_Natural_Material}`} component={Crafts}/>
+            <Route path={`/${Making_caterpillar}`} component={MakingCaterpillar}/>
+            <Route path={`/${Learning_Draw}`} component={LearningDraw}/>
+            <Route path={`/${Interactive_Coloring_Pages}`} component={InteractiveColoringPages}/>
+            <Route path={`/${Applications_from_natural_materials}`} component={ApplicationsFromNaturalMaterials}/>
+            <Route path={`/${BREAKFAST_APPLICATION}`} component={BreakfastApplication}/>
+            <Route path={`/${AUTUMN_LEAVES}`} component={AutumnLeaves}/>
+            <Route path={`/${GLADE}`} component={Glade}/>
+            <Route path={`/${LILAC}`} component={Lilac}/>
+            <Route path={`/${HEDGEHOG}`} component={Hedgehog}/>
+            <Route path={`/${CHICK}`} component={Chick}/>
+            <Route path={`/${LADYBUG}`} component={Ladybug}/>
+            <Route path={`/${PUPPIES}`} component={Puppies}/>
+            <Route path={`/${BOUQUET}`} component={Bouquet}/>
+            <Route path={`/${applications_from_circles}`} component={AppFromCircles}/>
+            <Route path={`/${applications_from_napkins}`} component={AppFromNapkins}/>
+            <Route path={`/${Flower_Basket}`} component={FlowerBasket}/>
+            <Route path={`/${SNOWDROPS}`} component={Snowdrops}/>
+            <Route path={`/${benefit_Of_Drawing}`} component={BenefitOfDrawing}/>
+            <Route path={`/${StepByStep_DrawingAnimals}`} component={StepByStepAnimals}/>
+            <Route path={`/${StepByStep_Car}`} component={StepByStepCar}/>
+            <Route path={`/${StepByStep_Flower}`} component={StepByStepFlower}/>
+            <Route path={`/${StepByStep_Man}`} component={StepByStepMan}/>
+            <Route path={`/${StepByStep_Cold}`} component={StepByStepCold}/>
+            <Route path={`/${Autumn_landscape}`} component={AutumnLandscape}/>
+
+            <Route path={`/${FUN_FROG}`} component={FunFrog}/>
+            <Route path={`/${Pictures_of_natural_material}`} component={PicturesOfNatural}/>
+            <Route path={`/${Christmas_tree_from_chestnuts}`} component={ChristmasTreeFromChestnuts}/>
+            <Route path={`/${Crafts_from_chestnuts_and_acorns}`} component={CraftsFromChestnutsAndAcorns}/>
+            <Route path={`/${SHELL_SCREWS}`} component={ShellScrews}/>
+            <Route path={`/${PISTACHKOVOE_TREE}`} component={PistachkovoeTree}/>
+            <Route path={`/${HUMANS_FROM_SHISHEK}`} component={HumansFromShishek}/>
+            <Route path={`/${STICK_ACRONY_SEASON}`} component={StickAcroneSeason}/>
 
           </Route>
 
@@ -444,6 +577,9 @@ ReactDOM.render(
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initForum)}>
             <Route path={`${FORUM_URL}`} component={Forum}/>
+            <Route path={`${FIRST_GREDER_2016}`} component={FirstGrader2016}/>
+            <Route path={`${FIRST_GREDER_PARENTS}`} component={FirstGraderParents}/>
+
           </Route>
 
           <Route path={`${OTHERS_URL}`} component={Other}/>

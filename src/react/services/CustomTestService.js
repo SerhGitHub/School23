@@ -9,6 +9,12 @@ export default {
   },
   setQuestion(question) {
     CustomTestAction.setQuestion(question);
+  },
+  setBeforQuestion() {
+    CustomTestAction.setBeforQuestion();
+  },
+  setNextQuestion() {
+    CustomTestAction.setNextQuestion();
   }
 }
 

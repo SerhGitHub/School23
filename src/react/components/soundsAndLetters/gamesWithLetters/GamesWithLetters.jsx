@@ -225,9 +225,33 @@ const data = [
   },
   {
     id: '45',
-    name: 'Ребусы-раскраски',
-    isHref: true,
-    link: 'https://rebus-raskraska.blogspot.com.by/p/blog-page_63.html',
+    name: `ЗВУКИ [Д] - [Т], [Д'] - [Т']`,
+    link: 'https://learningapps.org/watch?v=p0c5m12va18',
+  },
+  {
+    id: '46',
+    name: 'ЗВУКИ [Ж] - [Ш]',
+    link: 'https://learningapps.org/watch?v=pg2wy86yn18',
+  },
+  {
+    id: '47',
+    name: `ЗВУКИ [З] - [С], [З'] - [С']`,
+    link: 'https://learningapps.org/watch?v=ph3wkgyvt18',
+  },
+  {
+    id: '48',
+    name: 'Гласные звуки',
+    link: 'https://learningapps.org/watch?v=pmfxo975k18',
+  },
+  {
+    id: '49',
+    name: `ЗВУКИ [В] - [Ф], [В'] - [Ф']`,
+    link: 'https://learningapps.org/watch?v=p6v96pp7t18',
+  },
+  {
+    id: '50',
+    name: 'Гласные звуки',
+    link: 'https://learningapps.org/watch?v=paucst2dj18',
   }
 ];
 

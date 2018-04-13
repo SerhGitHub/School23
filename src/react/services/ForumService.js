@@ -9,6 +9,15 @@ export default {
   },
   addSubject(data) {
     ForumAction.addSubject(data);
+  },
+  addNewComment(data) {
+    ForumAction.addNewComment(data);
+  },
+  saveNewComment(topic) {
+    ForumAction.saveNewComment(topic);
+  },
+  cleanSubject() {
+    ForumAction.cleanSubject();
   }
 }
 

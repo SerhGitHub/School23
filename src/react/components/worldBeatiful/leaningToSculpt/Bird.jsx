@@ -2,6 +2,10 @@ import React from 'react';
 
 import BaseTextComponent from '../../shared/BaseTextComponent';
 
+import {LEANING_TO_SCULPT} from '../../../constants/constants';
+
+const BACK_LINK = LEANING_TO_SCULPT;
+
 class Bird extends React.Component {
 
   getData(){
@@ -32,7 +36,7 @@ class Bird extends React.Component {
   render() {
     const data = this.getData();
     return (
-      <BaseTextComponent data={data} title={'Лепка из пластилина птицы'}/>
+      <BaseTextComponent data={data} title={'Лепка из пластилина птицы'} backLink={BACK_LINK}/>
     );
   }
 }

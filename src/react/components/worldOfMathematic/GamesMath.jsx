@@ -81,7 +81,7 @@ const data = [
   {
     id: '16',
     name: 'Загадки о геометрических фигурах',
-    link: 'https://learningapps.org/watch?v=pjf3mxk2518',
+    link: 'https://learningapps.org/watch?v=pun8tjihc18',
   },
   {
     id: '17',
@@ -115,11 +115,55 @@ const data = [
   },
   {
     id: '23',
+    name: 'Сложение и вычитание в пределах 10',
+    link: 'https://learningapps.org/watch?v=pum35wgmn18',
+  },
+  {
+    id: '24',
+    name: 'Счет в пределах первого десятка',
+    link: 'https://learningapps.org/watch?v=p41ezu43n18',
+  },
+  {
+    id: '25',
+    name: 'Считаем в пределах 10',
+    link: 'https://learningapps.org/watch?v=pbgxei21v18',
+  },
+  {
+    id: '26',
+    name: 'Числа в пределах 5',
+    link: 'https://learningapps.org/watch?v=p31cqkkgt18',
+  },
+  {
+    id: '27',
+    name: 'Числа первого десятка',
+    link: 'https://learningapps.org/watch?v=pttn9aur318',
+  },
+  {
+    id: '28',
+    name: 'Числа от 10 до 20',
+    link: 'https://learningapps.org/watch?v=pc630kask18',
+  },
+  {
+    id: '29',
+    name: 'Порядок убывания',
+    link: 'https://learningapps.org/watch?v=pib65fb7c18',
+  },
+  {
+    id: '30',
+    name: 'Реши примеры',
+    link: 'https://learningapps.org/watch?v=pdcnf4jyn18',
+  },
+  {
+    id: '31',
+    name: 'Сравни числа',
+    link: 'https://learningapps.org/watch?v=ppu04p2jt18',
+  },
+  {
+    id: '32',
     name: 'Ребусы-раскраски',
     isHref: true,
     link: 'http://rebus-raskraska.blogspot.com.by/p/blog-page_2.html',
   },
-
 ];
 
 class GamesMath extends React.Component {

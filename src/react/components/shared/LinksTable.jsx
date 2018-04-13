@@ -16,10 +16,11 @@ class LinksTable extends React.Component {
   getTrs(){
     const {data} = this.props;
     return data.map(item => {
+      const link = item.isOtherSiteLink ? <a href={item.url} target='_blank'>{item.name}</a> : <Link to={item.url}>{item.name}</Link>;
       return (
         <tr key={item.id}>
           <td>
-            <Link to={item.url}>{item.name}</Link>
+            {link}
           </td>
         </tr>
       );

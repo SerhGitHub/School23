@@ -68,25 +68,34 @@ class BaseTextComponent extends React.Component {
   }
 
   render() {
-    const {data, links, title, video} = this.props;
+    const {backLink, data, links, title, video} = this.props;
     const {backgroundImage, defaultColor, url} = this.state;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     const titleContent = title ? <h1>{title}</h1> : null;
     const epigraph = this.getEpigraph();
     const videos = video ? this.getVideos(video) : null;
+    const backLinkContent = backLink ? (
+        <Link to={`/${backLink}`}>
+          <img src={'back.png'} width={40} height={40} style={{position: 'absolute', right: '25px'}}/>
+        </Link>
+      ) : null;
+    const keyLink = backLink ? null : (
+      <Link to={'/'}>
+            <img src={'key.jpg'} width={70} height={30}/>
+      </Link>
+      );
     const content = (
       <AuthSuccess>
         <div>
           <Jumbotron style={style}>
             <div style={{padding: '10px'}}>
+              {backLinkContent}
               {epigraph}
               {titleContent}
               {videos}
               {data}
               <div style={{textAlign: 'right'}}>
-                <Link to={`/`} >
-                  <img src={'key.jpg'} width={70} height={30}/>
-                </Link>
+                {keyLink}
               </div>
             </div>
           </Jumbotron>
@@ -102,6 +111,7 @@ class BaseTextComponent extends React.Component {
 }
 
 BaseTextComponent.propTypes = {
+  backLink: PropTypes.string,
   data: PropTypes.array,
   links: PropTypes.array,
   title: PropTypes.string,

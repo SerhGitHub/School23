@@ -2,6 +2,10 @@ import React from 'react';
 
 import BaseTextComponent from '../../shared/BaseTextComponent';
 
+import {LEANING_TO_SCULPT} from '../../../constants/constants';
+
+const BACK_LINK = LEANING_TO_SCULPT;
+
 class Smeshariki extends React.Component {
 
   getData(){
@@ -71,7 +75,7 @@ class Smeshariki extends React.Component {
   render() {
     const data = this.getData();
     return (
-      <BaseTextComponent data={data} title={'Как лепить из пластилина смешариков?'}/>
+      <BaseTextComponent data={data} title={'Как лепить из пластилина смешариков?'} backLink={BACK_LINK}/>
     );
   }
 }

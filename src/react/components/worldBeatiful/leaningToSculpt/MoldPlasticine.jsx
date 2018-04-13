@@ -2,6 +2,10 @@ import React from 'react';
 
 import BaseTextComponent from '../../shared/BaseTextComponent';
 
+import {LEANING_TO_SCULPT} from '../../../constants/constants';
+
+const BACK_LINK = LEANING_TO_SCULPT;
+
 class MoldPlasticine extends React.Component {
 
   getData(){
@@ -45,7 +49,7 @@ class MoldPlasticine extends React.Component {
   render() {
     const data = this.getData();
     return (
-      <BaseTextComponent data={data} title={'Лепим из пластилина'}/>
+      <BaseTextComponent data={data} title={'Лепим из пластилина'} backLink={BACK_LINK}/>
     );
   }
 }

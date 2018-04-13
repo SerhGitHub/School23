@@ -50,6 +50,8 @@ class CustomTestComponent extends React.Component {
   }
 
   back = () => {
+    this.setState({...this.getCurrentState(), finish: null});
+    CustomTestService.setQuestion(null);
     CustomTestService.setTest(null);
   };
 
@@ -61,8 +63,8 @@ class CustomTestComponent extends React.Component {
     const {currentTest} = this.state;
     return currentTest.questions.map((question, index) => {
       return (
-        <div onClick={this.setQuestion.bind(this, question)} style={{color: 'blue', cursor: 'pointer'}}>
-          <img src={'question.png'} width={30} height={30}/>
+        <div onClick={this.setQuestion.bind(this, question)} className='question-menu' style={{cursor: 'pointer', fontSize: '13px'}}>
+          <img src={'question.png'} width={20} height={20}/>
           {`Вопрос ${index + 1}`}
         </div>
       );
@@ -73,19 +75,69 @@ class CustomTestComponent extends React.Component {
     CustomTestService.setAnswerInQuestion(ans.id, ans.isTrue);
   };
 
-  getAnswers(question){
-    return question.answers.map(ans => {
+  getAnswers(test, question){
+    return test.answers.map(ans => {
+      const value = question.answer && question.answer === ans.id;
       return (
-        <span style={{marginRight: '10px'}}><input type='radio' onChange={this.setAnswer.bind(this, ans)}/>{ans.name}</span>
+        <div style={{marginRight: '10px'}}><input type='radio' checked={value} onChange={this.setAnswer.bind(this, ans)}/>{ans.name}</div>
       );
     });
   }
 
+  getButton(img, func, label, disabled){
+    return (
+      <button onClick={func} disabled={disabled} style={{backgroundColor: '#99bbe8', borderRadius: '5px'}}>
+        <img src={img} width={20} height={20}/>{label}
+      </button>
+    );
+  }
+
+  setBeforQuestion = () => {
+    CustomTestService.setBeforQuestion();
+  };
+
+  setNextQuestion = () => {
+    CustomTestService.setNextQuestion();
+  };
+
+  finishTest = () => {
+    const {currentTest} = this.state;
+    let index = 0;
+    let count = 0;
+    while(index < currentTest.questions.length){
+      if(currentTest.questions[index].answer === '1'){
+        count++;
+      }
+      index++;
+    }
+    const result = `Набрано балов: ${count} из ${currentTest.questions.length}`;
+    this.setState({...this.getCurrentState(), finish: result});
+  };
+
+  getButtons(){
+    const {currentQuestion, currentTest} = this.state;
+    const firstGroupClassName = 'col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8';
+    const secondGroupClassName = 'col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3';
+    const beforFunc = currentQuestion.id === '1' ? null : this.setBeforQuestion;
+    const nextFunc = currentQuestion.id === `${currentTest.questions.length}` ? null : this.setNextQuestion;
+    return (
+      <div className='row'>
+        <span className={firstGroupClassName} style={{textAlign: 'left'}}>
+          {this.getButton('befor.png', beforFunc, ' Предыдущий', !beforFunc)}
+          {this.getButton('next.png', nextFunc, ' Следующий', !nextFunc)}
+        </span>
+        <span className={secondGroupClassName} style={{textAlign: 'right'}}>
+          {this.getButton('finish.png', this.finishTest, ' Закончить')}
+        </span>
+      </div>
+    );
+  }
+
   render() {
     const {tests, isRightBack, title} = this.props;
-    const {backgroundImage, currentTest, currentQuestion, defaultColor, url} = this.state;
+    const {backgroundImage, currentTest, currentQuestion, defaultColor, url, finish} = this.state;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
-    const textContent = currentTest.text ? <div style={{padding: '10px'}}>{currentTest.text}</div> : null;
+    const textContent = currentTest && currentTest.text ? <div style={{padding: '10px'}}>{currentTest.text}</div> : null;
     const inputClassName = 'col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8';
     const labelClassName = 'col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4';
     const content = (
@@ -95,16 +147,25 @@ class CustomTestComponent extends React.Component {
             {
               currentTest ? (
                   <div>
-                    <div className='back-button' style={isRightBack ? {right: '10px'} : null} onClick={this.back}><img src='back.png' width={60}/></div>
-                    <div className='row'>
-                      <span className={labelClassName}>
-                        {this.getQuestionsLinks()}
-                      </span>
-                      <span className={inputClassName}>
-                        <label>{currentQuestion.name}</label>
-                        {this.getAnswers(currentQuestion)}
-                      </span>
-                    </div>
+                    <div className='back-button' style={isRightBack ? {right: '10px'} : null} onClick={this.back}><img src='back.png' width={40}/></div>
+                    <h2>{currentTest.name}</h2>
+                    {
+                      finish ? (
+                        <h4>{finish}</h4>
+                        ) : (
+                        <div className='row' style={{padding: '15px', color: 'black'}}>
+                          <span className={labelClassName} style={{textAlign: 'left', maxWidth: '150px', border: '2px solid #99bbe8'}}>
+                            {this.getQuestionsLinks()}
+                          </span>
+                          <span className={inputClassName} style={{textAlign: 'left', border: '2px solid #99bbe8'}}>
+                            <div style={{fontWeight: 'bold'}}>{`Вопрос ${currentQuestion.id}`}</div>
+                            <label>{currentQuestion.name}</label>
+                            {this.getAnswers(currentTest, currentQuestion)}
+                            {this.getButtons()}
+                          </span>
+                        </div>
+                        )
+                    }
                     {textContent}
                   </div>
                 ) : (
