@@ -17,6 +17,11 @@ class BaseTestComponent extends React.Component {
   constructor(props, context) {
     super(props, context);
     TestService.cleanUrl();
+    const catalogUrl = TestStore.getUrlFromCatolog();
+    if(catalogUrl){
+      TestService.setUrl(catalogUrl);
+      TestService.cleanUrlFromCatalog();
+    }
     this.state = this.getCurrentState();
   }
 
@@ -48,7 +53,7 @@ class BaseTestComponent extends React.Component {
   };
 
   render() {
-    const {data, isRightBack, title} = this.props;
+    const {data, isRightBack, link, title} = this.props;
     const {backgroundImage, defaultColor, text, url} = this.state;
     const style = backgroundImage ? {backgroundImage: `url(${backgroundImage})`} : {backgroundColor: defaultColor};
     const styleForIframe = {border: '0px', width: '100%', height: '500px'};
@@ -65,7 +70,7 @@ class BaseTestComponent extends React.Component {
                     {textContent}
                   </div>
                 ) : (
-                  <TableForTests ths={[title]} data={data}/>
+                  <TableForTests ths={[title]} data={data} link={link}/>
                 )
             }
           </Jumbotron>
@@ -83,7 +88,8 @@ class BaseTestComponent extends React.Component {
 BaseTestComponent.propTypes = {
   data: PropTypes.array,
   isRightBack: PropTypes.bool,
-  title: PropTypes.string
+  title: PropTypes.string,
+  link: PropTypes.string
 };
 
 export default BaseTestComponent;

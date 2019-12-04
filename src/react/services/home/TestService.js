@@ -6,12 +6,20 @@ export default {
     TestAction.setUrl(data);
   },
 
+  setUrlForCatolog(data) {
+    TestAction.setUrlForCatolog(data);
+  },
+
   setText(data) {
     TestAction.setText(data);
   },
 
   cleanUrl() {
     TestAction.cleanUrl();
+  },
+
+  cleanUrlFromCatalog() {
+    TestAction.cleanUrlFromCatalog();
   },
 }
 

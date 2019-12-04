@@ -1,176 +1,52 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-import BaseTestComponent from '../shared/BaseTestComponent';
+import AuthSuccess from '../auth/AuthSuccess';
+import RootComponent from '../RootComponent';
+import ContentAndUserInfo from '../shared/ContentAndUserInfo';
+import Jumbotron from '../shared/Jumbotron';
+import LinksTable from '../shared/LinksTable';
 
-const data = [
-  {
-    id: '1',
-    name: 'Числовой ряд',
-    link: 'https://learningapps.org/watch?v=pf470uayc18',
-  },
-  {
-    id: '2',
-    name: 'Число 10',
-    link: 'https://learningapps.org/watch?v=pfhhfyyon18',
-  },
-  {
-    id: '3',
-    name: 'Числа 5 и 6',
-    link: 'https://learningapps.org/watch?v=pdwy3xorj18',
-  },
-  {
-    id: '4',
-    name: 'Четные и нечетные числа',
-    link: 'https://learningapps.org/watch?v=pce9wu2mc17',
-  },
-  {
-    id: '5',
-    name: 'Больше, меньше и равно',
-    link: 'https://learningapps.org/watch?v=pzyqo2yc518',
-  },
-  {
-    id: '6',
-    name: 'Счет предметов',
-    link: 'https://learningapps.org/watch?v=pfgs3v3x518',
-  },
-  {
-    id: '7',
-    name: 'Расположи по порядку',
-    link: 'https://learningapps.org/watch?v=ps9fud47318',
-  },
-  {
-    id: '8',
-    name: 'Сложение в пределах 10',
-    link: 'https://learningapps.org/watch?v=pg6gsztoc18',
-  },
-  {
-    id: '9',
-    name: 'Вычитание в пределах 10',
-    link: 'https://learningapps.org/watch?v=pbc70zv9j18',
-  },
-  {
-    id: '10',
-    name: 'Вычитание в пределах 10 – 2',
-    link: 'https://learningapps.org/watch?v=pmag8n0yj18',
-  },
-  {
-    id: '11',
-    name: 'Найди ошибки',
-    link: 'https://learningapps.org/watch?v=phov3pw5318',
-  },
-  {
-    id: '12',
-    name: 'Викторина «Таблица сложения»',
-    link: 'https://learningapps.org/watch?v=p2tzjrtk518',
-  },
-  {
-    id: '13',
-    name: 'Сложение  в пределах 5',
-    link: 'https://learningapps.org/watch?v=p2x34sbj317',
-  },
-  {
-    id: '14',
-    name: 'Геометрические фигуры',
-    link: 'https://learningapps.org/watch?v=pjf3mxk2518',
-  },
-  {
-    id: '15',
-    name: 'На что похоже',
-    link: 'https://learningapps.org/watch?v=pti1djr5t18',
-  },
-  {
-    id: '16',
-    name: 'Загадки о геометрических фигурах',
-    link: 'https://learningapps.org/watch?v=pun8tjihc18',
-  },
-  {
-    id: '17',
-    name: 'Дни недели',
-    link: 'https://learningapps.org/watch?v=p6s76u9ka18',
-  },
-  {
-    id: '18',
-    name: 'Время суток',
-    link: 'https://learningapps.org/watch?v=pen5rmxec18',
-  },
-  {
-    id: '19',
-    name: 'Найди пары. Формы',
-    link: 'https://learningapps.org/watch?v=pem6prhda18',
-  },
-  {
-    id: '20',
-    name: 'Найди пары. Цвет',
-    link: 'https://learningapps.org/watch?v=p54y6x9ua18',
-  },
-  {
-    id: '21',
-    name: 'Разгадай ребусы',
-    link: 'https://learningapps.org/watch?v=pd8g2vgo518',
-  },
-  {
-    id: '22',
-    name: 'Разгадай ребусы - 2',
-    link: 'https://learningapps.org/watch?v=pdo12n22n18',
-  },
-  {
-    id: '23',
-    name: 'Сложение и вычитание в пределах 10',
-    link: 'https://learningapps.org/watch?v=pum35wgmn18',
-  },
-  {
-    id: '24',
-    name: 'Счет в пределах первого десятка',
-    link: 'https://learningapps.org/watch?v=p41ezu43n18',
-  },
-  {
-    id: '25',
-    name: 'Считаем в пределах 10',
-    link: 'https://learningapps.org/watch?v=pbgxei21v18',
-  },
-  {
-    id: '26',
-    name: 'Числа в пределах 5',
-    link: 'https://learningapps.org/watch?v=p31cqkkgt18',
-  },
-  {
-    id: '27',
-    name: 'Числа первого десятка',
-    link: 'https://learningapps.org/watch?v=pttn9aur318',
-  },
-  {
-    id: '28',
-    name: 'Числа от 10 до 20',
-    link: 'https://learningapps.org/watch?v=pc630kask18',
-  },
-  {
-    id: '29',
-    name: 'Порядок убывания',
-    link: 'https://learningapps.org/watch?v=pib65fb7c18',
-  },
-  {
-    id: '30',
-    name: 'Реши примеры',
-    link: 'https://learningapps.org/watch?v=pdcnf4jyn18',
-  },
-  {
-    id: '31',
-    name: 'Сравни числа',
-    link: 'https://learningapps.org/watch?v=ppu04p2jt18',
-  },
-  {
-    id: '32',
-    name: 'Ребусы-раскраски',
-    isHref: true,
-    link: 'http://rebus-raskraska.blogspot.com.by/p/blog-page_2.html',
-  },
-];
+import {MENU, WORLD_OF_MATHEMATIC, GAMES_MATH} from '../../constants/constants';
 
 class GamesMath extends React.Component {
 
+  getData(){
+    let index = 0;
+    let isFound = false;
+    let data = [];
+    while(index < MENU.length && !isFound){
+      if(MENU[index].id === WORLD_OF_MATHEMATIC){
+        let index_ = 0;
+        while(index_ < MENU[index].children.length && !isFound){
+          if(MENU[index].children[index_].id === GAMES_MATH){
+            data = MENU[index].children[index_].children;
+            isFound = true;
+          }
+          index_++;
+        }
+      }
+      index++;
+    }
+    return data;
+  }
+
   render() {
+    const data = this.getData();
+    const content = (
+      <AuthSuccess>
+        <Jumbotron>
+          <div className='back-button' style={{right: '25px', paddingTop: '5px'}}>
+            <Link to={`/${WORLD_OF_MATHEMATIC}`}><img src='back.png' width={60}/></Link>
+          </div>
+          <LinksTable data={data} ths={['Игры']}/>
+        </Jumbotron>
+      </AuthSuccess>
+    );
     return (
-      <BaseTestComponent title={'Игры'} data={data} />
+      <RootComponent>
+        <ContentAndUserInfo content={content}/>
+      </RootComponent>
     );
   }
 }

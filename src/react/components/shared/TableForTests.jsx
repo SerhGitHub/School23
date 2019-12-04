@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router';
 
 import TestService from '../../services/home/TestService';
 
@@ -46,10 +47,17 @@ class TableForTests extends React.Component {
   }
 
   render() {
+    const {link} = this.props;
     const ths = this.getThs();
     const trs = this.getTrs();
+    const linkBack = link ? (
+        <div className='back-button' style={{right: '25px', paddingTop: '5px'}}>
+          <Link to={`/${link}`}><img src='back.png' width={60}/></Link>
+        </div>
+      ) : null;
     return (
       <div className='table-home-psych'>
+        {linkBack}
         <table className='table table-hover'>
           <thead>
           <tr>

@@ -64,9 +64,7 @@ export const WORK_OF_PEOPLE = 'WorkOfPeople';
 export const THE_WORLD = 'TheWorld';
 //Home tutor -> In the world of mathematics
 export const In_the_world_of_mathematics = 'mathematics';
-export const World_of_numbers = 'numbers';
 export const Solve_examples = 'examples';
-export const The_World_of_Geometry = 'geometry';
 export const Orient_in_time_and_space = 'space';
 //Home tutor -> Learning to speak beautifully
 export const Learning_to_speak_beautifully = 'beautifully';
@@ -75,7 +73,6 @@ export const Learning_to_compose = 'compose';
 //Home tutor -> Learning to read
 export const Learning_to_read = 'read';
 export const Sounds_and_letters = 'letters';
-export const Learning_the_alphabet = 'alphabet';
 export const Favorite_works = 'FavoriteWorks';
 
 
@@ -210,6 +207,39 @@ export const USED_SITE = 'Used_';
 export const TECH_H = 'tech';
 export const GAMES_LOG = 'Gameslog';
 
+
+export const Vowels_and_consonants = 'VowelsAndConsonants';
+export const Learning_the_alphabet = 'LearningTheAlphabet';
+export const Learn_syllables = 'LearnSyllables';
+export const Developing__the__speech = 'DevelopingTheSpeech';
+export const Favorite__heroes = 'FavoriteHeroes';
+export const Puzzles___ = 'Puzzles_';
+
+
+export const Living_and_inanimate_nature = 'LivingAndInanimateNature';
+export const The_world_around = 'TheWorldAround';
+export const My_motherland = 'MyMotherland';
+export const Healthy_lifestyle = 'HealthyLifestyle';
+
+export const World_of_numbers = 'WorldOfNumbers';
+export const Learning_to_add_and_subtract = 'LearningToAddAndSubtract';
+export const Learning_to_solve_problems = 'LearningToSolveProblems';
+export const Learning_to_compare = 'LearningToCompare';
+export const The_World_of_Geometry = 'TheWorldOfGeometry';
+export const Learning_to_navigate_in_time = 'LearningToNavigateInTime';
+export const Puzzles_M = 'PuzzlesM';
+
+export const Learning_to_draw_ = 'LearningToDraw_';
+export const ART_ = 'Art_';
+export const Musical_art_ = 'MusicalArt_';
+export const Artistic_work_ = 'ArtisticWork_';
+export const Puzzles_B_ = 'PuzzlesB_';
+
+export const U_svete_pirodi = 'U_s_p';
+export const Narodnae_as = 'n_as';
+export const Razgadai_zag = 'r_z';
+export const Puzzles_Bel = 'puzzles_bel';
+
 export const MENU = [
   {
     id: MAIN_ID,
@@ -230,7 +260,7 @@ export const MENU = [
           },
           {
             id: USED_SITE,
-            name: 'Рекомендации по использованию',
+            name: 'Рекомендации по использованию игр',
             url: `/${USED_SITE}`
           },
           {
@@ -455,6 +485,38 @@ export const MENU = [
         id: GAMES_WITH_LETTERS_AND_SOUNDS,
         name: 'Игры с буквами и звуками',
         url: `/${GAMES_WITH_LETTERS_AND_SOUNDS}`,
+        children: [
+          {
+            id: Vowels_and_consonants,
+            name: 'Гласные и согласные',
+            url: `/${Vowels_and_consonants}`,
+          },
+          {
+            id: Learning_the_alphabet,
+            name: 'Учим алфавит',
+            url: `/${Learning_the_alphabet}`,
+          },
+          {
+            id: Learn_syllables,
+            name: 'Учим слоги',
+            url: `/${Learn_syllables}`,
+          },
+          {
+            id: Developing__the__speech,
+            name: 'Развиваем речь',
+            url: `/${Developing__the__speech}`,
+          },
+          {
+            id: Favorite__heroes,
+            name: 'Любимые герои',
+            url: `/${Favorite__heroes}`,
+          },
+          {
+            id: Puzzles___,
+            name: 'Ребусы',
+            url: `/${Puzzles___}`,
+          },
+        ]
       },
       {
         id: PERFECTING_THE_SPEECH,
@@ -552,7 +614,30 @@ export const MENU = [
       {
         id: GAMES_BEL,
         name: 'Гульні',
-        url: `/${GAMES_BEL}`
+        url: `/${GAMES_BEL}`,
+        children: [
+          {
+            id: U_svete_pirodi,
+            name: 'У свеце прыроды',
+            url: `/${U_svete_pirodi}`
+          },
+          {
+            id: Narodnae_as,
+            name: 'Навакольнае асяроддзе',
+            url: `/${Narodnae_as}`
+          },
+          {
+            id: Razgadai_zag,
+            name: 'Разгадай загадкі',
+            url: `/${Razgadai_zag}`
+          },
+          {
+            id: Puzzles_Bel,
+            name: 'Рэбусы',
+            url: `/${Puzzles_Bel}`
+          },
+
+        ]
       },
     ]
   },
@@ -564,13 +649,35 @@ export const MENU = [
     children: [
       {
         id: QUESTIONS_FOR_CHILD_SIX_YEAR,
-        name: 'На какие вопросы должен уметь отвечать ребенок 6 лет',
+        name: 'На какие вопросы должен уметь отвечать ребенок в 6 лет',
         url: `/${QUESTIONS_FOR_CHILD_SIX_YEAR}`
       },
       {
         id: GAMES_RUS,
         name: 'Игры',
-        url: `/${GAMES_RUS}`
+        url: `/${GAMES_RUS}`,
+        children: [
+          {
+            id: Living_and_inanimate_nature,
+            name: 'Живая и неживая природа',
+            url: `/${Living_and_inanimate_nature}`
+          },
+          {
+            id: The_world_around,
+            name: 'Мир вокруг',
+            url: `/${The_world_around}`
+          },
+          {
+            id: My_motherland,
+            name: 'Моя Родина',
+            url: `/${My_motherland}`
+          },
+          {
+            id: Healthy_lifestyle,
+            name: 'Здоровый образ жизни',
+            url: `/${Healthy_lifestyle}`
+          },
+        ]
       },
     ]
   },
@@ -588,7 +695,44 @@ export const MENU = [
       {
         id: GAMES_MATH,
         name: 'Игры',
-        url: `/${GAMES_MATH}`
+        url: `/${GAMES_MATH}`,
+        children: [
+          {
+            id: World_of_numbers,
+            name: 'Мир чисел',
+            url: `/${World_of_numbers}`
+          },
+          {
+            id: Learning_to_add_and_subtract,
+            name: 'Учимся складывать и вычитать',
+            url: `/${Learning_to_add_and_subtract}`
+          },
+          {
+            id: Learning_to_solve_problems,
+            name: 'Учимся решать задачи',
+            url: `/${Learning_to_solve_problems}`
+          },
+          {
+            id: Learning_to_compare,
+            name: 'Учимся сравнивать',
+            url: `/${Learning_to_compare}`
+          },
+          {
+            id: The_World_of_Geometry,
+            name: 'Мир геометрии',
+            url: `/${The_World_of_Geometry}`
+          },
+          {
+            id: Learning_to_navigate_in_time,
+            name: 'Учимся ориентироваться во времени',
+            url: `/${Learning_to_navigate_in_time}`
+          },
+          {
+            id: Puzzles_M,
+            name: 'Ребусы',
+            url: `/${Puzzles_M}`
+          },
+        ]
       },
     ]
   },
@@ -601,7 +745,34 @@ export const MENU = [
       {
         id: GAMES_BEAUTIFUL,
         name: 'Игры',
-        url: `/${GAMES_BEAUTIFUL}`
+        url: `/${GAMES_BEAUTIFUL}`,
+        children: [
+          {
+            id: ART_,
+            name: 'Изобразительное искусство',
+            url: `/${ART_}`
+          },
+          {
+            id: Learning_to_draw_,
+            name: 'Учимся рисовать',
+            url: `/${Learning_to_draw_}`
+          },
+          {
+            id: Musical_art_,
+            name: 'Музыкальное искусство',
+            url: `/${Musical_art_}`
+          },
+          {
+            id: Artistic_work_,
+            name: 'Художественный труд',
+            url: `/${Artistic_work_}`
+          },
+          {
+            id: Puzzles_B_,
+            name: 'Ребусы',
+            url: `/${Puzzles_B_}`
+          }
+        ]
       },
       {
         id: CARTOONS,
@@ -1178,11 +1349,6 @@ export const MENU = [
             url: `/${Sounds_and_letters}`,
           },
           {
-            id: Learning_the_alphabet,
-            name: 'Учим алфавит',
-            url: `/${Learning_the_alphabet}`,
-          },
-          {
             id: Favorite_works,
             name: 'Любимые произведения',
             url: `/${Favorite_works}`,
@@ -1297,6 +1463,8 @@ export const CHANGE_MAIN_BACKGROUND_IMAGE = 'CHANGE_MAIN_BACKGROUND_IMAGE';
 
 //TEST
 export const SET_TEST_URL = 'SET_TEST_URL';
+export const SET_TEST_URL_FROM_CATALOG = 'SET_TEST_URL_FROM_CATALOG';
+export const CLEAN_TEST_URL_FROM_CATALOG = 'CLEAN_TEST_URL_FROM_CATALOG';
 export const SET_TEST_TEXT = 'SET_TEST_TEXT';
 export const CLEAN_TEST_URL = 'CLEAN_TEST_URL';
 

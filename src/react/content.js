@@ -34,8 +34,6 @@ import TheWorld from './components/home/tutor/expandOurHorizons/TheWorld';
 
 import SolveExamples from './components/home/tutor/inTheWorldOfMathematics/SolveExamples';
 import OrientInTimeAndSpace from './components/home/tutor/inTheWorldOfMathematics/OrientInTimeAndSpace';
-import TheWorldOfGeometry from './components/home/tutor/inTheWorldOfMathematics/TheWorldOfGeometry';
-import WorldOfNumbers from './components/home/tutor/inTheWorldOfMathematics/WorldOfNumbers';
 
 import LearningToCompose from './components/home/tutor/learningToSpeakBeautifully/LearningToCompose';
 import PlayingWithWords from './components/home/tutor/learningToSpeakBeautifully/PlayingWithWords';
@@ -175,7 +173,60 @@ import Used from './components/main/forUser/Used';
 import Tech from './components/main/forUser/Tech';
 import GamesCatolog from './components/main/forUser/GamesCatolog';
 
+import PuzzlesSAL from './components/soundsAndLetters/gamesWithLetters/PuzzlesSAL';
+import FavoriteHeroes from './components/soundsAndLetters/gamesWithLetters/FavoriteHeroes';
+import DevelopingTheSpeech from './components/soundsAndLetters/gamesWithLetters/DevelopingTheSpeech';
+import LearningTheAlphabet from './components/soundsAndLetters/gamesWithLetters/LearningTheAlphabet';
+import LearnSyllables from './components/soundsAndLetters/gamesWithLetters/LearnSyllables';
+import VowelsAndConsonants from './components/soundsAndLetters/gamesWithLetters/VowelsAndConsonants';
+
+import HealthyLifestyle from './components/world/HealthyLifestyle';
+import MyMotherland from './components/world/MyMotherland';
+import TheWorldAround from './components/world/TheWorldAround';
+import LivingAndInanimateNature from './components/world/LivingAndInanimateNature';
+
+import TheWorldOfGeometry from './components/worldOfMathematic/TheWorldOfGeometry';
+import LearningToCompare from './components/worldOfMathematic/LearningToCompare';
+import LearningToSolveProblems from './components/worldOfMathematic/LearningToSolveProblems';
+import LearningToAddAndSubtract from './components/worldOfMathematic/LearningToAddAndSubtract';
+import WorldOfNumbers from './components/worldOfMathematic/WorldOfNumbers';
+import PuzzlesM from './components/worldOfMathematic/PuzzlesM';
+import LearningToNavigateInTime from './components/worldOfMathematic/LearningToNavigateInTime';
+
+import PuzzlesB from './components/worldBeatiful/PuzzlesB';
+import ArtisticWork from './components/worldBeatiful/ArtisticWork';
+import MusicalArt from './components/worldBeatiful/MusicalArt';
+import ArtB from './components/worldBeatiful/ArtB';
+import LearningToDraw from './components/worldBeatiful/LearningToDraw';
+
+import PuzzlesBel from './components/talkInBelarusian/learningToReson/PuzzlesBel';
+import RazgadaiZ from './components/talkInBelarusian/learningToReson/RazgadaiZ';
+import NarodnaeAs from './components/talkInBelarusian/learningToReson/NarodnaeAs';
+import USvetePrirodi from './components/talkInBelarusian/learningToReson/USvetePrirodi';
+
 import {
+  U_svete_pirodi,
+  Narodnae_as,
+  Razgadai_zag,
+  Puzzles_Bel,
+  ART_,
+  Learning_to_draw_,
+  Musical_art_,
+  Artistic_work_,
+  Puzzles_B_,
+  Learning_to_compare,
+  Learning_to_solve_problems,
+  Learning_to_add_and_subtract,
+  Healthy_lifestyle,
+  My_motherland,
+  The_world_around,
+  Living_and_inanimate_nature,
+  Puzzles___,
+  Favorite__heroes,
+  Developing__the__speech,
+  Learn_syllables,
+  Learning_the_alphabet,
+  Vowels_and_consonants,
   FUN_FROG,
   BOUQUET,
   LADYBUG,
@@ -241,7 +292,6 @@ import {
   Playing_with_words,
   Learning_to_compose,
   Sounds_and_letters,
-  Learning_the_alphabet,
   Favorite_works,
   Fizicheskay_gotovnost,
   HYGIENE,
@@ -337,6 +387,8 @@ import {
   USED_SITE,
   TECH_H,
   GAMES_LOG,
+  Puzzles_M,
+  Learning_to_navigate_in_time,
 } from './constants/constants';
 //These libraries can really be a part of extension, but for performance reasons you can use standalone dependencies
 
@@ -427,6 +479,13 @@ ReactDOM.render(
             <Route path={`${GAMES_WITH_LETTERS_AND_SOUNDS}`} component={GamesWithLetters}/>
             <Route path={`${PERFECTING_THE_SPEECH}`} component={PerfectingTheSpeech}/>
             <Route path={`${ART_EXERCISES}`} component={ArtExercises}/>
+
+            <Route path={`${Puzzles___}`} component={PuzzlesSAL}/>
+            <Route path={`${Favorite__heroes}`} component={FavoriteHeroes}/>
+            <Route path={`${Developing__the__speech}`} component={DevelopingTheSpeech}/>
+            <Route path={`${Learning_the_alphabet}`} component={LearningTheAlphabet}/>
+            <Route path={`${Learn_syllables}`} component={LearnSyllables}/>
+            <Route path={`${Vowels_and_consonants}`} component={VowelsAndConsonants}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initTalkInBelarusian)}>
@@ -443,12 +502,21 @@ ReactDOM.render(
             <Route path={`${Listening_to_fairy_tales}`} component={ListeningToFairyTales}/>
             <Route path={`${Listen_and_sing}`} component={ListenAndSing}/>
             <Route path={`${GAMES_BEL}`} component={Games}/>
+
+            <Route path={`${Puzzles_Bel}`} component={PuzzlesBel}/>
+            <Route path={`${Razgadai_zag}`} component={RazgadaiZ}/>
+            <Route path={`${Narodnae_as}`} component={NarodnaeAs}/>
+            <Route path={`${U_svete_pirodi}`} component={USvetePrirodi}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initWorld)}>
             <Route path={`/${WORLD}`} component={World}/>
             <Route path={`/${QUESTIONS_FOR_CHILD_SIX_YEAR}`} component={QuestionsForChildSix}/>
             <Route path={`/${GAMES_RUS}`} component={GamesRus}/>
+            <Route path={`/${Healthy_lifestyle}`} component={HealthyLifestyle}/>
+            <Route path={`/${My_motherland}`} component={MyMotherland}/>
+            <Route path={`/${The_world_around}`} component={TheWorldAround}/>
+            <Route path={`/${Living_and_inanimate_nature}`} component={LivingAndInanimateNature}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initWorldOfMathematic)}>
@@ -456,6 +524,13 @@ ReactDOM.render(
             <Route path={`/${INDICATORS_OF_MATHEMATICAL_DEVELOPMENT}`} component={IndicatorsMathDev}/>
             <Route path={`/${GAMES_MATH}`} component={GamesMath}/>
 
+            <Route path={`/${The_World_of_Geometry}`} component={TheWorldOfGeometry}/>
+            <Route path={`/${Learning_to_compare}`} component={LearningToCompare}/>
+            <Route path={`/${Learning_to_solve_problems}`} component={LearningToSolveProblems}/>
+            <Route path={`/${Learning_to_add_and_subtract}`} component={LearningToAddAndSubtract}/>
+            <Route path={`/${World_of_numbers}`} component={WorldOfNumbers}/>
+            <Route path={`/${Learning_to_navigate_in_time}`} component={LearningToNavigateInTime}/>
+            <Route path={`/${Puzzles_M}`} component={PuzzlesM}/>
           </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initWorldBeautiful)}>
@@ -507,73 +582,13 @@ ReactDOM.render(
             <Route path={`/${HUMANS_FROM_SHISHEK}`} component={HumansFromShishek}/>
             <Route path={`/${STICK_ACRONY_SEASON}`} component={StickAcroneSeason}/>
 
+            <Route path={`/${Puzzles_B_}`} component={PuzzlesB}/>
+            <Route path={`/${Artistic_work_}`} component={ArtisticWork}/>
+            <Route path={`/${Musical_art_}`} component={MusicalArt}/>
+            <Route path={`/${ART_}`} component={ArtB}/>
+            <Route path={`/${Learning_to_draw_}`} component={LearningToDraw}/>
           </Route>
 
-          <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomePsychologically)}>
-            <Route path={`/${HOME_PSYCHOLOGICALLY_URL}`} component={HomePsychologist}/>
-            <Route path={`/${FROM_CHILD_ROOM_TO_SCHOOL_URL}`} component={Other}/>
-            <Route path={`/${TESTS_FOR_PARENTS_URL}`} component={Other}/>
-            <Route path={`/${PSICHOLOGICHESKAY_GOTOVNOST_URL}`} component={Other}/>
-            <Route path={`/${INTELECTUALNAY_GOTOVNOST_URL}`} component={Other}/>
-            <Route path={`/${SOCIALNAY_GOTOVNOST_URL}`} component={Other}/>
-            <Route path={`/${IN_FAMILY_URL}`} component={Other}/>
-            <Route path={`/${IN_PARENTS_URL}`} component={Other}/>
-            <Route path={`/${IN_FRIENDS_URL}`} component={Other}/>
-            <Route path={`/${IN_OTHERS_URL}`} component={Other}/>
-            <Route path={`/${LICHNOSTNAY_URL}`} component={Other}/>
-            <Route path={`/${EMOCIONALNAY_GOTOVNOCCT_URL}`} component={Other}/>
-            <Route path={`/${MOTIVACIY_UCHENIKA_URL}`} component={Other}/>
-            <Route path={`/${FORNIROVANIE_VOLEVIH_KACHEVSTV_URL}`} component={Other}/>
-
-            <Route path={`/${IN_THE_WORLD_OF_NATURE}`} component={InTheWorldOfNature}/>
-            <Route path={`/${WORK_OF_PEOPLE}`} component={WorkOfPeople}/>
-            <Route path={`/${THE_WORLD}`} component={TheWorld}/>
-
-            <Route path={`/${World_of_numbers}`} component={WorldOfNumbers}/>
-            <Route path={`/${Solve_examples}`} component={SolveExamples}/>
-            <Route path={`/${The_World_of_Geometry}`} component={TheWorldOfGeometry}/>
-            <Route path={`/${Orient_in_time_and_space}`} component={OrientInTimeAndSpace}/>
-
-            <Route path={`/${Learning_to_compose}`} component={LearningToCompose}/>
-            <Route path={`/${Playing_with_words}`} component={PlayingWithWords}/>
-
-            <Route path={`/${Sounds_and_letters}`} component={SoundsAndLetters}/>
-            <Route path={`/${Learning_the_alphabet}`} component={LearningTheAlphbet}/>
-            <Route path={`/${Favorite_works}`} component={FavoriteWorks}/>
-
-
-            <Route path={`/${FORMIROVANIE_POSICII_SHKOLNIKA_URL}`} component={FormationStudentsPosition}/>
-
-            <Route path={`/${Aggressive_child}`} component={AggressiveChild}/>
-
-            <Route path={`/${Readiness_for_school}`} component={ReadinessForSchool}/>
-            <Route path={`/${How_to_prepare_a_child_for_school}`} component={HowToPrepareAChildForSchool}/>
-            <Route path={`/${TestForParents_atSchool}`} component={TestForParentsAtSchool}/>
-            <Route path={`/${TestForParents_ChildReadyToSchool}`} component={TestChildReadyToSchool}/>
-            <Route path={`/${A_man_steps_into_the_school}`} component={AManSteps}/>
-            </Route>
-
-          <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeDoctor)}>
-            <Route path={`${HOME_DOCTOR_URL}`} component={HomeDoctor}/>
-
-          </Route>
-
-          <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeTutor)}>
-            <Route path={`${HOME_TUTOR_URL}`} component={HomeTutor}/>
-
-
-
-
-
-          </Route>
-
-          <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeAssistant)}>
-            <Route path={`${HOME_ASSISTANT_URL}`} component={HomeAssistant}/>
-          </Route>
-
-          <Route onEnter={onNewInnerRouteEnter(RoutingService.initHomeMaster)}>
-            <Route path={`${HOME_MASTER_URL}`} component={HomeMaster}/>
-          </Route>
 
           <Route onEnter={onNewInnerRouteEnter(RoutingService.initForum)}>
             <Route path={`${FORUM_URL}`} component={Forum}/>

@@ -5,7 +5,7 @@
 
 .caption {
   position: absolute;
-  padding: 0 0 20px;
+  padding: 0 0 5px;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -14,10 +14,15 @@
 }
 
 .caption-title {
-  padding: 20px 20px 10px;
-  font-size: 20px;
+  padding: 0px 0px 0px 10px;
+  font-size: 16px;
   text-align: left;
   text-transform: uppercase;
+}
+
+.caption-body {
+  padding: 0px 10px 0px 0px;
+  font-size: 16px;
 }
 
 .smallNavItem{
@@ -195,4 +200,9 @@
   text-align: left;
   border: 1px solid gray;
   border-radius: 0px 9px 0px 0px;
+}
+
+.td-games-padding {
+  padding-top: 4px!important;
+  padding-bottom: 4px!important;
 }

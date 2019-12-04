@@ -1,6 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-import BaseTestComponent from '../../shared/BaseTestComponent';
+import AuthSuccess from '../../auth/AuthSuccess';
+import RootComponent from '../../RootComponent';
+import ContentAndUserInfo from '../../shared/ContentAndUserInfo';
+import Jumbotron from '../../shared/Jumbotron';
+import LinksTable from '../../shared/LinksTable';
+
+import {MENU, SOUNDS_LETTERS, GAMES_WITH_LETTERS_AND_SOUNDS} from '../../../constants/constants';
 
 const data = [
   {
@@ -250,16 +257,94 @@ const data = [
   },
   {
     id: '50',
-    name: 'Гласные звуки',
+    name: 'Гласные звуки - 2',
     link: 'https://learningapps.org/watch?v=paucst2dj18',
+  },
+  {
+    id: '51',
+    name: 'Что за птица?',
+    link: 'https://learningapps.org/watch?v=pugfudqdt18',
+  },
+  {
+    id: '52',
+    name: 'Согласные буквы',
+    link: 'https://learningapps.org/watch?v=p5rcjt0yk18',
+  },
+  {
+    id: '53',
+    name: 'Слоги',
+    link: 'https://learningapps.org/watch?v=pgm3723wn18',
+  },
+  {
+    id: '54',
+    name: 'Читаем слоги',
+    link: 'https://learningapps.org/watch?v=pwwcpv50318',
+  },
+  {
+    id: '55',
+    name: 'Один - много',
+    link: 'https://learningapps.org/watch?v=ps591ej1t18',
+  },
+  {
+    id: '56',
+    name: 'Он, она, оно',
+    link: 'https://learningapps.org/watch?v=pwqk0oxya18',
+  },
+  {
+    id: '57',
+    name: 'Ребусы',
+    link: 'https://learningapps.org/watch?v=p6nc7erva18',
+  },
+  {
+    id: '58',
+    name: 'Найди слова',
+    link: 'https://learningapps.org/watch?v=ptx44hsun18',
+  },
+  {
+    id: '59',
+    name: 'Цепочка слов',
+    link: 'https://learningapps.org/watch?v=p9r9ph55518',
   }
 ];
 
 class GamesWithLetters extends React.Component {
 
+  getData(){
+    let index = 0;
+    let isFound = false;
+    let data = [];
+    while(index < MENU.length && !isFound){
+      if(MENU[index].id === SOUNDS_LETTERS){
+        let index_ = 0;
+        while(index_ < MENU[index].children.length && !isFound){
+          if(MENU[index].children[index_].id === GAMES_WITH_LETTERS_AND_SOUNDS){
+            data = MENU[index].children[index_].children;
+            isFound = true;
+          }
+          index_++;
+        }
+      }
+      index++;
+    }
+    return data;
+  }
+
   render() {
+    const data = this.getData();
+    const content = (
+      <AuthSuccess>
+        <Jumbotron>
+          <div className='back-button' style={{right: '25px', paddingTop: '5px'}}>
+            <Link to={`/${SOUNDS_LETTERS}`}><img src='back.png' width={60}/></Link>
+          </div>
+          <LinksTable data={data} ths={['Игры с буквами и звуками']}/>
+        </Jumbotron>
+      </AuthSuccess>
+    );
     return (
-      <BaseTestComponent title={'Игры с буквами и звуками'} data={data} />
+      <RootComponent>
+        <ContentAndUserInfo content={content}/>
+      </RootComponent>
     );
   }
 }

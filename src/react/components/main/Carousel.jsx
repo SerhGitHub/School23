@@ -30,7 +30,7 @@ class Carousel extends React.Component {
 
   getEpigraph(main, auth){
     return (
-      <p style={{textAlign: 'right', fontSize: '20px', margin: '0px'}}>
+      <p style={{textAlign: 'right', fontSize: '16px', padding: '0px', margin: '0px'}}>
         <i>
           {main}
           <br/>{auth}
@@ -69,7 +69,7 @@ class Carousel extends React.Component {
         epigraph: this.getEpigraph('Жизнь для ребенка - один огромный эксперимент.', 'А. Адлер'),
         alt: ''
       },
-      {
+      /*{
         id: '5',
         img: '5.jpg',
         title: 'ЧТО ДЛЯ МЕНЯ МАТЕМАТИКА?',
@@ -89,7 +89,7 @@ class Carousel extends React.Component {
         title: 'ЧТО ТАКОЕ «МИР ПРЕКРАСНОГО»?',
         epigraph: this.getEpigraph('Дети должны жить в мире красоты, игры, сказки, музыки, рисунка, фантазии, творчества.', 'В. Сухомлинский'),
         alt: ''
-      }
+      }*/
     ];
   }
 
@@ -105,10 +105,10 @@ class Carousel extends React.Component {
                 <div key={item.id} className={`carousel-item${index == 0 ? ' active' : ''}`}>
                   <img className='d-block' src={item.img} alt={item.alt} style={{width: '100%'}}/>
                   <div className='caption' style={style}>
-                    <div className='caption-title' style={{padding: '0px 0px 0px 0px', fontWeight: 'bolder'}}>
+                    <div className='caption-title' style={{padding: '0px 0px 0px 10px', fontWeight: 'bolder'}}>
                       {item.title}
                     </div>
-                    <div className='caption-body' style={{paddingRight: '10px'}}>
+                    <div className='caption-body'>
                       {item.epigraph}
                     </div>
                   </div>
@@ -129,10 +129,10 @@ class Carousel extends React.Component {
           <li data-target='#carouselExampleIndicators' data-slide-to='0' className='active'/>
           <li data-target='#carouselExampleIndicators' data-slide-to='1'/>
           <li data-target='#carouselExampleIndicators' data-slide-to='2'/>
-          <li data-target='#carouselExampleIndicators' data-slide-to='3'/>
+          <li data-target='#carouselExampleIndicators' data-slide-to='3'/>{/*
           <li data-target='#carouselExampleIndicators' data-slide-to='4'/>
           <li data-target='#carouselExampleIndicators' data-slide-to='5'/>
-          <li data-target='#carouselExampleIndicators' data-slide-to='6'/>
+          <li data-target='#carouselExampleIndicators' data-slide-to='6'/>*/}
         </ol>
       </div>
     );

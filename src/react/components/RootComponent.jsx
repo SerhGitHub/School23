@@ -147,14 +147,30 @@ class RootComponent extends React.Component {
     const navigationItems = this.getNavigationItems(navbarStyle);
     const smallNavigationItems = this.getSmallMenu(menu, 0, navbarStyle);
     return (
+    <div>
+      <div style={{
+        position: 'absolute',
+        left: '5px',
+        top: '5px',
+      }}>
+        <a target="_blank" href="http://tibo.by/ru/internet-premiya-tibo/"><img src={'logo.png'} style={{width: '18vw'}}/></a>
+      </div>
       <div id='mainBody' style={{textAlign: '-webkit-center', backgroundImage: 'url(mainBackgrounddefault.jpg)'}}>
         {/*<span style={{color: '#DAA520', fontSize: '28px', fontWeight: 'bolder', textShadow: `${defaultColor} 0 0px 8px`}}>{'ШКОЛА для будущих первоклассников и классных их родителей «ЗОЛОТОЙ КЛЮЧИК»'}</span>
-       */}
-       <div style={{textAlign: 'center'}}>
-         <img src={'text.png'} style={{width: '50%'}}/>
-         <img src={'text1.png'} style={{width: '100%'}}/>
-       </div>
-
+         */}
+        <div style={{ width: '100%', height: '3.5vw', textAlign: 'center' }}>
+          <a target="_blank" style={{
+            fontSize: '2vw',
+            paddingLeft: '17px',
+            fontFamily: 'initial',
+            fontWeight: 'bold',
+            color: 'cornflowerblue'
+          }} href="http://tibo.by/ru/internet-premiya-tibo/">Участник «Интернет-премии «ТИБО-2019»»</a>
+        </div>
+        <div style={{textAlign: 'center'}}>
+          <img src={'text.png'} style={{width: '50%'}}/>
+          <img src={'text1.png'} style={{width: '100%'}}/>
+        </div>
         <div style={{width: '98%'}}>
           <nav className='navbar navbar-expand-sm navbar-dark main-navbar' style={navbarStyle}>
             <Link to={'/'}><img src={'keyClose.png'} width={60}/></Link>
@@ -175,6 +191,8 @@ class RootComponent extends React.Component {
           {this.props.children}
         </div>
       </div>
+    </div>
+
     );
   }
 }

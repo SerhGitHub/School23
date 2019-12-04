@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
-import PsychService from '../../services/home/PsychService';
+import TestService from '../../services/home/TestService';
 
 class TableData extends React.Component {
 
@@ -19,8 +19,8 @@ class TableData extends React.Component {
     this.props.onChange(file);
   }
 
-  setImages(value){
-    PsychService.setImages(value.data);
+  setGame(link){
+    TestService.setUrlForCatolog(link);
   }
 
   getTrs(){
@@ -30,9 +30,17 @@ class TableData extends React.Component {
         <tr key={item.id}>
           {
             item.values.map((value, index) => {
-              return value.isLink ? (
-                  <Link key={`key_${index}`} to={value.url}>{value.name}</Link>
-                ) : <span key={`key_${index}`}>{value.name}</span>;
+              const tdProps = {
+                className: 'td-games-padding',
+                style: index === 0 ? {fontWeight: 'bold', fontSize: value.isColSpan ? '22px' : '16px', textAlign: value.isColSpan ? 'center' : 'left'} : null,
+                width: `${index === 0 ? '30%' : '70%'}`,
+                colSpan: value.isColSpan ? '2' : '1'
+              };
+              return value.url ? (
+                  <td {...tdProps}>
+                    <Link key={`key_${index}`} to={`/${value.url}`} onClick={value.link ? this.setGame.bind(this, value.link) : null}>{value.name}</Link>
+                  </td>
+                ) : <td {...tdProps}><span key={`key_${index}`}>{value.name}</span></td>;
             })
           }
         </tr>

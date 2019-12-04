@@ -100,7 +100,7 @@ class QuestionsForChildSix extends React.Component {
   render() {
     const data = this.getData();
     return (
-      <BaseTextComponent data={data} title={'На какие вопросы должен уметь отвечать ребенок 6 лет'}/>
+      <BaseTextComponent data={data} title={'На какие вопросы должен уметь отвечать ребенок в 6 лет'}/>
     );
   }
 }
